@@ -1,0 +1,3036 @@
+[
+  {
+    "id": "101",
+    "name": "Contour",
+    "category": 1,
+    "definition": "A line joining points of equal height. The standard vertical interval between contours is 5 m. A contour interval of 2.5 m may be used for flat terrains. Slope lines may be drawn on the lower side of a contour line to clarify the direction of slope. When used, they should be placed in re-entrants. A closed contour represents a knoll or a depression. A depression has to have at least one slope line. Minimum height/depth should be 1 m.\n\nRelationships between adjacent contour lines are important. Adjacent contour lines show form and structure. Small details on contours should be avoided because they tend to hide the main features of the terrain. Prominent features such as depressions, re-entrants, spurs, earth banks and terraces may have to be exaggerated.\n\nAbsolute height accuracy is of little importance, but the relative height difference between neighbouring features should be represented on the map as accurately as possible. It is permissible to alter the height of a contour slightly if this improves the representation of a feature. This deviation should not exceed 25% of the contour interval, and attention must be paid to neighbouring features.\n\nContours shall be adapted or broken in order not to touch symbol Small knoll (109) or Small elongated knoll (110).",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/101-contour/",
+    "symbolImage": "101/symbol.svg",
+    "photos": [
+      {
+        "file": "101/photo-1.jpg",
+        "alt": "Contours depression",
+        "caption": "A large depressions near Šumperk, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Šumperk, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1222/"
+      },
+      {
+        "file": "101/photo-2.jpg",
+        "alt": "Re-entrant (landform)",
+        "caption": "Re-entrant near Šumperk, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Šumperk, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1960/"
+      },
+      {
+        "file": "101/photo-3.jpg",
+        "alt": "Long re-entrant",
+        "caption": "Long re-entrant probably formed as a result of historical mining near Petrov nad Desnou, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Petrov nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1984/"
+      },
+      {
+        "file": "101/photo-4.jpg",
+        "alt": "Spur",
+        "caption": "Side view of the spur near Ostravice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Ostravice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2001/"
+      }
+    ]
+  },
+  {
+    "id": "104",
+    "name": "Earth bank",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/104-earth-bank/",
+    "symbolImage": "104/symbol.svg",
+    "photos": [
+      {
+        "file": "104/photo-1.jpg",
+        "alt": "Earth bank",
+        "caption": "The earth bank defining the edge of the old sandpit near Krupka, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Krupka, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1967/"
+      },
+      {
+        "file": "104/photo-2.jpg",
+        "alt": "104 Earth bank",
+        "caption": "104 Earth bank. Loddon Shire, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Loddon Shire, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2015/"
+      },
+      {
+        "file": "104/photo-3.jpg",
+        "alt": "104 Earth bank",
+        "caption": "104 Earth Bank. Tarnagulla, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Tarnagulla, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2031/"
+      },
+      {
+        "file": "104/photo-4.jpg",
+        "alt": "Earth bank",
+        "caption": "Earth bank. Domžale, Slovenia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Domžale, Slovenia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2281/"
+      }
+    ]
+  },
+  {
+    "id": "105.1",
+    "name": "Earth wall",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/105-earth-wall/",
+    "symbolImage": "105-1/symbol.svg",
+    "photos": [
+      {
+        "file": "105-1/photo-1.jpg",
+        "alt": "Earth wall side view",
+        "caption": "Side view of the earth wall in Ostrava, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Ostrava, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1685/"
+      },
+      {
+        "file": "105-1/photo-2.jpg",
+        "alt": "Earth wall",
+        "caption": "Top view of the earth wall near Ostravice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Ostravice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2004/"
+      },
+      {
+        "file": "105-1/photo-3.jpg",
+        "alt": "105 Earth wall",
+        "caption": "105 Earth wall. Anderson's Diggings, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Anderson's Diggings, Victoria, Australia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2021/"
+      },
+      {
+        "file": "105-1/photo-4.jpg",
+        "alt": "Earth wall",
+        "caption": "Earth wall. Inglewood, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Inglewood, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2033/"
+      }
+    ]
+  },
+  {
+    "id": "106",
+    "name": "Ruined earth wall",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/106-ruined-earth-wall/",
+    "symbolImage": "106/symbol.svg",
+    "photos": [
+      {
+        "file": "106/photo-1.jpg",
+        "alt": "106 Ruined earth wall",
+        "caption": "106 Ruined earth wall. Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2035/"
+      },
+      {
+        "file": "106/photo-2.jpg",
+        "alt": "Ruined earth wall",
+        "caption": "Ruined earth wall near Kubova Huť, Czechia. Photo by: Jiri Vistejn (CC BY-SA 4.0)",
+        "location": "Kubova Huť, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3112/"
+      }
+    ]
+  },
+  {
+    "id": "107",
+    "name": "Erosion gully",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/107-erosion-gully/",
+    "symbolImage": "107/symbol.svg",
+    "photos": [
+      {
+        "file": "107/photo-1.jpg",
+        "alt": "A deep erosion gully shown by a single line.",
+        "caption": "Erosion gully, Renmark, Australia. Photo by Adrian Uppill (CC BY-SA 4.0)",
+        "location": "Renmark, Australia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1731/"
+      },
+      {
+        "file": "107/photo-2.jpg",
+        "alt": "A network of erosion gullies",
+        "caption": "A network of erosion gullies, Renmark, Australia. Photo by Adrian Uppill (CC BY-SA 4.0)",
+        "location": "Renmark, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1732/"
+      },
+      {
+        "file": "107/photo-3.jpg",
+        "alt": "107 Erosion gully",
+        "caption": "107 Erosion gully. Anderson's Diggings, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Anderson's Diggings, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2039/"
+      }
+    ]
+  },
+  {
+    "id": "108",
+    "name": "Small erosion gully",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/108-small-erosion-gully/",
+    "symbolImage": "108/symbol.svg",
+    "photos": [
+      {
+        "file": "108/photo-1.jpg",
+        "alt": "Small erosion gully",
+        "caption": "Small erosion gully near Pélussin, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Pélussin, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1333/"
+      },
+      {
+        "file": "108/photo-2.jpg",
+        "alt": "Small erosion gully",
+        "caption": "Small erosion gully near Bludov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bludov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1495/"
+      },
+      {
+        "file": "108/photo-3.jpg",
+        "alt": "Old dry water channel",
+        "caption": "Old dry water channel near Fláje, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Fláje, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1964/"
+      },
+      {
+        "file": "108/photo-4.jpg",
+        "alt": "Small erosion gully",
+        "caption": "Small erosion gully. Andersons''s Diggings, Dunolly, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Anderson's Diggings, Dunnolly, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2602/"
+      }
+    ]
+  },
+  {
+    "id": "109",
+    "name": "Small knoll",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/109-small-knoll/",
+    "symbolImage": "109/symbol.svg",
+    "photos": [
+      {
+        "file": "109/photo-1.jpg",
+        "alt": "Small knoll",
+        "caption": "Small knoll created by collecting stones in former pastures near Pélussin, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Pélussin, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1415/"
+      },
+      {
+        "file": "109/photo-2.jpg",
+        "alt": "Small knoll",
+        "caption": "Small know built in the past by collecting stones on the former pastures near Vojtíškov, Czechia. Photo by: Radim Ondráček (CC BY-SA 4.0)",
+        "location": "Vojtíškov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1418/"
+      },
+      {
+        "file": "109/photo-3.jpg",
+        "alt": "Small knoll",
+        "caption": "Small stony knoll with control near Vojtíškov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Vojtíškov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1446/"
+      },
+      {
+        "file": "109/photo-4.jpg",
+        "alt": "Small knoll",
+        "caption": "Small knoll near Bludov, Czehia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bludov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1492/"
+      }
+    ]
+  },
+  {
+    "id": "110",
+    "name": "Small elongated knoll",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/110-small-elongated-knoll/",
+    "symbolImage": "110/symbol.svg",
+    "photos": [
+      {
+        "file": "110/photo-1.jpg",
+        "alt": "110 Small elongated knoll",
+        "caption": "110 Small elongated knoll. Nuggety Range, Victoria. Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Nuggety Ramge, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2045/"
+      },
+      {
+        "file": "110/photo-2.jpg",
+        "alt": "Small elongated knoll",
+        "caption": "Small elongated knoll near Šumperk, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Šumperk, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2150/"
+      },
+      {
+        "file": "110/photo-3.jpg",
+        "alt": "Small elongated knoll",
+        "caption": "Small elongated knoll. Inglewood, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Inglewood, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3068/"
+      }
+    ]
+  },
+  {
+    "id": "111",
+    "name": "Small depression",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/111-small-depression/",
+    "symbolImage": "111/symbol.svg",
+    "photos": [
+      {
+        "file": "111/photo-1.jpg",
+        "alt": "Small depression",
+        "caption": "Small depression near Bludov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bludov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1534/"
+      },
+      {
+        "file": "111/photo-2.jpg",
+        "alt": "111 Small depression",
+        "caption": "111 Small depression. Terrick Terrick, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Terrick Terrick, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2047/"
+      },
+      {
+        "file": "111/photo-3.jpg",
+        "alt": "Small depression",
+        "caption": "Small depression near Malenovice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Malenovice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2564/"
+      },
+      {
+        "file": "111/photo-4.jpg",
+        "alt": "Small depression",
+        "caption": "Small depression in Bendigo, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bendigo, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3062/"
+      }
+    ]
+  },
+  {
+    "id": "112",
+    "name": "Pit",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/112-pit/",
+    "symbolImage": "112/symbol.svg",
+    "photos": [
+      {
+        "file": "112/photo-1.jpg",
+        "alt": "112 Pit",
+        "caption": "112 Pit. Nuggety Range, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Nuggety Range, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2049/"
+      },
+      {
+        "file": "112/photo-2.jpg",
+        "alt": "Pit from artisanal mining",
+        "caption": "Pit from artisanal mining near Petrov nad Desnou, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Petrov nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2194/"
+      },
+      {
+        "file": "112/photo-3.jpg",
+        "alt": "Pit",
+        "caption": "Pit. Dunolly, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Dunolly, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3017/"
+      }
+    ]
+  },
+  {
+    "id": "113",
+    "name": "Broken ground",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/113-broken-ground/",
+    "symbolImage": "113/symbol.svg",
+    "photos": [
+      {
+        "file": "113/photo-1.jpg",
+        "alt": "113 Broken ground",
+        "caption": "Broken ground. Anderson's Diggings, Victoria Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Anderson's Diggings, Victoria, Australia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2017/"
+      },
+      {
+        "file": "113/photo-2.jpg",
+        "alt": "Broken ground",
+        "caption": "Broken ground near Xi'an, China. Photo by: Chen Chao (CC BY-SA 4.0)",
+        "location": "Xi'an China",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2142/"
+      },
+      {
+        "file": "113/photo-3.jpg",
+        "alt": "Broken ground",
+        "caption": "High density of small knolls formed from the root systems of trees uprooted by the windstorm. It is not possible to map them separately, thus area should be mapped as broken ground. Velké Karlovice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Velké Karlovice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2719/"
+      },
+      {
+        "file": "113/photo-4.jpg",
+        "alt": "Broken ground",
+        "caption": "Ploughed forest ground near Srbská Kamenice, Czechia. Photo by: Libor Pecháček (CC BY-SA 4.0)",
+        "location": "Srbská Kamenice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2787/"
+      }
+    ]
+  },
+  {
+    "id": "114",
+    "name": "Very broken ground",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/114-very-broken-ground/",
+    "symbolImage": "114/symbol.svg",
+    "photos": [
+      {
+        "file": "114/photo-1.jpg",
+        "alt": "Very broken ground",
+        "caption": "Very broken ground near Inglewood, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Inglewood, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2595/"
+      }
+    ]
+  },
+  {
+    "id": "115",
+    "name": "Prominent landform feature",
+    "category": 1,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/115-prominent-landform-feature/",
+    "symbolImage": "115/symbol.svg",
+    "photos": [
+      {
+        "file": "115/photo-1.jpg",
+        "alt": "Charcoal burning place",
+        "caption": "Charcoal burning places creates typically flat spots in the slope. Smaller ones can be 5×5 metres, but 15×15 metres is not an exception. Skřítek, Sobotín, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Sobotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1711/"
+      },
+      {
+        "file": "115/photo-2.jpg",
+        "alt": "Termite mound",
+        "caption": "Termite mound in Belair National Park, Adelaide, Australia. Photo by: Adrian Uppill (CC BY-SA 4.0)",
+        "location": "Belair National Park, Adelaide, Australia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1728/"
+      },
+      {
+        "file": "115/photo-3.jpg",
+        "alt": "115 Prominent landform feature",
+        "caption": "Tree root mound prominent in landscape. 2.5 metres in height. Anderson's Diggings, Victoria Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Anderson's Diggings, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2022/"
+      },
+      {
+        "file": "115/photo-4.jpg",
+        "alt": "Prominent landform feature",
+        "caption": "Prominent landform feature - a pile of bulldozed tree stumps. Dunolly, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Dunolly, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3070/"
+      }
+    ]
+  },
+  {
+    "id": "201",
+    "name": "Impassable cliff",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/201-impassable-cliff/",
+    "symbolImage": "201/symbol.svg",
+    "photos": [
+      {
+        "file": "201/photo-1.jpg",
+        "alt": "Impassable cliff",
+        "caption": "Impassable cliff near Mostek, Czechia. Photo by: Jan Prášil (CC BY-SA 4.0)",
+        "location": "Mostek, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1392/"
+      },
+      {
+        "file": "201/photo-2.jpg",
+        "alt": "Impassable cliff",
+        "caption": "Impassable cliff near Branná, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Branná, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1527/"
+      },
+      {
+        "file": "201/photo-3.jpg",
+        "alt": "Impassable cliff",
+        "caption": "Impassable cliff near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1528/"
+      },
+      {
+        "file": "201/photo-4.jpg",
+        "alt": "Impassable cliff",
+        "caption": "Impassable cliff. Murjanji,Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Murjanji, Latvia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1620/"
+      }
+    ]
+  },
+  {
+    "id": "202",
+    "name": "Cliff",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/202-cliff/",
+    "symbolImage": "202/symbol.svg",
+    "photos": [
+      {
+        "file": "202/photo-1.jpg",
+        "alt": "Cliff",
+        "caption": "Cliff near Skřítek, Sobotín, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Skřítek, Sobotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1715/"
+      },
+      {
+        "file": "202/photo-2.jpg",
+        "alt": "Cliff",
+        "caption": "Cliff near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1726/"
+      },
+      {
+        "file": "202/photo-3.jpg",
+        "alt": "202 Cliff",
+        "caption": "202 Passable cliff. The Granites, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "The Granites, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2056/"
+      },
+      {
+        "file": "202/photo-4.jpg",
+        "alt": "Cliff",
+        "caption": "Cliff. Bendigo, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bendigo, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3061/"
+      }
+    ]
+  },
+  {
+    "id": "203.1",
+    "name": "Rocky pit or cave",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/203-rocky-pit-or-cave/",
+    "symbolImage": "203-1/symbol.svg",
+    "photos": [
+      {
+        "file": "203-1/photo-1.jpg",
+        "alt": "Cave in old quarry",
+        "caption": "Cave in old quarry in Rapotín, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Rapotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1435/"
+      },
+      {
+        "file": "203-1/photo-2.jpg",
+        "alt": "Cave with barred entrance",
+        "caption": "Cave with barred entrance near Bohutín, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bohutín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1436/"
+      },
+      {
+        "file": "203-1/photo-3.jpg",
+        "alt": "Rocky pit",
+        "caption": "Rocky pit near Logatec, Slovenia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Logatec, Slovenia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1725/"
+      },
+      {
+        "file": "203-1/photo-4.jpg",
+        "alt": "203 Cave",
+        "caption": "203 \"Rocky pit or cave which may constitute a danger to the competitor\". Psalm Singing Gully, Inglewood, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Psalm Singing Gully, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2058/"
+      }
+    ]
+  },
+  {
+    "id": "203.2",
+    "name": "Dangerous pit",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/203-2-dangerous-pit/",
+    "symbolImage": "203-2/symbol.svg",
+    "photos": [
+      {
+        "file": "203-2/photo-1.jpg",
+        "alt": "Dangerous rocky pit 1",
+        "caption": "Rocky pit, looks innocent, especially when running downhill. Banská Bystrica, Slovakia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Banská Bystrica, Slovakia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2293/"
+      },
+      {
+        "file": "203-2/photo-2.jpg",
+        "alt": "Dangerous rocky pit",
+        "caption": "Dangerous rocky pit - vertical mine shaft. Deadman's Flat, Freyerstown, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Freyerstown, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3009/"
+      },
+      {
+        "file": "203-2/photo-3.jpg",
+        "alt": "Dangerous rocky pit",
+        "caption": "Dangerous rocky pit - vertical mine shaft. Petticoat Gully, Creswick, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Creswick, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3015/"
+      },
+      {
+        "file": "203-2/photo-4.jpg",
+        "alt": "Dangerous pit",
+        "caption": "Šumsko, Slovenia. Photo by: Ivan Nagy (CC BY-SA 4.0)",
+        "location": "Šumsko, Slovenia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3367/"
+      }
+    ]
+  },
+  {
+    "id": "204",
+    "name": "Boulder",
+    "category": 2,
+    "definition": "A distinct boulder (should be higher than 1 m), which is immediately identifiable on the ground.\n\nGroups of boulders are represented using symbol Bouldercluster (207) or a boulder field symbol (208, 209).\n\nTo be able to show the distinction between neighbouring (closer than 30 m apart) boulders with significant difference in size, it is permitted to enlarge the symbol to 0.5 mm for some of the boulders.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/204-boulder/",
+    "symbolImage": "204/symbol.svg",
+    "photos": [
+      {
+        "file": "204/photo-1.jpg",
+        "alt": "Distinct boulder",
+        "caption": "A distinct boulder in typical open forest in Whitehorse, Yukon, Canada. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Whitehorse, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-899/"
+      },
+      {
+        "file": "204/photo-2.jpg",
+        "alt": "Two boulders",
+        "caption": "Two boulders near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1254/"
+      },
+      {
+        "file": "204/photo-3.jpg",
+        "alt": "Boulder with control",
+        "caption": "Boulder with control near Vojtíškov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Vojtíškov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1445/"
+      },
+      {
+        "file": "204/photo-4.jpg",
+        "alt": "204 Boulder",
+        "caption": "204 Boulder. The Granites, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "The Granites, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2062/"
+      }
+    ]
+  },
+  {
+    "id": "205",
+    "name": "Large boulder",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/205-large-boulder/",
+    "symbolImage": "205/symbol.svg",
+    "photos": [
+      {
+        "file": "205/photo-1.jpg",
+        "alt": "Large boulder",
+        "caption": "Large boulder near Pélussin, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Pélussin, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1335/"
+      },
+      {
+        "file": "205/photo-2.jpg",
+        "alt": "Large boulder",
+        "caption": "Large boulder near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1421/"
+      },
+      {
+        "file": "205/photo-3.jpg",
+        "alt": "Large boulder",
+        "caption": "Large boulder near Skřítek, Sobotín, Czechia. Photo by Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Sobotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1718/"
+      },
+      {
+        "file": "205/photo-4.jpg",
+        "alt": "Large boulder",
+        "caption": "Large boulder in Lo Fu Tau, Hong Kong. Photo by Lok-Hin MA (CC BY-SA 4.0)",
+        "location": "Lo Fu Tau, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1821/"
+      }
+    ]
+  },
+  {
+    "id": "206",
+    "name": "Gigantic boulder or rock pillar",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/206-gigantic-boulder-or-rock-pillar/",
+    "symbolImage": "206/symbol.svg",
+    "photos": [
+      {
+        "file": "206/photo-1.jpg",
+        "alt": "Massive cliff",
+        "caption": "A gigantic boulder, rock pillar or massive cliff. Osudová skála, Czech. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Osudová skála, Czech.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1632/"
+      },
+      {
+        "file": "206/photo-2.jpg",
+        "alt": "Rock pillar",
+        "caption": "Rock pillar near Skřítek, Sobotín, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Sobotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1716/"
+      },
+      {
+        "file": "206/photo-3.jpg",
+        "alt": "Rock pillar",
+        "caption": "Rock pillar near Hřensko, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Hřensko, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1958/"
+      },
+      {
+        "file": "206/photo-4.jpg",
+        "alt": "Passage between rock pillars",
+        "caption": "Passage between rock pillars in Toulovcovy Maštale, Bor u Skutče, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bor u Skutče, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2227/"
+      }
+    ]
+  },
+  {
+    "id": "207",
+    "name": "Boulder cluster",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/207-boulder-cluster/",
+    "symbolImage": "207/symbol.svg",
+    "photos": [
+      {
+        "file": "207/photo-1.jpg",
+        "alt": "Boulder cluster",
+        "caption": "Boulder cluster near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/boulder-cluster/"
+      },
+      {
+        "file": "207/photo-2.jpg",
+        "alt": "Boulder cluster",
+        "caption": "A boulder cluster in Josefův důl, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Josefův důl, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-767/"
+      },
+      {
+        "file": "207/photo-3.jpg",
+        "alt": "207 Boulder cluster",
+        "caption": "207 Boulder cluster. Nuggety Range, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Nuggety Range, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2064/"
+      },
+      {
+        "file": "207/photo-4.jpg",
+        "alt": "207 Boulder cluster",
+        "caption": "207 Boulder cluster. The Granites, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "The Granites, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2066/"
+      }
+    ]
+  },
+  {
+    "id": "208",
+    "name": "Boulder field",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/208-boulder-field/",
+    "symbolImage": "208/symbol.svg",
+    "photos": [
+      {
+        "file": "208/photo-1.jpg",
+        "alt": "208 Boulder field",
+        "caption": "208 Boulder field. The Granites, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "The Granites, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2068/"
+      },
+      {
+        "file": "208/photo-2.jpg",
+        "alt": "Boulder field",
+        "caption": "Boulder field. Nax, Switzerland. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Nax, Switzerland",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2301/"
+      }
+    ]
+  },
+  {
+    "id": "209",
+    "name": "Dense boulder field",
+    "category": 2,
+    "definition": "An area which is covered with so many blocks of stone that they cannot be marked individually and the runnability is affected, is shown with randomly placed and orientated solid triangles with sides of ratio 8:6:5 (inner angles: 92.9, 48.5, 38.6).\n\nA minimum of two triangles must be used.\n\nA minimum of two triangles should be used. One triangle may be used if it is combined with other rock symbols (for instance directly below cliff symbols (201, 202), adjacent to boulder symbols (204-206) or combined with stony ground symbols (210-212)).",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/209-dense-boulder-field/",
+    "symbolImage": "209/symbol.svg",
+    "photos": [
+      {
+        "file": "209/photo-1.jpg",
+        "alt": "Dense boulder field",
+        "caption": "Dense boulder field in Tramuntana forest, Cres, Croatia. Photo by: Jiří Vištejn (CC BY-SA 4.0)",
+        "location": "Tramuntana forest, Croatia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1341/"
+      },
+      {
+        "file": "209/photo-2.jpg",
+        "alt": "Dense boulder field",
+        "caption": "Dense boulder field near Skřítek, Sobotín, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Sobotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1714/"
+      },
+      {
+        "file": "209/photo-3.jpg",
+        "alt": "Dense boulder field",
+        "caption": "Dense boulder field near Osek, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Osek, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1911/"
+      },
+      {
+        "file": "209/photo-4.jpg",
+        "alt": "Patch of dense boulder field",
+        "caption": "Patch of dense boulder field near Černá Voda, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Černá Voda, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2543/"
+      }
+    ]
+  },
+  {
+    "id": "210",
+    "name": "Stony ground, slow running",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/210-stony-ground-slow-running/",
+    "symbolImage": "210/symbol.svg",
+    "photos": [
+      {
+        "file": "210/photo-1.jpg",
+        "alt": "Stony ground, slow running",
+        "caption": "Stony ground, slow running. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Černá Voda, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1597/"
+      },
+      {
+        "file": "210/photo-2.jpg",
+        "alt": "Stony ground, slow running",
+        "caption": "Stony ground, slow running. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Stražisko, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1599/"
+      },
+      {
+        "file": "210/photo-3.jpg",
+        "alt": "Stony ground",
+        "caption": "Stony ground, slow running. Nax, Switzerland. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Nax, Switzerland",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2303/"
+      }
+    ]
+  },
+  {
+    "id": "211",
+    "name": "Stony ground, walk",
+    "category": 2,
+    "definition": "Stony or rocky ground which reduces the runnability significantly (to about 20-60% of normal speed).\n\nThe dots should be randomly distributed but not interfere with the representation of important terrain features and objects.\n\nIllustration serves as an example of density and also point symbol (single dots) can be used to draw stony ground.\n\nTo avoid confusion with symbol Distinct vegetation boundary (416), the dots should not be arranged to form a line.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/211-stony-ground-walk/",
+    "symbolImage": "211/symbol.svg",
+    "photos": [
+      {
+        "file": "211/photo-1.jpg",
+        "alt": "Stouny ground, walk",
+        "caption": "Stouny ground, walk in Tramuntana forest, Cres, Croatia. Photo by: Jiří Vištejn (CC BY-SA 4.0)",
+        "location": "Tramuntana forest, Croatia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1338/"
+      },
+      {
+        "file": "211/photo-2.jpg",
+        "alt": "Stony ground",
+        "caption": "Stony ground, walk (in background). Opava, Czechia. Photo by: Zdeněk Lenhart (CC BY-SA 4.0).",
+        "location": "Opava, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2305/"
+      },
+      {
+        "file": "211/photo-3.jpg",
+        "alt": "Stony ground: walk",
+        "caption": "Stony ground where running speed is reduced to about 20-60% of normal speed. Deadman's Flat, Freyerstown, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Freyerstown, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3011/"
+      }
+    ]
+  },
+  {
+    "id": "212",
+    "name": "Stony ground, fight",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/212-stony-ground-fight/",
+    "symbolImage": "212/symbol.svg",
+    "photos": [
+      {
+        "file": "212/photo-1.jpg",
+        "alt": "Stony ground fight",
+        "caption": "Stony ground with speed reduced to less than 20% of normal speed near Doizieux, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Crêt de l'Œillon, Doizieux, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1328/"
+      },
+      {
+        "file": "212/photo-2.jpg",
+        "alt": "Stony ground, fight with stairway",
+        "caption": "Stony ground, fight with stairway in High Island, Hong Kong. Photo by Lok-Hin MA (CC BY-SA 4.0)",
+        "location": "High Island, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1555/"
+      },
+      {
+        "file": "212/photo-3.jpg",
+        "alt": "212 Stony ground fight",
+        "caption": "212 Stony ground fight. Byaduk, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Byaduk, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2070/"
+      }
+    ]
+  },
+  {
+    "id": "213",
+    "name": "Sandy ground",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/213-sandy-ground/",
+    "symbolImage": "213/symbol.svg",
+    "photos": [
+      {
+        "file": "213/photo-1.jpg",
+        "alt": "Sandy ground",
+        "caption": "Sand dunes near Carcross, Yukon, Canada. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Carcross, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1367/"
+      },
+      {
+        "file": "213/photo-2.jpg",
+        "alt": "Open sandy ground",
+        "caption": "Open sandy ground near Krupka, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Krupka, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1966/"
+      },
+      {
+        "file": "213/photo-3.jpg",
+        "alt": "Sandy ground",
+        "caption": "Sandy ground near Beli, Croatia. Photo by: Jiri Vistejn (CC BY-SA 4.0)",
+        "location": "Cres, Croatia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3030/"
+      }
+    ]
+  },
+  {
+    "id": "214",
+    "name": "Bare rock",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/214-bare-rock/",
+    "symbolImage": "214/symbol.svg",
+    "photos": [
+      {
+        "file": "214/photo-1.jpg",
+        "alt": "214 Bare rock",
+        "caption": "214 Bare rock. Korong, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Korong, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2072/"
+      },
+      {
+        "file": "214/photo-2.jpg",
+        "alt": "Bare rock",
+        "caption": "Bare rock. Vesseaux, France. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Vesseaux, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2369/"
+      },
+      {
+        "file": "214/photo-3.jpg",
+        "alt": "Bare rock",
+        "caption": "Bare rock. Nissedal, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Nissedal, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2399/"
+      },
+      {
+        "file": "214/photo-4.jpg",
+        "alt": "Bare rock",
+        "caption": "Bare rock. Kooyoora State Park, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Kooyoora State Park, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3067/"
+      }
+    ]
+  },
+  {
+    "id": "215",
+    "name": "Trench",
+    "category": 2,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/215-trench/",
+    "symbolImage": "215/symbol.svg",
+    "photos": [
+      {
+        "file": "215/photo-1.jpg",
+        "alt": "Trench",
+        "caption": "Trench near Grövelsjön, Sweden. Photo by: Sven Lundbäck (CC BY-SA 4.0)",
+        "location": "Grövelsjön, Sweden",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1413/"
+      },
+      {
+        "file": "215/photo-2.jpg",
+        "alt": "215 Trench",
+        "caption": "215 Trench. Poverty Reef, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Poverty Reef, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2074/"
+      },
+      {
+        "file": "215/photo-3.jpg",
+        "alt": "Trench",
+        "caption": "Trench. Tirelis Swamp, Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Tirelis Swamp, Latvia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2173/"
+      }
+    ]
+  },
+  {
+    "id": "301",
+    "name": "Uncrossable body of water",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/301-uncrossable-body-of-water/",
+    "symbolImage": "301/symbol.svg",
+    "photos": [
+      {
+        "file": "301/photo-1.jpg",
+        "alt": "Uncrossable body of water",
+        "caption": "Uncrossable body of water in Grövelsjön, Sweden. Photo by: Sven Lundbäck (CC SA-BY 4.0)",
+        "location": "Grövelsjön, Sweden",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1354/"
+      },
+      {
+        "file": "301/photo-2.jpg",
+        "alt": "Lake",
+        "caption": "Lake near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1679/"
+      },
+      {
+        "file": "301/photo-3.jpg",
+        "alt": "Small pond",
+        "caption": null,
+        "location": "Near Lewes Lake, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1681/"
+      },
+      {
+        "file": "301/photo-4.jpg",
+        "alt": "Uncrossable body of water in old quarry",
+        "caption": "Small uncrossable body of water in old quarry near Šumperk, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Šumperk, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1858/"
+      }
+    ]
+  },
+  {
+    "id": "302",
+    "name": "Shallow body of water",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/302-shallow-body-of-water/",
+    "symbolImage": "302/symbol.svg",
+    "photos": [
+      {
+        "file": "302/photo-1.jpg",
+        "alt": "Shallow body of water",
+        "caption": "A shallow seasonal or periodic body of water, minimum size near Grövelsjön. On this photo you can see that it is only a periodic body of water. Photo by: Sven Lundbäck (CC BY-SA 4.0)",
+        "location": "Grövelsjön, Sweden",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1402/"
+      },
+      {
+        "file": "302/photo-2.jpg",
+        "alt": "Small shallow pond",
+        "caption": "Small shallow pond in Josefová, Branná, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Branná, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1682/"
+      },
+      {
+        "file": "302/photo-3.jpg",
+        "alt": "Shallow body of water in old quarry",
+        "caption": "Shallow body of water in old quarry near Šumperk, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Šumperk, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1859/"
+      },
+      {
+        "file": "302/photo-4.jpg",
+        "alt": "302 Shallow body of water",
+        "caption": "302 Shallow body of water - Psalm Singing Gully, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Psalm Singing Gully, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2078/"
+      }
+    ]
+  },
+  {
+    "id": "303",
+    "name": "Waterhole",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/303-waterhole/",
+    "symbolImage": "303/symbol.svg",
+    "photos": [
+      {
+        "file": "303/photo-1.jpg",
+        "alt": "Waterhole",
+        "caption": "Waterhole near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1371/"
+      },
+      {
+        "file": "303/photo-2.jpg",
+        "alt": "303 Waterhole",
+        "caption": "303 Waterhole - Kooyoora, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Kooyoora, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2081/"
+      },
+      {
+        "file": "303/photo-3.jpg",
+        "alt": "303 Waterhole",
+        "caption": "303 Waterhole - Terrick Terrick, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Terrick Terrick, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2082/"
+      },
+      {
+        "file": "303/photo-4.jpg",
+        "alt": "Waterhole",
+        "caption": "Waterhole - wild boar bath. Brno, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Brno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2311/"
+      }
+    ]
+  },
+  {
+    "id": "304",
+    "name": "Crossable watercourse",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/304-crossable-watercourse/",
+    "symbolImage": "304/symbol.svg",
+    "photos": [
+      {
+        "file": "304/photo-1.jpg",
+        "alt": "Crossable watercourse",
+        "caption": "Crossable watercourse near Sofia, Bulgaria. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Sofia, Bulgaria",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1530/"
+      },
+      {
+        "file": "304/photo-2.jpg",
+        "alt": "Crossable watercourse",
+        "caption": "Crossable watercourse near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1727/"
+      },
+      {
+        "file": "304/photo-3.jpg",
+        "alt": "304 Crossable watercourse",
+        "caption": "304 Crossable watercourse - Yankee Gully, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Yankee Gully, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2084/"
+      },
+      {
+        "file": "304/photo-4.jpg",
+        "alt": "Crossable watercourse",
+        "caption": "Crossable watercourse, recenly dry. Vesseaux, France. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Vesseaux, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2313/"
+      }
+    ]
+  },
+  {
+    "id": "305",
+    "name": "Small crossable watercourse",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/305-small-crossable-watercourse/",
+    "symbolImage": "305/symbol.svg",
+    "photos": [
+      {
+        "file": "305/photo-1.jpg",
+        "alt": "Small crossable watercourse",
+        "caption": "Small crossable watercourse near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1326/"
+      },
+      {
+        "file": "305/photo-2.jpg",
+        "alt": "Small crossable watercourse",
+        "caption": "Small crossable watercourse near Velké Vrbno, Staré Město, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Velké Vrbno, Staré Město, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1423/"
+      },
+      {
+        "file": "305/photo-3.jpg",
+        "alt": "Small crossable watercourse",
+        "caption": "Small crossable watercourse near Třemešek u Oskavy, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Třemešek u Oskavy, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1573/"
+      },
+      {
+        "file": "305/photo-4.jpg",
+        "alt": "305 Small crossable watercourse",
+        "caption": "305 Small crossable watercourse - Bendigo, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Bendigo, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2089/"
+      }
+    ]
+  },
+  {
+    "id": "306",
+    "name": "Minor/seasonal water channel",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/306-minor-seasonal-water-channel/",
+    "symbolImage": "306/symbol.svg",
+    "photos": [
+      {
+        "file": "306/photo-1.jpg",
+        "alt": "305 Seasonal Watercourse",
+        "caption": "305 Seasonal watercourse - Psalm Singing Gully, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Psalm Singing Gully, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2087/"
+      },
+      {
+        "file": "306/photo-2.jpg",
+        "alt": "Minor-seasonal water channel",
+        "caption": "Minor-seasonal water channel, suitable minimum size. Protivanov, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Protivanov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2315/"
+      },
+      {
+        "file": "306/photo-3.jpg",
+        "alt": "Seasonal water channel",
+        "caption": "Seasonal water channel near Srbská Kamenice, Czechia. Photo by: Libor Pecháček (CC BY-SA 4.0)",
+        "location": "Srbská Kamenice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2786/"
+      },
+      {
+        "file": "306/photo-4.jpg",
+        "alt": "Minor/seasonal water channel",
+        "caption": "Minor/seasonal water channel near Inglewood, Victoria, Australia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Inglewood, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3024/"
+      }
+    ]
+  },
+  {
+    "id": "307",
+    "name": "Uncrossable marsh",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/307-uncrossable-marsh/",
+    "symbolImage": "307/symbol.svg",
+    "photos": [
+      {
+        "file": "307/photo-1.jpg",
+        "alt": "Uncrossable marsh",
+        "caption": "Uncrossable marsh near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1226/"
+      },
+      {
+        "file": "307/photo-2.jpg",
+        "alt": "Uncrossable marsh",
+        "caption": "Uncrossable marsh. Asari, Latvia. Photo by: Gunars Dukste (CC BY-SA 4.0)",
+        "location": "Asari, Latvia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1584/"
+      },
+      {
+        "file": "307/photo-3.jpg",
+        "alt": "Uncrossable marsh",
+        "caption": "Uncrossable marsh. Cenas tirelis, Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Cenas tirelis, Latvia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1612/"
+      },
+      {
+        "file": "307/photo-4.jpg",
+        "alt": "Uncrossable marsh",
+        "caption": "Uncrossable marsh. Bjugn, Norway. Photo Jan Drbal (CC BY-SA 4.0)",
+        "location": "Bjugn, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2320/"
+      }
+    ]
+  },
+  {
+    "id": "308",
+    "name": "Marsh",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/308-marsh/",
+    "symbolImage": "308/symbol.svg",
+    "photos": [
+      {
+        "file": "308/photo-1.jpg",
+        "alt": "Marsh",
+        "caption": "A crossable marsh near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1321/"
+      },
+      {
+        "file": "308/photo-2.jpg",
+        "alt": "Marsh",
+        "caption": "Marsh near Velké Vrbno, Czechia. Photo by: SK Severka Šumperk (CC BY-SA 4.0)",
+        "location": "Velké Vrbno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1518/"
+      },
+      {
+        "file": "308/photo-3.jpg",
+        "alt": "Marsh",
+        "caption": "Marsh near Moravský Karlov, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Moravský Karlov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1719/"
+      },
+      {
+        "file": "308/photo-4.jpg",
+        "alt": "Marsh",
+        "caption": "Marsh near Bor u Skutče, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bor u Skutče, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2224/"
+      }
+    ]
+  },
+  {
+    "id": "309",
+    "name": "Narrow marsh",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/309-narrow-marsh/",
+    "symbolImage": "309/symbol.svg",
+    "photos": [
+      {
+        "file": "309/photo-1.jpg",
+        "alt": "Narrow marsh",
+        "caption": "Narrow marsh in Grövelsjön, Sweden. Photo by: Sven Lundbäck (CC SA-BY 4.0)",
+        "location": "Grövelsjön, Sweden",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1356/"
+      },
+      {
+        "file": "309/photo-2.jpg",
+        "alt": "Narrow marsh",
+        "caption": "Narrow marsh near Třemešek u Oskavy, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Třemešek u Oskavy, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1567/"
+      },
+      {
+        "file": "309/photo-3.jpg",
+        "alt": "Narrow marsh",
+        "caption": "Narrow marsh. Oslo, Norway. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2326/"
+      },
+      {
+        "file": "309/photo-4.jpg",
+        "alt": "Narrow marsh",
+        "caption": "Narrow marsh. Protivanov, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Protivanov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2328/"
+      }
+    ]
+  },
+  {
+    "id": "310",
+    "name": "Indistinct marsh",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/310-indistinct-marsh/",
+    "symbolImage": "310/symbol.svg",
+    "photos": [
+      {
+        "file": "310/photo-1.jpg",
+        "alt": "Indistinct marsh",
+        "caption": "Indistinct marsh. Bjugn, Norway. Photo Jan Drbal (CC BY-SA 4.0)",
+        "location": "Bjugn, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2332/"
+      },
+      {
+        "file": "310/photo-2.jpg",
+        "alt": "Indistinct marsh",
+        "caption": "Indistinct marsh near Pavlova Huť. Photo by: Jiri Vistejn (CC BY-SA 4.0)",
+        "location": "Pavlova Huť, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3027/"
+      }
+    ]
+  },
+  {
+    "id": "311",
+    "name": "Well, fountain or water tank",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/311-well-fountain-or-water-tank/",
+    "symbolImage": "311/symbol.svg",
+    "photos": [
+      {
+        "file": "311/photo-1.jpg",
+        "alt": "Well",
+        "caption": "Well with covering construction next to a small lake near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1678/"
+      },
+      {
+        "file": "311/photo-2.jpg",
+        "alt": "Well",
+        "caption": "Well. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Pure, Latvia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3526/"
+      }
+    ]
+  },
+  {
+    "id": "312",
+    "name": "Spring",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/312-spring/",
+    "symbolImage": "312/symbol.svg",
+    "photos": [
+      {
+        "file": "312/photo-1.jpg",
+        "alt": "Spring",
+        "caption": "Spring near Saint-Genest-Malifaux, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Saint-Genest-Malifaux, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1379/"
+      },
+      {
+        "file": "312/photo-2.jpg",
+        "alt": "Spring",
+        "caption": "Anenská studánka (Annaquelle) is a spring with a commemorative plaque near Petrov nad Desnou, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Petrov nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1986/"
+      },
+      {
+        "file": "312/photo-3.jpg",
+        "alt": "Spring",
+        "caption": "Javornícka studnička spring near Makov, Slovakia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Makov, Slovakia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2716/"
+      }
+    ]
+  },
+  {
+    "id": "313",
+    "name": "Prominent water feature",
+    "category": 3,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/313-prominent-water-feature/",
+    "symbolImage": "313/symbol.svg",
+    "photos": [
+      {
+        "file": "313/photo-1.jpg",
+        "alt": "Prominent water feature",
+        "caption": "Prominent water feature, lower side foto near Kubova Huť, Czechia. Photo by: Jiri Vistejn (CC BY-SA 4.0)",
+        "location": "Kubova Huť, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3130/"
+      }
+    ]
+  },
+  {
+    "id": "401",
+    "name": "Open land",
+    "category": 4,
+    "definition": "Open land that has a ground cover (grass, moss or similar) which offers better runnability than typical open forest. If yellow coloured areas become dominant, a screen (75% instead of full yellow) may be used.Shall not be combined with area symbols other than Broken ground (113), Boulder field (208), Marsh (308) and Indistinct marsh (310).",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/401-open-land/",
+    "symbolImage": "401/symbol.svg",
+    "photos": [
+      {
+        "file": "401/photo-1.jpg",
+        "alt": "Open land",
+        "caption": "Meadow near Pélussin, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Pélussin, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1290/"
+      },
+      {
+        "file": "401/photo-2.jpg",
+        "alt": "Open land",
+        "caption": "Open land near Skřítek, Sobotín, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Skřítek, Sobotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1721/"
+      },
+      {
+        "file": "401/photo-3.jpg",
+        "alt": "Open land",
+        "caption": "Open land near Medvědice, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Medvědice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1900/"
+      },
+      {
+        "file": "401/photo-4.jpg",
+        "alt": "Open land",
+        "caption": "Open land. Do NOT map this as 201 (Cultivated land). Protivanov, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Protivanov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2336/"
+      }
+    ]
+  },
+  {
+    "id": "403",
+    "name": "Rough open land",
+    "category": 4,
+    "definition": "Heath, moorland, felled areas, newly planted areas (trees lower than ca. 1 m) or other generally open land with rough ground vegetation, heather or tall grass offering the same runnability as typical open forest.May be combined with symbol Vegetation: slow running, good visibility (407) or Vegetation: walk, good visibility (409) to show reduced runnability.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/403-rough-open-land/",
+    "symbolImage": "403/symbol.svg",
+    "photos": [
+      {
+        "file": "403/photo-1.jpg",
+        "alt": "Rough open land",
+        "caption": "Felled area nearby Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1214/"
+      },
+      {
+        "file": "403/photo-2.jpg",
+        "alt": "Small clearing",
+        "caption": "Small clearing near Velké Vrbno, Czechia. Photo by: SK Severka Šumperk (CC BY-SA 4.0)",
+        "location": "Velké Vrbno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1516/"
+      },
+      {
+        "file": "403/photo-3.jpg",
+        "alt": "Rough open land",
+        "caption": "Rough open land near Třemešek u Oskavy, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Třemešek u Oskavy, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1572/"
+      },
+      {
+        "file": "403/photo-4.jpg",
+        "alt": "Rough open land",
+        "caption": "Rough open land near Dubí, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Dubí, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1910/"
+      }
+    ]
+  },
+  {
+    "id": "404",
+    "name": "Rough open land with scattered trees",
+    "category": 4,
+    "definition": "Areas with scattered trees or bushes in rough open land may be generalised by using a regular pattern of large dots in the yellow screen.The dots may be white (scattered trees) or green (scattered bushes / thickets).Only the white dot variant can be combined with symbol Vegetation: slow running, good visibility (407) or Vegetation: walk, good visibility (409) to show reduced runnability.The symbol is orientated to north.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/404-rough-open-land-with-scattered-trees/",
+    "symbolImage": "404/symbol.svg",
+    "photos": [
+      {
+        "file": "404/photo-1.jpg",
+        "alt": "Areaa with scattered trees in rough open land",
+        "caption": "Areas with scattered trees or bushes in rough open land. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Hutě, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1601/"
+      },
+      {
+        "file": "404/photo-2.jpg",
+        "alt": "Rough open land with scattered trees",
+        "caption": "Rough open land with scattered trees near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1680/"
+      },
+      {
+        "file": "404/photo-3.jpg",
+        "alt": "Rough open land with scattered trees",
+        "caption": "Rough open land with scattered trees on the hill in background. Bjugn, Norway. Photo by: Jan Drbal (CC BY-SA 4.0)",
+        "location": "Bjugn, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2350/"
+      },
+      {
+        "file": "404/photo-4.jpg",
+        "alt": "Rough open land with scattered trees",
+        "caption": "Rough open land with scattered trees. Brno, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Brno, Czechia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2352/"
+      }
+    ]
+  },
+  {
+    "id": "405",
+    "name": "Forest",
+    "category": 4,
+    "definition": "Typical open forest for the particular type of terrain. If no part of the forest is easily runnable then no white should appear on the map.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/405-forest/",
+    "symbolImage": "405/symbol.svg",
+    "photos": [
+      {
+        "file": "405/photo-1.jpg",
+        "alt": "Open runnable forest",
+        "caption": "Open runnable forest with grassy ground in Renaison, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Renaison, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-824/"
+      },
+      {
+        "file": "405/photo-2.jpg",
+        "alt": "Deciduous forest",
+        "caption": "Deciduous forest in Bohutín, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bohutín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-895/"
+      },
+      {
+        "file": "405/photo-3.jpg",
+        "alt": "Open forest",
+        "caption": "Typical open coniferous forest at higher altitudes near Velké Vrbno, Czechia. Photo by: SK Severka Šumperk (CC BY-SA 4.0)",
+        "location": "Velké Vrbno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1512/"
+      },
+      {
+        "file": "405/photo-4.jpg",
+        "alt": "Open forest",
+        "caption": "Open forest near Třemešek u Oskavy, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Třemešek u Oskavy, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1571/"
+      }
+    ]
+  },
+  {
+    "id": "406",
+    "name": "Vegetation: slow running",
+    "category": 4,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/406-vegetation-slow-running/",
+    "symbolImage": "406/symbol.svg",
+    "photos": [
+      {
+        "file": "406/photo-1.jpg",
+        "alt": "Vegetation: slow running",
+        "caption": "Vegetation which allows slow running near Petrov nad Desnou, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Petrov nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1998/"
+      },
+      {
+        "file": "406/photo-2.jpg",
+        "alt": "Vegetation: slow running",
+        "caption": "Patch of slow running vegetation near Janovice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Janovice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2008/"
+      },
+      {
+        "file": "406/photo-3.jpg",
+        "alt": "Reeds",
+        "caption": "Reeds growing on wetland near Ostravice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Ostravice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2010/"
+      },
+      {
+        "file": "406/photo-4.jpg",
+        "alt": "Vegetation slow running",
+        "caption": "Vegetation: slow running. Ochoz, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Ochoz, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2354/"
+      }
+    ]
+  },
+  {
+    "id": "407",
+    "name": "Vegetation: slow running, good visibility",
+    "category": 4,
+    "definition": "An area of good visibility and reduced runnability, due to, for instance, undergrowth (brambles, heather, low bushes, cut branches). Running speed is reduced to about 60-80% of normal speed.The symbol is orientated to north.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/407-vegetation-slow-running-good-visibility/",
+    "symbolImage": "407/symbol.svg",
+    "photos": [
+      {
+        "file": "407/photo-1.jpg",
+        "alt": "Fern vegetation",
+        "caption": "Fern can reduce running speed especially during growth season. Vojtíškov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Vojtíškov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1398/"
+      },
+      {
+        "file": "407/photo-2.jpg",
+        "alt": "Vegetation, slow running, good visibility",
+        "caption": "Vegetation, slow running, good visibility (Urtica dioica). Milzkalns, Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Milzkalns, Latvia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1637/"
+      },
+      {
+        "file": "407/photo-3.jpg",
+        "alt": "Clearing with lots of branches",
+        "caption": "Clearing with lots of branches near Krupka, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Krupka, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1907/"
+      },
+      {
+        "file": "407/photo-4.jpg",
+        "alt": "Clearing with undergrowth",
+        "caption": "Clearing with undergrowth near Šumperk, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Šumperk, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1959/"
+      }
+    ]
+  },
+  {
+    "id": "408",
+    "name": "Vegetation: walk",
+    "category": 4,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/408-vegetation-walk/",
+    "symbolImage": "408/symbol.svg",
+    "photos": [
+      {
+        "file": "408/photo-1.jpg",
+        "alt": "Vegetation: walk",
+        "caption": "The growing trees create an area of dense vegetation (thicket) with low runnability near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1684/"
+      },
+      {
+        "file": "408/photo-2.jpg",
+        "alt": "Vegetation: walk",
+        "caption": "Area of dense vegetation with low runnability (walk) near Skřítek, Sobotín, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Sobotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1713/"
+      },
+      {
+        "file": "408/photo-3.jpg",
+        "alt": "Area of dense trees",
+        "caption": "Area of dense trees with low visibility near Zdíkov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Zdíkov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1868/"
+      },
+      {
+        "file": "408/photo-4.jpg",
+        "alt": "Vegetation: walk",
+        "caption": "Vegetation with walk runnability near Potůčník, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Potůčník, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2151/"
+      }
+    ]
+  },
+  {
+    "id": "409",
+    "name": "Vegetation: walk, good visibility",
+    "category": 4,
+    "definition": "An area of good visibility that is difficult to run through, due to, for instance, undergrowth (brambles, heather, low bushes, cut branches). Running speed is reduced to about 20-60% of normal speed.Areas of good visibility that are very difficult to run or impassable are represented using symbol Vegetation: fight (410).The symbol is orientated to north.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/409-vegetation-walk-good-visibility/",
+    "symbolImage": "409/symbol.svg",
+    "photos": [
+      {
+        "file": "409/photo-1.jpg",
+        "alt": "Vegetation: walk, good visibility",
+        "caption": "Vegetation: walk, good visibility, near Borlänge, Sweden. Photo by: Sven Lundbäck (CC SA-BY 4.0)",
+        "location": "Borlänge, Sweden",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1352/"
+      },
+      {
+        "file": "409/photo-2.jpg",
+        "alt": "Vegetation: slow running, good visibility",
+        "caption": "Vegetation: slow running, good visibility. Wienerwald, Vienna, Austria. Photo by: Robert Ditz (CC BY-SA 4.0)",
+        "location": "Wienerwald, Vienna, Austria",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3353/"
+      }
+    ]
+  },
+  {
+    "id": "410",
+    "name": "Vegetation: fight",
+    "category": 4,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/410-vegetation-fight/",
+    "symbolImage": "410/symbol.svg",
+    "photos": [
+      {
+        "file": "410/photo-1.jpg",
+        "alt": "Vegetation fight",
+        "caption": "Impassable vegetation near Doizieux, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Doizieux, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1520/"
+      },
+      {
+        "file": "410/photo-2.jpg",
+        "alt": "Vegetation: fight",
+        "caption": "Control point at the edge of very dense vegetation near Skřítek, Sobotín, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Sobotín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1724/"
+      },
+      {
+        "file": "410/photo-3.jpg",
+        "alt": "Patch of impassable vegetation",
+        "caption": "Patch of dense vegetation which is barely passable near Zdíkov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Zdíkov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1867/"
+      },
+      {
+        "file": "410/photo-4.jpg",
+        "alt": "Vegetation fight",
+        "caption": "Distinct group of young spruces, mapped as min. area of 410 (Vegetation fight). Protivanov, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Protivanov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2356/"
+      }
+    ]
+  },
+  {
+    "id": "412",
+    "name": "Cultivated land",
+    "category": 4,
+    "definition": "Cultivated land, normally used for growing crops. Runnability may vary according to the type of crops grown and the time of year. For agroforestry, symbol Forest (405) or Open land with scattered trees (402) may be used instead of yellow.Since the runnability may vary, such areas should be avoided when setting courses.The symbol is combined with symbol Out-of-bounds area (709) to show cultivated land that shall not be entered.The symbol is orientated to north.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/412-cultivated-land/",
+    "symbolImage": "412/symbol.svg",
+    "photos": [
+      {
+        "file": "412/photo-1.jpg",
+        "alt": "Cultivated land",
+        "caption": "Cultivated land. South France. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "South France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1643/"
+      }
+    ]
+  },
+  {
+    "id": "413",
+    "name": "Orchard",
+    "category": 4,
+    "definition": "Land planted with trees or bushes, normally in a regular pattern. The dot lines may be orientated to show the direction of planting.Must be combined with either symbol Open land (401) or Rough open land (403).May be combined with symbol Vegetation: slow running, good visibility (407) or Vegetation: walk, good visibility (409) to show reduced runnability.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/413-orchard/",
+    "symbolImage": "413/symbol.svg",
+    "photos": [
+      {
+        "file": "413/photo-1.jpg",
+        "alt": "Orchard",
+        "caption": "Old orchard in Velké Karlovice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Velké Karlovice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2715/"
+      }
+    ]
+  },
+  {
+    "id": "414",
+    "name": "Vineyard or similar",
+    "category": 4,
+    "definition": "A vineyard or similar cultivated land containing dense rows of plants offering good or normal runnability in the direction of planting. The lines shall be orientated to show the direction of planting. At least three lines shall be clearly visible. Must be combined with either symbol Open land (401) or Rough open land (403).",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/414-vineyard-or-similar/",
+    "symbolImage": "414/symbol.svg",
+    "photos": [
+      {
+        "file": "414/photo-1.jpg",
+        "alt": "Vineyard",
+        "caption": "Vineyard near Hnanice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Hnanice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1372/"
+      },
+      {
+        "file": "414/photo-2.jpg",
+        "alt": "Vineyard or similar",
+        "caption": "Vineyard. Seasonal fence should not be mapped. Vesseaux, France. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Vesseaux, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2358/"
+      },
+      {
+        "file": "414/photo-3.jpg",
+        "alt": "Vineyard or similar",
+        "caption": "Vineyard or similar species near Obříství, Czechia. Photo by: Jiri Vistejn (CC BY-SA 4.0)",
+        "location": "Obříství, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3118/"
+      }
+    ]
+  },
+  {
+    "id": "415",
+    "name": "Distinct cultivation boundary",
+    "category": 4,
+    "definition": "A boundary of cultivated land vegetation (symbols 401, 412, 413, 414) or a boundary between areas of cultivated land when not shown with other symbols (fence, wall, path, etc.).",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/415-distinct-cultivation-boundary/",
+    "symbolImage": "415/symbol.svg",
+    "photos": [
+      {
+        "file": "415/photo-1.jpg",
+        "alt": "Distinct cultivation boundary",
+        "caption": "Distinct cultivation boundary near Ostravice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Ostravice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2000/"
+      },
+      {
+        "file": "415/photo-2.jpg",
+        "alt": "Edge of the arable land",
+        "caption": "Edge of the arable land near Frýdlant nad Ostravicí, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Frýdlant nad Ostravicí, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2009/"
+      },
+      {
+        "file": "415/photo-3.jpg",
+        "alt": "Distinct cultivation boundary",
+        "caption": "Distinct cultivation boundary near Velké Karlovice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Velké Karlovice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2723/"
+      }
+    ]
+  },
+  {
+    "id": "416",
+    "name": "Distinct vegetation boundary",
+    "category": 4,
+    "definition": "A vegetation boundary within the forest, or a distinct forest edge.\n\nOnly one of the vegetation boundary symbols (black dotted line or dashed green line) can be used on a map. For areas with a lot of rock features, it is recommended to use the green dashed line for vegetation boundaries. A disadvantage with a green line is that it cannot be used to show distinct vegetation boundaries around and within symbol Vegetation: fight (410). An alternative for these situations is to use symbol Distinct cultivation boundary (415).",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/416-distinct-vegetation-boundary/",
+    "symbolImage": "416/symbol.svg",
+    "photos": [
+      {
+        "file": "416/photo-1.jpg",
+        "alt": "Distinct vegetation boundary and Footpath",
+        "caption": "Distinct vegetation boundary and Footpath in Lo Fu Tau, Hong Kong. Photo by Lok-Hin MA (CC BY-SA 4.0)",
+        "location": "Lo Fu Tau, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1827/"
+      },
+      {
+        "file": "416/photo-2.jpg",
+        "alt": "Distinct vegetation boundary",
+        "caption": "Distinct vegetation boundary near Krajníčko, Czechia. Photo by: Radim Ondráček (CC BY-SA 4.0)",
+        "location": "Krajníčko, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1973/"
+      },
+      {
+        "file": "416/photo-3.jpg",
+        "alt": "Distinct vegetation boundary",
+        "caption": "Vegetation boundary between deciduous and coniferous forest near Vikýřovice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Vikýřovice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2175/"
+      },
+      {
+        "file": "416/photo-4.jpg",
+        "alt": "Distinct vegetation boundary",
+        "caption": "Distinct vegetation boundary near Velké Karlovice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Velké Karlovice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2721/"
+      }
+    ]
+  },
+  {
+    "id": "417",
+    "name": "Prominent large tree",
+    "category": 4,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/417-prominent-large-tree/",
+    "symbolImage": "417/symbol.svg",
+    "photos": [
+      {
+        "file": "417/photo-1.jpg",
+        "alt": "Two prominent large trees",
+        "caption": "Two prominent large trees near Teplice, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Teplice. Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1920/"
+      },
+      {
+        "file": "417/photo-2.jpg",
+        "alt": "Prominent large tree",
+        "caption": "Prominent large tree in the forest near Teplice, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Teplice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1962/"
+      },
+      {
+        "file": "417/photo-3.jpg",
+        "alt": "Prominent large tree",
+        "caption": "Prominent large tree near Petrov nad Desnou, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Petrov nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1982/"
+      },
+      {
+        "file": "417/photo-4.jpg",
+        "alt": "Prominent bush or tree",
+        "caption": "Prominent tree (beech). Křtiny, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Křtiny, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2371/"
+      }
+    ]
+  },
+  {
+    "id": "418",
+    "name": "Prominent bush or tree",
+    "category": 4,
+    "definition": "A bush or small single tree which clearly stands out from the surrounding vegetation.\n\nUse sparingly, as it is easily mistaken for symbol Small knoll (109). Small white dot inside is used to aid the colour vision impaired.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/418-prominent-bush-or-tree/",
+    "symbolImage": "418/symbol.svg",
+    "photos": [
+      {
+        "file": "418/photo-1.jpg",
+        "alt": "Prominent bush or tree (beech)",
+        "caption": "Majestic mountain beech. Belize, France. Photo by: Zdeněk Lenhart (CC BY-SA 4.0).",
+        "location": "Belize, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2254/"
+      },
+      {
+        "file": "418/photo-2.jpg",
+        "alt": "Prominent bush or tree",
+        "caption": "Prominent trees. Kunčice, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Kunčice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2373/"
+      }
+    ]
+  },
+  {
+    "id": "419",
+    "name": "Prominent vegetation feature",
+    "category": 4,
+    "definition": "A vegetation feature which is significant or prominent.\n\nWhite mask is used under the green cross, to improve readability in yellow and green (line width of white mask 0.36 mm, and it shall be 0.18 mm longer in the ends of the symbol).The symbol is orientated to north.The definition of the symbol must be given on the map.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/419-prominent-vegetation-feature/",
+    "symbolImage": "419/symbol.svg",
+    "photos": [
+      {
+        "file": "419/photo-1.jpg",
+        "alt": "Rootstock",
+        "caption": "Rootstock near Velké Vrbno, Czechia. Photo by: SK Severka Šumperk (CC BY-SA 4.0)",
+        "location": "Velké Vrbno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1515/"
+      },
+      {
+        "file": "419/photo-2.jpg",
+        "alt": "Rootstock",
+        "caption": "Rootstock near Moravský Karlov, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Moravský Karlov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1722/"
+      },
+      {
+        "file": "419/photo-3.jpg",
+        "alt": "Rootstock",
+        "caption": "Rootstock near Petrov nad Desnou, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Petrov nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1981/"
+      }
+    ]
+  },
+  {
+    "id": "501",
+    "name": "Paved area",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/501-paved-area/",
+    "symbolImage": "501/symbol.svg",
+    "photos": [
+      {
+        "file": "501/photo-1.jpg",
+        "alt": "Paved area",
+        "caption": "Paved area. Ringsaker, Norway. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Ringsaker, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2382/"
+      }
+    ]
+  },
+  {
+    "id": "502",
+    "name": "Wide road",
+    "category": 5,
+    "definition": "A maintained road wider than 5 m wide suitable for vehicles in all weather.\n\nThe width should be drawn to scale, but not smaller than the minimum width (0.3 + 2*0.14 mm – footprint 8.7 m). The outer boundary lines may be replaced with other black line symbols, such as symbol Fence (516), Impassable fence (518), Wall (513.1) or Impassable wall (515) if the feature is so close to the road edge that it cannot practically be shown as a separate symbol.The space between the black lines is filled with brown (50%).A road with two carriageways can be represented using two wide road symbols side by side, keeping only one of the road edges in the middle.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/502-wide-road/",
+    "symbolImage": "502/symbol.svg",
+    "photos": [
+      {
+        "file": "502/photo-1.jpg",
+        "alt": "Wide road",
+        "caption": "Wide road for motor vehicles near Kluane Lake, Haines Junction, Yukon, Canada. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Kluane Lake, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-913/"
+      },
+      {
+        "file": "502/photo-2.jpg",
+        "alt": "Wide road",
+        "caption": "Wide road. Selfoss, Iceland. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Iceland",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1606/"
+      }
+    ]
+  },
+  {
+    "id": "503",
+    "name": "Road",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/503-road/",
+    "symbolImage": "503/symbol.svg",
+    "photos": [
+      {
+        "file": "503/photo-1.jpg",
+        "alt": "Road",
+        "caption": "Gravel road in Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-911/"
+      },
+      {
+        "file": "503/photo-2.jpg",
+        "alt": "Road",
+        "caption": "Road. Riga, Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Riga, Latvia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1648/"
+      },
+      {
+        "file": "503/photo-3.jpg",
+        "alt": "Road (Width less than 8.7m)",
+        "caption": "Road in Chung Hom Kok, Hong Kong. Road width is less than 8.7m. Photo by Lok-Hin MA (CC BY-SA 4.0)",
+        "location": "Chung Hom Kok, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1834/"
+      },
+      {
+        "file": "503/photo-4.jpg",
+        "alt": "Road",
+        "caption": "Forest road. Protivanov, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Protivanov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2384/"
+      }
+    ]
+  },
+  {
+    "id": "504",
+    "name": "Vehicle track",
+    "category": 5,
+    "definition": "A track or poorly maintained road suitable for vehicles only when travelling slowly. For distinct junctions the dashes of the symbols are joined at the junction.For indistinct junctions the dashes of the symbols are not joined.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/504-vehicle-track/",
+    "symbolImage": "504/symbol.svg",
+    "photos": [
+      {
+        "file": "504/photo-1.jpg",
+        "alt": "Vehicle track",
+        "caption": "Vehicle track near Třemešek u Oskavy, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Třemešek u Oskavy, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1569/"
+      },
+      {
+        "file": "504/photo-2.jpg",
+        "alt": "Vehicle path",
+        "caption": "Vehicle path. Jaunpils, Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Jaunpils, Latvia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1624/"
+      },
+      {
+        "file": "504/photo-3.jpg",
+        "alt": "Vehicle track",
+        "caption": "Vehicle track near Krupka, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Krupka, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1906/"
+      },
+      {
+        "file": "504/photo-4.jpg",
+        "alt": "Vehicle track",
+        "caption": "Vehicle track near Klíny, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Klíny, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1918/"
+      }
+    ]
+  },
+  {
+    "id": "505",
+    "name": "Footpath",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/505-footpath/",
+    "symbolImage": "505/symbol.svg",
+    "photos": [
+      {
+        "file": "505/photo-1.jpg",
+        "alt": "Footpath",
+        "caption": "Footpath near Sofia, Bulgaria. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Sofia, Bulgaria",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-907/"
+      },
+      {
+        "file": "505/photo-2.jpg",
+        "alt": "Footpath",
+        "caption": "Footpath in Whitehorse, Yukon, Canada. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Whitehorse, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-909/"
+      },
+      {
+        "file": "505/photo-3.jpg",
+        "alt": "Footpath",
+        "caption": "An old footpath built from stones near Pélussin, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Pélussin, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-915/"
+      },
+      {
+        "file": "505/photo-4.jpg",
+        "alt": "Distinct vegetation boundary and Footpath",
+        "caption": "Distinct vegetation boundary and Footpath in Lo Fu Tau, Hong Kong. Photo by Lok-Hin MA (CC BY-SA 4.0)",
+        "location": "Lo Fu Tau, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1829/"
+      }
+    ]
+  },
+  {
+    "id": "506",
+    "name": "Small footpath",
+    "category": 5,
+    "definition": "A runnable small path or (temporary) forest extraction track which can be followed at competition speed.For distinct junctions the dashes of the symbols are joined at the junction.For indistinct junctions the dashes of the symbols are not joined.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/506-small-footpath/",
+    "symbolImage": "506/symbol.svg",
+    "photos": [
+      {
+        "file": "506/photo-1.jpg",
+        "alt": "Small footpath",
+        "caption": "Small footpath made of wooden planks because of wet terrain in Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-901/"
+      },
+      {
+        "file": "506/photo-2.jpg",
+        "alt": "Small footpath",
+        "caption": "Small footpath in Carcross, Yukon, Canada. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Carcross, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-903/"
+      },
+      {
+        "file": "506/photo-3.jpg",
+        "alt": "Small footpath",
+        "caption": "Small footpath in open deciduous forest in Bludov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bludov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-905/"
+      },
+      {
+        "file": "506/photo-4.jpg",
+        "alt": "Small footpath",
+        "caption": "Small footpath in steep slope in Vrgada, Croatia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Vrgada, Croatia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1311/"
+      }
+    ]
+  },
+  {
+    "id": "507",
+    "name": "Less distinct small footpath",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/507-less-distinct-small-footpath/",
+    "symbolImage": "507/symbol.svg",
+    "photos": [
+      {
+        "file": "507/photo-1.jpg",
+        "alt": "Less distinct small footpath",
+        "caption": "Less distinct small footpath. Inglewood, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Inglewood, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2599/"
+      },
+      {
+        "file": "507/photo-2.jpg",
+        "alt": "Less distinct small footpath",
+        "caption": "Less distinct small footpath. Riga, Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Riga, Latvia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2612/"
+      },
+      {
+        "file": "507/photo-3.jpg",
+        "alt": "Less distinct small footpath",
+        "caption": "Less distinct small footpath near Masákova Lhota, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Masákova Lhota, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2639/"
+      }
+    ]
+  },
+  {
+    "id": "508",
+    "name": "Narrow ride or linear trace through the terrain",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/508-narrow-ride-or-linear-trace-through-the-terrain/",
+    "symbolImage": "508/symbol.svg",
+    "photos": [
+      {
+        "file": "508/photo-1.jpg",
+        "alt": "Narrow ride or linear trace through the terrain",
+        "caption": "Narrow ride, easy running, Eigenthal West, Kloten, Switzerland. Photo by Lerjen Kartografie (CC-BY-SA 4.0)",
+        "location": "Eigental West, Kloten, Switzerland",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1286/"
+      },
+      {
+        "file": "508/photo-2.jpg",
+        "alt": "Narrow ride",
+        "caption": "Narrow ride, normal runnability near Whitehorse, Yukon, Canada. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Whitehorse, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1377/"
+      },
+      {
+        "file": "508/photo-3.jpg",
+        "alt": "Narrow ride through impassable vegetation",
+        "caption": "Narrow ride with easy running through impassable vegetation near Doizieux, France. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Doizieux, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1552/"
+      },
+      {
+        "file": "508/photo-4.jpg",
+        "alt": "Narrow ride",
+        "caption": "Narrow ride with normal runnability near Moravský Karlov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Moravský Karlov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1720/"
+      }
+    ]
+  },
+  {
+    "id": "509",
+    "name": "Railway",
+    "category": 5,
+    "definition": "A railway or other kind of railed track.If it is forbidden to run along the railway, it shall be combined with symbol Out-of-bounds route (711). If it is forbidden to cross the railway, it must be combined with symbol Area that shall not be entered (520) or Out-of-bounds area (709).",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/509-railway/",
+    "symbolImage": "509/symbol.svg",
+    "photos": [
+      {
+        "file": "509/photo-1.jpg",
+        "alt": "Railway",
+        "caption": "Railway. Jakuszyce, Poland. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Jakuszyce. Poland.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1361/"
+      },
+      {
+        "file": "509/photo-2.jpg",
+        "alt": "Railway",
+        "caption": "Railway near Osek, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Osek, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1912/"
+      }
+    ]
+  },
+  {
+    "id": "510",
+    "name": "Power line, cableway or skilift",
+    "category": 5,
+    "definition": "Power line, cableway or skilift. The bars show the exact location of the pylons.The line may be broken to improve legibility.If a section of a power line, cableway or skilift goes along a road or path (and does not offer significant additional navigational value) it should be omitted.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/510-power-line-cableway-or-skilift/",
+    "symbolImage": "510/symbol.svg",
+    "photos": [
+      {
+        "file": "510/photo-1.jpg",
+        "alt": "Chairlift",
+        "caption": "Chairlift in Oslo Winter Park at Tryvann near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1523/"
+      },
+      {
+        "file": "510/photo-2.jpg",
+        "alt": "Cableway",
+        "caption": "Cableway. Sapporo, Japan. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Sapporo, Japan",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1641/"
+      },
+      {
+        "file": "510/photo-3.jpg",
+        "alt": "Power line",
+        "caption": "Power line near Zdíkov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Zdíkov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2566/"
+      },
+      {
+        "file": "510/photo-4.jpg",
+        "alt": "Power line",
+        "caption": "Power line near Antýgl, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Antýgl, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2626/"
+      }
+    ]
+  },
+  {
+    "id": "511",
+    "name": "Major power line",
+    "category": 5,
+    "definition": "Major power lines should be drawn with a double line. The gap between the lines may indicate the extent of the power line. The lines may be broken to improve legibility. The bars show the exact location of the pylons. Very large carrying masts shall be represented in plan shape using outline of symbol Building (521) or with symbol High tower (524).",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/511-major-power-line/",
+    "symbolImage": "511/symbol.svg",
+    "photos": [
+      {
+        "file": "511/photo-1.jpg",
+        "alt": "Major power line",
+        "caption": "Major power line near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1376/"
+      },
+      {
+        "file": "511/photo-2.jpg",
+        "alt": "Major power line with very large carrying mast",
+        "caption": "Major power line with very large carrying mast in Hong Kong. Photo by Lok-Hin MA (CC BY-SA 4.0)",
+        "location": "Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1478/"
+      }
+    ]
+  },
+  {
+    "id": "512",
+    "name": "Bridge / tunnel",
+    "category": 5,
+    "definition": "Bridges and tunnels are represented using the same basic symbols.If it is not possible to get through a tunnel (or under a bridge), it shall be omitted.Minimum length (of baseline): 0.4 mm (footprint 6 m).Small bridges connected to a track/path are shown by centring a track dash on the crossing. Tracks/paths are broken for water course crossings without bridges. A small footbridge with no path leading to it is represented with a single dash.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/512-bridge-tunnel/",
+    "symbolImage": "512/symbol.svg",
+    "photos": [
+      {
+        "file": "512/photo-1.jpg",
+        "alt": "Tunnel",
+        "caption": "Tunnel under the railway in Branná, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Branná, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1313/"
+      },
+      {
+        "file": "512/photo-2.jpg",
+        "alt": "Bridge-tunnel",
+        "caption": "Bridge-tunnel near Osek, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Osek, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1913/"
+      },
+      {
+        "file": "512/photo-3.jpg",
+        "alt": "Bridge, tunnel",
+        "caption": "Bridge, tunnel. Ringsaker, Norway. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Ringsaker, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2394/"
+      },
+      {
+        "file": "512/photo-4.jpg",
+        "alt": "Bridge, tunnel",
+        "caption": "Tunnel. Ringsaker, Norway. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Ringsaker, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2396/"
+      }
+    ]
+  },
+  {
+    "id": "513.1",
+    "name": "Wall",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/513-wall/",
+    "symbolImage": "513-1/symbol.svg",
+    "photos": [
+      {
+        "file": "513-1/photo-1.jpg",
+        "alt": "Wall of stone in the forest",
+        "caption": "Wall of stone in the forest in Vojtíškov, Czechia. Photo by: Ivo Habán (CC BY-SA 4.0)",
+        "location": "Vojtíškov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-887/"
+      },
+      {
+        "file": "513-1/photo-2.jpg",
+        "alt": "Stone wall",
+        "caption": "Stone walls in Vrgada, Croatia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Vrgada, Croatia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-897/"
+      },
+      {
+        "file": "513-1/photo-3.jpg",
+        "alt": "Stone wall",
+        "caption": "Stone wall near Velké Březno, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Velké Březno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1961/"
+      },
+      {
+        "file": "513-1/photo-4.jpg",
+        "alt": "513 Wall",
+        "caption": "513 Wall - Nuggety Range, Victoria, Australia. Photo Neil Barr (CC BY-SA 4.0)",
+        "location": "Nuggety Range, Victoria, Australia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2091/"
+      }
+    ]
+  },
+  {
+    "id": "513.2",
+    "name": "Retaining wall",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/513-2-retained-wall/",
+    "symbolImage": "513-2/symbol.svg",
+    "photos": [
+      {
+        "file": "513-2/photo-1.jpg",
+        "alt": "Retained wall",
+        "caption": "Retained wall in forest near Vojtíškov, Czechia. Photo by: Radim Ondráček (CC BY-SA 4.0)",
+        "location": "Pélussin, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1330/"
+      },
+      {
+        "file": "513-2/photo-2.jpg",
+        "alt": "Retaining wall",
+        "caption": "Retaining wall, Vilaplana, Catalonia, Spain. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Vilaplana, Catalonia, Spain.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3166/"
+      }
+    ]
+  },
+  {
+    "id": "514",
+    "name": "Ruined wall",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/514-ruined-wall/",
+    "symbolImage": "514/symbol.svg",
+    "photos": [
+      {
+        "file": "514/photo-1.jpg",
+        "alt": "Ruined wall",
+        "caption": "Ruined wall near Krajníčko, Czechia. Photo by: Radim Ondráček (CC BY-SA 4.0)",
+        "location": "Krajníčko, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1972/"
+      },
+      {
+        "file": "514/photo-2.jpg",
+        "alt": "Ruined wall",
+        "caption": "Remains of stone wall, previously 1.5m high in Houndkirk Moor, Sheffield, UK. Photo by Ian Cooper (CC BY-SA 4.0).",
+        "location": "Ruined wall on Houndkirk Moor, Sheffield, UK",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2807/"
+      }
+    ]
+  },
+  {
+    "id": "515",
+    "name": "Impassable wall",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/515-impassable-wall/",
+    "symbolImage": "515/symbol.svg",
+    "photos": [
+      {
+        "file": "515/photo-1.jpg",
+        "alt": null,
+        "caption": "Impassable wall",
+        "location": "Lee Yue Mun, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2571/"
+      },
+      {
+        "file": "515/photo-2.jpg",
+        "alt": "Impassable wall",
+        "caption": "Impassable wall in Vimperk, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Vimperk, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2625/"
+      }
+    ]
+  },
+  {
+    "id": "516",
+    "name": "Fence",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/516-fence/",
+    "symbolImage": "516/symbol.svg",
+    "photos": [
+      {
+        "file": "516/photo-1.jpg",
+        "alt": "Fence",
+        "caption": "A fence between footpath and pasture near Hnanice, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Hnanice, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1381/"
+      },
+      {
+        "file": "516/photo-2.jpg",
+        "alt": "Fence",
+        "caption": "Fence in Nol, Sweden. Photo by: Christer Carlsson (CC BY-SA 4.0)",
+        "location": "Nol, Sweden",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1543/"
+      },
+      {
+        "file": "516/photo-3.jpg",
+        "alt": "Fence",
+        "caption": "Fence in Nol, Sweden. Photo by: Christer Carlsson (CC BY-SA 4.0)",
+        "location": "Nol, Sweden",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1548/"
+      },
+      {
+        "file": "516/photo-4.jpg",
+        "alt": "Passable fences",
+        "caption": "Passable fences near Dubí, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Dubí, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1968/"
+      }
+    ]
+  },
+  {
+    "id": "517",
+    "name": "Ruined fence",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/517-ruined-fence/",
+    "symbolImage": "517/symbol.svg",
+    "photos": [
+      {
+        "file": "517/photo-1.jpg",
+        "alt": "Ruin fence",
+        "caption": "Ruin fence near Lee Yue Mun, Hong Kong. Photo by: Lok-Hin Ma (CC BY-SA 4.0)",
+        "location": "Lee Yue Mun, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2572/"
+      },
+      {
+        "file": "517/photo-2.jpg",
+        "alt": "Ruined fence",
+        "caption": "Fence with ruined sections near Velké Vrbno, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Velké Vrbno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2771/"
+      },
+      {
+        "file": "517/photo-3.jpg",
+        "alt": "Ruined fence",
+        "caption": "Ruined fence near Josefův Důl, Czechia. Photo by Ivo Habán (CC BY-SA 4.0)",
+        "location": "Josefův Důl, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2772/"
+      }
+    ]
+  },
+  {
+    "id": "518",
+    "name": "Impassable fence",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/518-impassable-fence/",
+    "symbolImage": "518/symbol.svg",
+    "photos": [
+      {
+        "file": "518/photo-1.jpg",
+        "alt": "Impassable fence",
+        "caption": "Riga, Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Riga, Latvia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/impassable-fence-example/"
+      },
+      {
+        "file": "518/photo-2.jpg",
+        "alt": "Impassable fence",
+        "caption": "An impassable or uncrossable fence. Borlänge, Sweden. Photo by: Sven Lundbäck (CC BY-SA 4.0)",
+        "location": "Borlänge, Sweden",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1350/"
+      },
+      {
+        "file": "518/photo-3.jpg",
+        "alt": "Impassable fence",
+        "caption": "Impassable fence near Žernoseky, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Žernoseky, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1916/"
+      },
+      {
+        "file": "518/photo-4.jpg",
+        "alt": "Impassable fence around clearing",
+        "caption": "Impassable fence around clearing near Lelov, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Lelov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1917/"
+      }
+    ]
+  },
+  {
+    "id": "519",
+    "name": "Crossing point",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/519-crossing-point/",
+    "symbolImage": "519/symbol.svg",
+    "photos": [
+      {
+        "file": "519/photo-1.jpg",
+        "alt": "Crossing point",
+        "caption": "Crossing point. Nazareth, Israel. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Nazareth, Israel",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2412/"
+      },
+      {
+        "file": "519/photo-2.jpg",
+        "alt": "Crossing point",
+        "caption": "Crossing point. Neronde, France. Photo Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Neronde, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2414/"
+      },
+      {
+        "file": "519/photo-3.jpg",
+        "alt": "Crossing point (gate)",
+        "caption": "Crossing point (gate) in impassable fence. If it is to be used during a competition, the gate must be open. Photo by Ian Cooper (CC BY-SA 4.0).",
+        "location": "Blacka Moor, Sheffield, UK",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2805/"
+      }
+    ]
+  },
+  {
+    "id": "520",
+    "name": "Area that shall not be entered",
+    "category": 5,
+    "definition": "An out-of-bounds area is a feature such as a private house, a garden, a factory or another industrial area. Only contours and prominent features such as railways and large buildings shall be shown inside an out-of-bounds area. The area shall be discontinued where a path goes through and white colour is used as background with overlap 0.15 mm on both sides. Out-of-bound areas with a clear border shall be bounded by a black boundary line or another black line, if the border is unclear no black line shall occur.Course planning symbol 709 can be used for temporary out-of bounds areas.An out-of-bounds area shall not be entered.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/520-area-that-shall-not-be-entered/",
+    "symbolImage": "520/symbol.svg",
+    "photos": [
+      {
+        "file": "520/photo-1.jpg",
+        "alt": "Area that shall not be entered - Shooting range",
+        "caption": "Shooting range with armies and tanks shooting near Wa Shan, Hong Kong. Photo by: Lok-Hin Ma (CC BY-SA 4.0)",
+        "location": "Wa Shan, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2582/"
+      }
+    ]
+  },
+  {
+    "id": "521",
+    "name": "Building",
+    "category": 5,
+    "definition": "A building is shown with its ground plan so far as the scale permits.Buildings larger than 75 m x 75 m may be represented with a dark grey infill in urban areas.Passages through buildings must have a minimum width of 0.4 mm (footprint 6.0 m).Buildings within forbidden areas are generalised.Areas totally contained within a building shall not be mapped (they shall be represented as being part of the building). Minimum gap indicating a passage between buildings and between buildings and other impassable features should be 0.4 mm.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/521-building/",
+    "symbolImage": "521/symbol.svg",
+    "photos": [
+      {
+        "file": "521/photo-1.jpg",
+        "alt": "Building",
+        "caption": "Building in Haines, Alaska, USA. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Haines, Alaska, USA",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-891/"
+      },
+      {
+        "file": "521/photo-2.jpg",
+        "alt": "Building",
+        "caption": "Cabin in the forest near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1303/"
+      },
+      {
+        "file": "521/photo-3.jpg",
+        "alt": "Building",
+        "caption": "Building in Tsz Shan Monastery, Hong Kong. Alternative option using symbol 524 High tower for cases where monument footprint (diameter of base) is less than 20 meters. Photo by Lok-Hin MA (CC BY-SA 4.0)",
+        "location": "Tsz Shan Monastery, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1671/"
+      },
+      {
+        "file": "521/photo-4.jpg",
+        "alt": "Small building",
+        "caption": "Small building serving as rest place for tourists near Klíny, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Klíny, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1965/"
+      }
+    ]
+  },
+  {
+    "id": "522",
+    "name": "Canopy",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/522-canopy/",
+    "symbolImage": "522/symbol.svg",
+    "photos": [
+      {
+        "file": "522/photo-1.jpg",
+        "alt": "Canopy",
+        "caption": "Canopy. Brno, Czechia. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Brno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2422/"
+      }
+    ]
+  },
+  {
+    "id": "523",
+    "name": "Ruin",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/523-ruin/",
+    "symbolImage": "523/symbol.svg",
+    "photos": [
+      {
+        "file": "523/photo-1.jpg",
+        "alt": "Ruined log cabin",
+        "caption": "Ruined log cabin in Whitehorse, Yukon, Canada. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Whitehorse, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-889/"
+      },
+      {
+        "file": "523/photo-2.jpg",
+        "alt": "Ruin",
+        "caption": "Ruin. Tireli. Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Tireli, Latvia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1459/"
+      },
+      {
+        "file": "523/photo-3.jpg",
+        "alt": "Ruin",
+        "caption": "Ruin near Moravský Karlov, Czechia. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Moravský Karlov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1723/"
+      },
+      {
+        "file": "523/photo-4.jpg",
+        "alt": "Ruin",
+        "caption": "Ruin. Belize, France. Photo by: Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Belize, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2424/"
+      }
+    ]
+  },
+  {
+    "id": "524",
+    "name": "High tower",
+    "category": 5,
+    "definition": "A high tower or large pylon. If it is in a forest, it must be visible above the level of the surrounding forest.Towers with a larger footprint must be represented using symbol Building (521).The symbol is orientated to north.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/524-high-tower/",
+    "symbolImage": "524/symbol.svg",
+    "photos": [
+      {
+        "file": "524/photo-1.jpg",
+        "alt": "High tower",
+        "caption": "Klostermann lookout tower near Javorník, Vacov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Javorník, Vacov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1441/"
+      },
+      {
+        "file": "524/photo-2.jpg",
+        "alt": "Lookout tower",
+        "caption": "Lookout tower in Bludov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bludov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1442/"
+      },
+      {
+        "file": "524/photo-3.jpg",
+        "alt": "High tower",
+        "caption": "High tower. Lozmetejkalns. Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Lozmetejkalns, Latvia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1463/"
+      },
+      {
+        "file": "524/photo-4.jpg",
+        "alt": "High tower",
+        "caption": "High tower. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Anenský Vrch, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1595/"
+      }
+    ]
+  },
+  {
+    "id": "525",
+    "name": "Small tower",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/525-small-tower/",
+    "symbolImage": "525/symbol.svg",
+    "photos": [
+      {
+        "file": "525/photo-1.jpg",
+        "alt": "Small tower",
+        "caption": "Small tower in Whitehorse, Yukon, Canada. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Whitehorse, Yukon, Canada",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1278/"
+      },
+      {
+        "file": "525/photo-2.jpg",
+        "alt": "Small tower",
+        "caption": "Hunting tower near Bohutín, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bohutín, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1385/"
+      },
+      {
+        "file": "525/photo-3.jpg",
+        "alt": "Hunting tower",
+        "caption": "Hunting tower near Mostek, Czechia. Photo by: Jan Prášil (CC BY-SA 4.0)",
+        "location": "Mostek, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1386/"
+      },
+      {
+        "file": "525/photo-4.jpg",
+        "alt": "Hunting pod",
+        "caption": "Hunting pod near Přemyslov, Loučná nad Desnou, Czechia. Photo by: Luděk Krtička",
+        "location": "Přemyslov, Loučná nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1657/"
+      }
+    ]
+  },
+  {
+    "id": "526",
+    "name": "Cairn",
+    "category": 5,
+    "definition": "A prominent cairn, memorial stone, boundary stone or trigonometric point.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/526-cairn/",
+    "symbolImage": "526/symbol.svg",
+    "photos": [
+      {
+        "file": "526/photo-1.jpg",
+        "alt": "Memorial stone",
+        "caption": "Memorial stone in Bludov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bludov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-893/"
+      },
+      {
+        "file": "526/photo-2.jpg",
+        "alt": "Cairn",
+        "caption": "Cairn near Mostek, Czechia. Photo by: Jan Prášil (CC BY-SA 4.0)",
+        "location": "Mostek, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1388/"
+      },
+      {
+        "file": "526/photo-3.jpg",
+        "alt": "Memorial stone",
+        "caption": "Memorial stone of Kaiserin Elisabeth (Empress Elisabeth of Austria) near Ostružná, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Ostružná, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1389/"
+      },
+      {
+        "file": "526/photo-4.jpg",
+        "alt": "Boundary stone",
+        "caption": "Historical boundary stone near Křižanov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Křižanov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1390/"
+      }
+    ]
+  },
+  {
+    "id": "527",
+    "name": "Fodder rack",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/527-fodder-rack/",
+    "symbolImage": "527/symbol.svg",
+    "photos": [
+      {
+        "file": "527/photo-1.jpg",
+        "alt": "Fodder rack",
+        "caption": "Fodder rack near Bludov, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Bludov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1490/"
+      },
+      {
+        "file": "527/photo-2.jpg",
+        "alt": "Fodder rack",
+        "caption": "Fodder rack near Cotkytle, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Cotkytle, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1860/"
+      },
+      {
+        "file": "527/photo-3.jpg",
+        "alt": "Fodder rack next to the vehicle track",
+        "caption": "Fodder rack next to the vehicle track near Krupka, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Krupka, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1905/"
+      },
+      {
+        "file": "527/photo-4.jpg",
+        "alt": "Big fodder rack",
+        "caption": "Big fodder rack near Petrov nad Desnou. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Petrov nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1983/"
+      }
+    ]
+  },
+  {
+    "id": "528",
+    "name": "Prominent line feature",
+    "category": 5,
+    "definition": "A prominent man-made line feature. For example, a low pipeline (gas, water, oil, heat, etc.) or a bobsleigh / skeleton track that is clearly visible. The definition of the symbol must be given on the map.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/528-prominent-line-feature/",
+    "symbolImage": "528/symbol.svg",
+    "photos": [
+      {
+        "file": "528/photo-1.jpg",
+        "alt": "Prominent line feature",
+        "caption": "Prominent line feature. Old summer training track for luge sport. Murjanji. Latvia. Photo by: Ainars Lagzdins (CC BY-SA 4.0)",
+        "location": "Murjanji, Latvia.",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/prominent-line-feature-example/"
+      },
+      {
+        "file": "528/photo-2.jpg",
+        "alt": "Prominent line feature - elevated pipeline",
+        "caption": "Elevated pipeline, easy to run under. Warsaw, Poland. Photo by: Aleksander Obernikhin (CC BY-SA 4.0)",
+        "location": "Warsaw, Poland",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2731/"
+      }
+    ]
+  },
+  {
+    "id": "529",
+    "name": "Prominent impassable line feature",
+    "category": 5,
+    "definition": "An impassable man-made line feature. For example, a high pipeline (gas, water, oil, heat, etc.) or a bobsleigh / skeleton track. The definition of the symbol must be given on the map.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/529-prominent-impassable-line-feature/",
+    "symbolImage": "529/symbol.svg",
+    "photos": [
+      {
+        "file": "529/photo-1.jpg",
+        "alt": "Impassable pipeline",
+        "caption": "Impassable pipeline. Photo by: Zdeněk Janů (CC BY-SA 4.0)",
+        "location": "Mokrá-Horákov, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1745/"
+      }
+    ]
+  },
+  {
+    "id": "530",
+    "name": "Prominent man-made feature – ring",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/530-prominent-man-made-feature-ring/",
+    "symbolImage": "530/symbol.svg",
+    "photos": [
+      {
+        "file": "530/photo-1.jpg",
+        "alt": "Prominent man-made feature",
+        "caption": "Remnant of an emergency shelter near Oslo, Norway. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Oslo, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1383/"
+      },
+      {
+        "file": "530/photo-2.jpg",
+        "alt": "Prominent man-made feature",
+        "caption": "Prominent man-made feature, camp. Brno, Czechia. Photo by: Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Brno, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2430/"
+      },
+      {
+        "file": "530/photo-3.jpg",
+        "alt": "Prominent man-made feature - ring",
+        "caption": "Prominent man-made feature, fire tank. Belize, France. Photo by: Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Belize, France",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2432/"
+      },
+      {
+        "file": "530/photo-4.jpg",
+        "alt": "Graves in South China and some place in Asia",
+        "caption": "Graves in South China and some place in Asia. Kunming, Yunnan Province, China. Photo by: Chen Chao (CC BY-SA 4.0)",
+        "location": "Kunming, Yunnan Province, China",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-3560/"
+      }
+    ]
+  },
+  {
+    "id": "531",
+    "name": "Prominent man-made feature – x",
+    "category": 5,
+    "definition": null,
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/531-prominent-man-made-feature-x/",
+    "symbolImage": "531/symbol.svg",
+    "photos": [
+      {
+        "file": "531/photo-1.jpg",
+        "alt": "A collapsed shelter",
+        "caption": "A collapsed shelter near Šumperk, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Šumperk, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1862/"
+      },
+      {
+        "file": "531/photo-2.jpg",
+        "alt": "Tourist shelter",
+        "caption": "Tourist shelter near Petrov nad Desnou, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Petrov nad Desnou, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1987/"
+      },
+      {
+        "file": "531/photo-3.jpg",
+        "alt": "Prominent man-made feature - cross",
+        "caption": "Domžale, Slovenia",
+        "location": "Domžale, Slovenia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2434/"
+      },
+      {
+        "file": "531/photo-4.jpg",
+        "alt": "Prominent man-made feature – cross",
+        "caption": "Prominent man-made feature, sculpture. Naeroset, Norway. Photo Zdeněk Lenhart (CC BY-SA 4.0)",
+        "location": "Naeroset, Norway",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2437/"
+      }
+    ]
+  },
+  {
+    "id": "532",
+    "name": "Stairway",
+    "category": 5,
+    "definition": "A distinct stairway through the terrain which helps to climb very steep slopes or to cross over impassable objects. A stairway going through rock passages or between impassable objects may be drawn without border lines.An easily runnable stairway or indistinct stairway should be drawn as a footpath. Steps of a stairway shall be represented in a generalized manner.",
+    "pageUrl": "https://omapwiki.orienteering.sport/symbols/532-stairway/",
+    "symbolImage": "532/symbol.svg",
+    "photos": [
+      {
+        "file": "532/photo-1.jpg",
+        "alt": "Stairways",
+        "caption": "Stairways in Braemar Hill, Hong Kong. Photo by Lok-Hin MA (CC BY-SA 4.0)",
+        "location": "Braemar Hill, Hong Kong",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1586/"
+      },
+      {
+        "file": "532/photo-2.jpg",
+        "alt": "Stairway",
+        "caption": "Stairway near Hřensko, Czechia. Photo by: Petr Benc (CC BY-SA 4.0)",
+        "location": "Hřensko, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-1957/"
+      },
+      {
+        "file": "532/photo-3.jpg",
+        "alt": "Stairway",
+        "caption": "Stairway near Adršpach, Czechia. Photo by: Luděk Krtička (CC BY-SA 4.0)",
+        "location": "Adršpach, Czechia",
+        "sourceUrl": "https://omapwiki.orienteering.sport/examples/example-2268/"
+      }
+    ]
+  }
+]
