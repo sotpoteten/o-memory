@@ -1,4 +1,7 @@
+import { useMemo } from 'react'
 import type { Card } from '../api'
+import { displayName } from '../playerName'
+import { useSaveResult } from '../game/useSaveResult'
 import { formatTime, useMemoryGame } from '../game/useMemoryGame'
 import { isFinished } from '../game/memoryGame'
 import { MemoryCard } from './MemoryCard'
@@ -7,12 +10,22 @@ import { ResultDialog } from './ResultDialog'
 interface Props {
   cards: Card[]
   pairs: number
+  playerName: string
   onRestart: () => void
   onQuit: () => void
 }
 
-export function GameBoard({ cards, pairs, onRestart, onQuit }: Props) {
-  const { state, flip, elapsedMs } = useMemoryGame(cards)
+export function GameBoard({ cards, pairs, playerName, onRestart, onQuit }: Props) {
+  const { state, flip, unzoom, review, toggleZoom, elapsedMs } = useMemoryGame(cards)
+
+  const finished = isFinished(state)
+  // Moves and time are frozen once the game is finished, so this is created once.
+  const finalTimeMs = finished ? state.finishedAt! - state.startedAt! : 0
+  const score = useMemo(
+    () => (finished ? { name: displayName(playerName), pairs, moves: state.moves, timeMs: finalTimeMs } : null),
+    [finished, playerName, pairs, state.moves, finalTimeMs],
+  )
+  const { status: saveStatus, retry: retrySave } = useSaveResult(score)
 
   return (
     <section className="game">
@@ -26,20 +39,41 @@ export function GameBoard({ cards, pairs, onRestart, onQuit }: Props) {
         </span>
       </div>
 
-      <div className={`board board-${pairs}`}>
-        {state.cards.map(card => (
-          <MemoryCard
-            key={card.id}
-            card={card}
-            faceUp={state.flipped.includes(card.id) || state.matched.includes(card.pairId)}
-            matched={state.matched.includes(card.pairId)}
-            onFlip={() => flip(card.id)}
-          />
-        ))}
+      {state.reviewing && <p className="muted center review-hint">Klikk på et kort for å forstørre det.</p>}
+
+      <div className={`board board-${pairs} ${state.reviewing ? 'is-reviewing' : ''}`}>
+        {state.cards.map(card => {
+          const faceUp = state.flipped.includes(card.id) || state.matched.includes(card.pairId)
+          const zoomed = state.zoomed.includes(card.id)
+          return (
+            <MemoryCard
+              key={card.id}
+              card={card}
+              faceUp={faceUp}
+              matched={state.matched.includes(card.pairId)}
+              zoomed={zoomed}
+              interactive={state.reviewing || zoomed || !faceUp}
+              onClick={() => {
+                if (state.reviewing) toggleZoom(card.id)
+                else if (zoomed) unzoom(card.id)
+                else flip(card.id)
+              }}
+            />
+          )
+        })}
       </div>
 
-      {isFinished(state) && (
-        <ResultDialog pairs={pairs} moves={state.moves} timeMs={elapsedMs} onPlayAgain={onRestart} onQuit={onQuit} />
+      {finished && saveStatus && !state.reviewing && (
+        <ResultDialog
+          pairs={pairs}
+          moves={state.moves}
+          timeMs={elapsedMs}
+          saveStatus={saveStatus}
+          onRetrySave={retrySave}
+          onPlayAgain={onRestart}
+          onReview={review}
+          onQuit={onQuit}
+        />
       )}
     </section>
   )

@@ -7,19 +7,19 @@ import { SetupScreen } from './components/SetupScreen'
 type Screen =
   | { name: 'setup' }
   | { name: 'loading' }
-  | { name: 'playing'; pairs: number; cards: Card[]; gameId: number }
+  | { name: 'playing'; pairs: number; playerName: string; cards: Card[]; gameId: number }
   | { name: 'credits' }
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>({ name: 'setup' })
   const [error, setError] = useState<string>()
 
-  async function start(pairs: number) {
+  async function start(pairs: number, playerName: string) {
     setError(undefined)
     setScreen({ name: 'loading' })
     try {
       const cards = await fetchGame(pairs)
-      setScreen({ name: 'playing', pairs, cards, gameId: Date.now() })
+      setScreen({ name: 'playing', pairs, playerName, cards, gameId: Date.now() })
     } catch {
       setError('Kunne ikke starte spillet. Kjører API-et?')
       setScreen({ name: 'setup' })
@@ -50,7 +50,8 @@ export default function App() {
             key={screen.gameId}
             cards={screen.cards}
             pairs={screen.pairs}
-            onRestart={() => start(screen.pairs)}
+            playerName={screen.playerName}
+            onRestart={() => start(screen.pairs, screen.playerName)}
             onQuit={toSetup}
           />
         )}

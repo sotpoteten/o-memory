@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ANONYMOUS, MAX_NAME_LENGTH, readStoredName, storeName } from '../playerName'
 import { HighScoreList } from './HighScoreList'
 
 const DIFFICULTIES = [
@@ -8,12 +9,18 @@ const DIFFICULTIES = [
 ] as const
 
 interface Props {
-  onStart: (pairs: number) => void
+  onStart: (pairs: number, playerName: string) => void
   error?: string
 }
 
 export function SetupScreen({ onStart, error }: Props) {
   const [pairs, setPairs] = useState<number>(8)
+  const [name, setName] = useState(readStoredName)
+
+  function start() {
+    storeName(name)
+    onStart(pairs, name)
+  }
 
   return (
     <section className="setup">
@@ -21,6 +28,18 @@ export function SetupScreen({ onStart, error }: Props) {
         Finn parene: hvert karttegn fra orienteringskartet hører sammen med et foto av det samme
         terrengobjektet i virkeligheten.
       </p>
+
+      <div className="player-name">
+        <label htmlFor="player-name">Navn <span className="muted">(valgfritt)</span></label>
+        <input
+          id="player-name"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          maxLength={MAX_NAME_LENGTH}
+          placeholder={ANONYMOUS}
+          autoComplete="nickname"
+        />
+      </div>
 
       <fieldset className="difficulty">
         <legend>Vanskelighetsgrad</legend>
@@ -39,7 +58,7 @@ export function SetupScreen({ onStart, error }: Props) {
         ))}
       </fieldset>
 
-      <button type="button" className="start" onClick={() => onStart(pairs)}>Start spill</button>
+      <button type="button" className="start" onClick={start}>Start spill</button>
       {error && <p className="error">{error}</p>}
 
       <h2>Highscore – {DIFFICULTIES.find(d => d.pairs === pairs)?.label.toLowerCase()}</h2>

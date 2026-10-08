@@ -3,6 +3,7 @@ import type { Card } from '../api'
 import { createGame, gameReducer, isShowingMismatch } from './memoryGame'
 
 const MISMATCH_DELAY_MS = 1000
+const MATCH_ZOOM_MS = 1200
 
 export function useMemoryGame(cards: Card[]) {
   const [state, dispatch] = useReducer(gameReducer, cards, c => createGame(c))
@@ -14,9 +15,20 @@ export function useMemoryGame(cards: Card[]) {
     return () => clearTimeout(timer)
   }, [state])
 
-  const flip = (cardId: string) => dispatch({ type: 'flip', cardId, now: Date.now() })
+  // A found pair stays enlarged for a moment before shrinking back.
+  const showingMatch = !state.reviewing && state.flipped.length === 0 && state.zoomed.length > 0
+  useEffect(() => {
+    if (!showingMatch) return
+    const timer = setTimeout(() => dispatch({ type: 'clearZoom' }), MATCH_ZOOM_MS)
+    return () => clearTimeout(timer)
+  }, [showingMatch, state.zoomed])
 
-  return { state, flip, elapsedMs }
+  const flip = (cardId: string) => dispatch({ type: 'flip', cardId, now: Date.now() })
+  const unzoom = (cardId: string) => dispatch({ type: 'unzoom', cardId })
+  const review = () => dispatch({ type: 'review' })
+  const toggleZoom = (cardId: string) => dispatch({ type: 'toggleZoom', cardId })
+
+  return { state, flip, unzoom, review, toggleZoom, elapsedMs }
 }
 
 /** Ticks while the game is running and returns elapsed milliseconds. */

@@ -57,6 +57,60 @@ describe('gameReducer', () => {
     expect(flip(matched, 'a-s')).toBe(matched)
   })
 
+  it('zooms turned cards and shrinks them when a mismatch is turned back', () => {
+    let state = flip(newGame(), 'a-s')
+    expect(state.zoomed).toEqual(['a-s'])
+
+    state = flip(state, 'b-p')
+    expect(state.zoomed).toEqual(['a-s', 'b-p'])
+
+    state = gameReducer(state, { type: 'hideMismatch' })
+    expect(state.zoomed).toEqual([])
+  })
+
+  it('keeps a found pair zoomed until the zoom is cleared', () => {
+    let state = flip(flip(newGame(), 'a-s'), 'a-p')
+    expect(state.zoomed).toEqual(['a-s', 'a-p'])
+
+    state = gameReducer(state, { type: 'clearZoom' })
+    expect(state.zoomed).toEqual([])
+  })
+
+  it('lets the player shrink a zoomed card without turning it', () => {
+    let state = flip(newGame(), 'a-s')
+    state = gameReducer(state, { type: 'unzoom', cardId: 'a-s' })
+
+    expect(state.zoomed).toEqual([])
+    expect(state.flipped).toEqual(['a-s'])
+
+    state = flip(state, 'b-p')
+    expect(state.zoomed).toEqual(['b-p'])
+  })
+
+  it('replaces the zoom of a found pair when the next card is turned', () => {
+    let state = flip(flip(newGame(), 'a-s'), 'a-p')
+    state = flip(state, 'b-s')
+    expect(state.zoomed).toEqual(['b-s'])
+  })
+
+  it('lets the player review the finished board and toggle zoom on any card', () => {
+    let state = flip(flip(newGame(), 'a-s'), 'a-p')
+    expect(gameReducer(state, { type: 'review' })).toBe(state) // not finished yet
+    expect(gameReducer(state, { type: 'toggleZoom', cardId: 'b-s' })).toBe(state)
+
+    state = flip(flip(state, 'b-s'), 'b-p')
+    state = gameReducer(state, { type: 'review' })
+    expect(state.reviewing).toBe(true)
+    expect(state.zoomed).toEqual([])
+
+    state = gameReducer(state, { type: 'toggleZoom', cardId: 'a-p' })
+    expect(state.zoomed).toEqual(['a-p'])
+    state = gameReducer(state, { type: 'toggleZoom', cardId: 'b-s' })
+    expect(state.zoomed).toEqual(['b-s'])
+    state = gameReducer(state, { type: 'toggleZoom', cardId: 'b-s' })
+    expect(state.zoomed).toEqual([])
+  })
+
   it('finishes when all pairs are found', () => {
     let state = newGame()
     state = flip(state, 'a-s', 1000)
