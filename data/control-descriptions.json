@@ -1,0 +1,983 @@
+[
+  {
+    "id": 1,
+    "page": 18,
+    "text": "Terrace",
+    "feature": "terrace",
+    "mapImage": "control-descriptions/1/map.png",
+    "terrainImage": "control-descriptions/1/terrain.png",
+    "descriptionImage": "control-descriptions/1/description.png"
+  },
+  {
+    "id": 2,
+    "page": 18,
+    "text": "Terrace, west part",
+    "feature": "terrace",
+    "mapImage": "control-descriptions/2/map.png",
+    "terrainImage": "control-descriptions/2/terrain.png",
+    "descriptionImage": "control-descriptions/2/description.png"
+  },
+  {
+    "id": 3,
+    "page": 18,
+    "text": "Spur",
+    "feature": "spur",
+    "mapImage": "control-descriptions/3/map.png",
+    "terrainImage": "control-descriptions/3/terrain.png",
+    "descriptionImage": "control-descriptions/3/description.png"
+  },
+  {
+    "id": 4,
+    "page": 18,
+    "text": "Spur, upper part",
+    "feature": "spur",
+    "mapImage": "control-descriptions/4/map.png",
+    "terrainImage": "control-descriptions/4/terrain.png",
+    "descriptionImage": "control-descriptions/4/description.png"
+  },
+  {
+    "id": 5,
+    "page": 18,
+    "text": "Spur, lower part",
+    "feature": "spur",
+    "mapImage": "control-descriptions/5/map.png",
+    "terrainImage": "control-descriptions/5/terrain.png",
+    "descriptionImage": "control-descriptions/5/description.png"
+  },
+  {
+    "id": 6,
+    "page": 18,
+    "text": "Re-entrant",
+    "feature": "re-entrant",
+    "mapImage": "control-descriptions/6/map.png",
+    "terrainImage": "control-descriptions/6/terrain.png",
+    "descriptionImage": "control-descriptions/6/description.png"
+  },
+  {
+    "id": 7,
+    "page": 18,
+    "text": "Re-entrant, upper part",
+    "feature": "re-entrant",
+    "mapImage": "control-descriptions/7/map.png",
+    "terrainImage": "control-descriptions/7/terrain.png",
+    "descriptionImage": "control-descriptions/7/description.png"
+  },
+  {
+    "id": 8,
+    "page": 18,
+    "text": "Re-entrant",
+    "feature": "re-entrant",
+    "mapImage": "control-descriptions/8/map.png",
+    "terrainImage": "control-descriptions/8/terrain.png",
+    "descriptionImage": "control-descriptions/8/description.png"
+  },
+  {
+    "id": 9,
+    "page": 19,
+    "text": "Eastern re-entrant",
+    "feature": "re-entrant",
+    "mapImage": "control-descriptions/9/map.png",
+    "terrainImage": "control-descriptions/9/terrain.png",
+    "descriptionImage": "control-descriptions/9/description.png"
+  },
+  {
+    "id": 10,
+    "page": 19,
+    "text": "Earth bank, foot",
+    "feature": "earth bank",
+    "mapImage": "control-descriptions/10/map.png",
+    "terrainImage": "control-descriptions/10/terrain.png",
+    "descriptionImage": "control-descriptions/10/description.png"
+  },
+  {
+    "id": 11,
+    "page": 19,
+    "text": "Quarry, 5m x 5m",
+    "feature": "quarry",
+    "mapImage": "control-descriptions/11/map.png",
+    "terrainImage": "control-descriptions/11/terrain.png",
+    "descriptionImage": "control-descriptions/11/description.png"
+  },
+  {
+    "id": 12,
+    "page": 19,
+    "text": "Quarry, east edge",
+    "feature": "quarry",
+    "mapImage": "control-descriptions/12/map.png",
+    "terrainImage": "control-descriptions/12/terrain.png",
+    "descriptionImage": "control-descriptions/12/description.png"
+  },
+  {
+    "id": 13,
+    "page": 19,
+    "text": "Quarry, east part",
+    "feature": "quarry",
+    "mapImage": "control-descriptions/13/map.png",
+    "terrainImage": "control-descriptions/13/terrain.png",
+    "descriptionImage": "control-descriptions/13/description.png"
+  },
+  {
+    "id": 14,
+    "page": 19,
+    "text": "Earth wall, east end",
+    "feature": "earth wall",
+    "mapImage": "control-descriptions/14/map.png",
+    "terrainImage": "control-descriptions/14/terrain.png",
+    "descriptionImage": "control-descriptions/14/description.png"
+  },
+  {
+    "id": 15,
+    "page": 19,
+    "text": "Gully, lower part",
+    "feature": "gully",
+    "mapImage": "control-descriptions/15/map.png",
+    "terrainImage": "control-descriptions/15/terrain.png",
+    "descriptionImage": "control-descriptions/15/description.png"
+  },
+  {
+    "id": 16,
+    "page": 19,
+    "text": "Small gully, north-east end",
+    "feature": "small gully",
+    "mapImage": "control-descriptions/16/map.png",
+    "terrainImage": "control-descriptions/16/terrain.png",
+    "descriptionImage": "control-descriptions/16/description.png"
+  },
+  {
+    "id": 17,
+    "page": 19,
+    "text": "Hill",
+    "feature": "hill",
+    "mapImage": "control-descriptions/17/map.png",
+    "terrainImage": "control-descriptions/17/terrain.png",
+    "descriptionImage": "control-descriptions/17/description.png"
+  },
+  {
+    "id": 18,
+    "page": 20,
+    "text": "Hill, north-west part",
+    "feature": "hill",
+    "mapImage": "control-descriptions/18/map.png",
+    "terrainImage": "control-descriptions/18/terrain.png",
+    "descriptionImage": "control-descriptions/18/description.png"
+  },
+  {
+    "id": 19,
+    "page": 20,
+    "text": "West Hill, east side",
+    "feature": "hill",
+    "mapImage": "control-descriptions/19/map.png",
+    "terrainImage": "control-descriptions/19/terrain.png",
+    "descriptionImage": "control-descriptions/19/description.png"
+  },
+  {
+    "id": 20,
+    "page": 20,
+    "text": "Between hill and knoll",
+    "feature": "hill and knoll",
+    "mapImage": "control-descriptions/20/map.png",
+    "terrainImage": "control-descriptions/20/terrain.png",
+    "descriptionImage": "control-descriptions/20/description.png"
+  },
+  {
+    "id": 21,
+    "page": 20,
+    "text": "Knoll, 1m",
+    "feature": "knoll",
+    "mapImage": "control-descriptions/21/map.png",
+    "terrainImage": "control-descriptions/21/terrain.png",
+    "descriptionImage": "control-descriptions/21/description.png"
+  },
+  {
+    "id": 22,
+    "page": 20,
+    "text": "Knoll, 1m, east foot",
+    "feature": "knoll",
+    "mapImage": "control-descriptions/22/map.png",
+    "terrainImage": "control-descriptions/22/terrain.png",
+    "descriptionImage": "control-descriptions/22/description.png"
+  },
+  {
+    "id": 23,
+    "page": 20,
+    "text": "Saddle",
+    "feature": "saddle",
+    "mapImage": "control-descriptions/23/map.png",
+    "terrainImage": "control-descriptions/23/terrain.png",
+    "descriptionImage": "control-descriptions/23/description.png"
+  },
+  {
+    "id": 24,
+    "page": 20,
+    "text": "Depression",
+    "feature": "depression",
+    "mapImage": "control-descriptions/24/map.png",
+    "terrainImage": "control-descriptions/24/terrain.png",
+    "descriptionImage": "control-descriptions/24/description.png"
+  },
+  {
+    "id": 25,
+    "page": 20,
+    "text": "Depression, east part",
+    "feature": "depression",
+    "mapImage": "control-descriptions/25/map.png",
+    "terrainImage": "control-descriptions/25/terrain.png",
+    "descriptionImage": "control-descriptions/25/description.png"
+  },
+  {
+    "id": 26,
+    "page": 20,
+    "text": "Middle small depression, east edge",
+    "feature": "small depression",
+    "mapImage": "control-descriptions/26/map.png",
+    "terrainImage": "control-descriptions/26/terrain.png",
+    "descriptionImage": "control-descriptions/26/description.png"
+  },
+  {
+    "id": 27,
+    "page": 20,
+    "text": "Pit, 1m deep, west edge",
+    "feature": "pit",
+    "mapImage": "control-descriptions/27/map.png",
+    "terrainImage": "control-descriptions/27/terrain.png",
+    "descriptionImage": "control-descriptions/27/description.png"
+  },
+  {
+    "id": 28,
+    "page": 21,
+    "text": "Ant hill, 1m, south east side",
+    "feature": "ant hill",
+    "mapImage": "control-descriptions/28/map.png",
+    "terrainImage": "control-descriptions/28/terrain.png",
+    "descriptionImage": "control-descriptions/28/description.png"
+  },
+  {
+    "id": 29,
+    "page": 21,
+    "text": "Cliff, 2m",
+    "feature": "cliff",
+    "mapImage": "control-descriptions/29/map.png",
+    "terrainImage": "control-descriptions/29/terrain.png",
+    "descriptionImage": "control-descriptions/29/description.png"
+  },
+  {
+    "id": 30,
+    "page": 21,
+    "text": "Cliff, 2m, north foot",
+    "feature": "cliff",
+    "mapImage": "control-descriptions/30/map.png",
+    "terrainImage": "control-descriptions/30/terrain.png",
+    "descriptionImage": "control-descriptions/30/description.png"
+  },
+  {
+    "id": 31,
+    "page": 21,
+    "text": "Upper cliff, 2m",
+    "feature": "cliff",
+    "mapImage": "control-descriptions/31/map.png",
+    "terrainImage": "control-descriptions/31/terrain.png",
+    "descriptionImage": "control-descriptions/31/description.png"
+  },
+  {
+    "id": 32,
+    "page": 21,
+    "text": "Cliff, 1.5m, top",
+    "feature": "cliff",
+    "mapImage": "control-descriptions/32/map.png",
+    "terrainImage": "control-descriptions/32/terrain.png",
+    "descriptionImage": "control-descriptions/32/description.png"
+  },
+  {
+    "id": 33,
+    "page": 21,
+    "text": "Between cliffs",
+    "feature": "cliffs",
+    "mapImage": "control-descriptions/33/map.png",
+    "terrainImage": "control-descriptions/33/terrain.png",
+    "descriptionImage": "control-descriptions/33/description.png"
+  },
+  {
+    "id": 34,
+    "page": 21,
+    "text": "Rock pillar, south foot",
+    "feature": "rock pillar",
+    "mapImage": "control-descriptions/34/map.png",
+    "terrainImage": "control-descriptions/34/terrain.png",
+    "descriptionImage": "control-descriptions/34/description.png"
+  },
+  {
+    "id": 35,
+    "page": 21,
+    "text": "Cave",
+    "feature": "cave",
+    "mapImage": "control-descriptions/35/map.png",
+    "terrainImage": "control-descriptions/35/terrain.png",
+    "descriptionImage": "control-descriptions/35/description.png"
+  },
+  {
+    "id": 36,
+    "page": 21,
+    "text": "Boulder, 1.5m, west side",
+    "feature": "boulder",
+    "mapImage": "control-descriptions/36/map.png",
+    "terrainImage": "control-descriptions/36/terrain.png",
+    "descriptionImage": "control-descriptions/36/description.png"
+  },
+  {
+    "id": 37,
+    "page": 22,
+    "text": "South-eastern boulder, 2m, east side",
+    "feature": "boulder",
+    "mapImage": "control-descriptions/37/map.png",
+    "terrainImage": "control-descriptions/37/terrain.png",
+    "descriptionImage": "control-descriptions/37/description.png"
+  },
+  {
+    "id": 38,
+    "page": 22,
+    "text": "Between boulders 1m and 1.5m",
+    "feature": "boulders 1m and 1.5m",
+    "mapImage": "control-descriptions/38/map.png",
+    "terrainImage": "control-descriptions/38/terrain.png",
+    "descriptionImage": "control-descriptions/38/description.png"
+  },
+  {
+    "id": 39,
+    "page": 22,
+    "text": "Boulder, 0.5m/3m, west side",
+    "feature": "boulder",
+    "mapImage": "control-descriptions/39/map.png",
+    "terrainImage": "control-descriptions/39/terrain.png",
+    "descriptionImage": "control-descriptions/39/description.png"
+  },
+  {
+    "id": 40,
+    "page": 22,
+    "text": "Boulder field, south-east edge",
+    "feature": "boulder field",
+    "mapImage": "control-descriptions/40/map.png",
+    "terrainImage": "control-descriptions/40/terrain.png",
+    "descriptionImage": "control-descriptions/40/description.png"
+  },
+  {
+    "id": 41,
+    "page": 22,
+    "text": "Boulder cluster, south side",
+    "feature": "boulder cluster",
+    "mapImage": "control-descriptions/41/map.png",
+    "terrainImage": "control-descriptions/41/terrain.png",
+    "descriptionImage": "control-descriptions/41/description.png"
+  },
+  {
+    "id": 42,
+    "page": 22,
+    "text": "Stony ground, north edge",
+    "feature": "stony ground",
+    "mapImage": "control-descriptions/42/map.png",
+    "terrainImage": "control-descriptions/42/terrain.png",
+    "descriptionImage": "control-descriptions/42/description.png"
+  },
+  {
+    "id": 43,
+    "page": 22,
+    "text": "Bare rock",
+    "feature": "bare rock",
+    "mapImage": "control-descriptions/43/map.png",
+    "terrainImage": "control-descriptions/43/terrain.png",
+    "descriptionImage": "control-descriptions/43/description.png"
+  },
+  {
+    "id": 44,
+    "page": 22,
+    "text": "Bare rock, west part",
+    "feature": "bare rock",
+    "mapImage": "control-descriptions/44/map.png",
+    "terrainImage": "control-descriptions/44/terrain.png",
+    "descriptionImage": "control-descriptions/44/description.png"
+  },
+  {
+    "id": 45,
+    "page": 22,
+    "text": "Narrow passage",
+    "feature": "narrow passage",
+    "mapImage": "control-descriptions/45/map.png",
+    "terrainImage": "control-descriptions/45/terrain.png",
+    "descriptionImage": "control-descriptions/45/description.png"
+  },
+  {
+    "id": 46,
+    "page": 23,
+    "text": "Lake, east tip",
+    "feature": "lake",
+    "mapImage": "control-descriptions/46/map.png",
+    "terrainImage": "control-descriptions/46/terrain.png",
+    "descriptionImage": "control-descriptions/46/description.png"
+  },
+  {
+    "id": 47,
+    "page": 23,
+    "text": "Pond, east edge",
+    "feature": "pond",
+    "mapImage": "control-descriptions/47/map.png",
+    "terrainImage": "control-descriptions/47/terrain.png",
+    "descriptionImage": "control-descriptions/47/description.png"
+  },
+  {
+    "id": 48,
+    "page": 23,
+    "text": "Waterhole, east edge",
+    "feature": "waterhole",
+    "mapImage": "control-descriptions/48/map.png",
+    "terrainImage": "control-descriptions/48/terrain.png",
+    "descriptionImage": "control-descriptions/48/description.png"
+  },
+  {
+    "id": 49,
+    "page": 23,
+    "text": "Stream bend",
+    "feature": "stream bend",
+    "mapImage": "control-descriptions/49/map.png",
+    "terrainImage": "control-descriptions/49/terrain.png",
+    "descriptionImage": "control-descriptions/49/description.png"
+  },
+  {
+    "id": 50,
+    "page": 23,
+    "text": "Southern stream bend",
+    "feature": "stream bend",
+    "mapImage": "control-descriptions/50/map.png",
+    "terrainImage": "control-descriptions/50/terrain.png",
+    "descriptionImage": "control-descriptions/50/description.png"
+  },
+  {
+    "id": 51,
+    "page": 23,
+    "text": "Stream junction",
+    "feature": "stream junction",
+    "mapImage": "control-descriptions/51/map.png",
+    "terrainImage": "control-descriptions/51/terrain.png",
+    "descriptionImage": "control-descriptions/51/description.png"
+  },
+  {
+    "id": 52,
+    "page": 23,
+    "text": "Ditch, north-east end",
+    "feature": "ditch",
+    "mapImage": "control-descriptions/52/map.png",
+    "terrainImage": "control-descriptions/52/terrain.png",
+    "descriptionImage": "control-descriptions/52/description.png"
+  },
+  {
+    "id": 53,
+    "page": 23,
+    "text": "Ditch bend",
+    "feature": "ditch bend",
+    "mapImage": "control-descriptions/53/map.png",
+    "terrainImage": "control-descriptions/53/terrain.png",
+    "descriptionImage": "control-descriptions/53/description.png"
+  },
+  {
+    "id": 54,
+    "page": 23,
+    "text": "Northern ditch bend",
+    "feature": "ditch bend",
+    "mapImage": "control-descriptions/54/map.png",
+    "terrainImage": "control-descriptions/54/terrain.png",
+    "descriptionImage": "control-descriptions/54/description.png"
+  },
+  {
+    "id": 55,
+    "page": 23,
+    "text": "Ditch junction",
+    "feature": "ditch junction",
+    "mapImage": "control-descriptions/55/map.png",
+    "terrainImage": "control-descriptions/55/terrain.png",
+    "descriptionImage": "control-descriptions/55/description.png"
+  },
+  {
+    "id": 56,
+    "page": 24,
+    "text": "Ditch crossing",
+    "feature": "ditch crossing",
+    "mapImage": "control-descriptions/56/map.png",
+    "terrainImage": "control-descriptions/56/terrain.png",
+    "descriptionImage": "control-descriptions/56/description.png"
+  },
+  {
+    "id": 57,
+    "page": 24,
+    "text": "Narrow marsh, south-east end",
+    "feature": "narrow marsh",
+    "mapImage": "control-descriptions/57/map.png",
+    "terrainImage": "control-descriptions/57/terrain.png",
+    "descriptionImage": "control-descriptions/57/description.png"
+  },
+  {
+    "id": 58,
+    "page": 24,
+    "text": "Marsh, north-west part",
+    "feature": "marsh",
+    "mapImage": "control-descriptions/58/map.png",
+    "terrainImage": "control-descriptions/58/terrain.png",
+    "descriptionImage": "control-descriptions/58/description.png"
+  },
+  {
+    "id": 59,
+    "page": 24,
+    "text": "Marsh, south tip",
+    "feature": "marsh",
+    "mapImage": "control-descriptions/59/map.png",
+    "terrainImage": "control-descriptions/59/terrain.png",
+    "descriptionImage": "control-descriptions/59/description.png"
+  },
+  {
+    "id": 60,
+    "page": 24,
+    "text": "Marsh, east edge",
+    "feature": "marsh",
+    "mapImage": "control-descriptions/60/map.png",
+    "terrainImage": "control-descriptions/60/terrain.png",
+    "descriptionImage": "control-descriptions/60/description.png"
+  },
+  {
+    "id": 61,
+    "page": 24,
+    "text": "Marsh, 8m x 8m",
+    "feature": "marsh",
+    "mapImage": "control-descriptions/61/map.png",
+    "terrainImage": "control-descriptions/61/terrain.png",
+    "descriptionImage": "control-descriptions/61/description.png"
+  },
+  {
+    "id": 62,
+    "page": 24,
+    "text": "Between marshes",
+    "feature": "marshes",
+    "mapImage": "control-descriptions/62/map.png",
+    "terrainImage": "control-descriptions/62/terrain.png",
+    "descriptionImage": "control-descriptions/62/description.png"
+  },
+  {
+    "id": 63,
+    "page": 24,
+    "text": "Firm ground in marsh, north-west tip",
+    "feature": "firm ground in marsh",
+    "mapImage": "control-descriptions/63/map.png",
+    "terrainImage": "control-descriptions/63/terrain.png",
+    "descriptionImage": "control-descriptions/63/description.png"
+  },
+  {
+    "id": 64,
+    "page": 24,
+    "text": "Well, east side",
+    "feature": "well",
+    "mapImage": "control-descriptions/64/map.png",
+    "terrainImage": "control-descriptions/64/terrain.png",
+    "descriptionImage": "control-descriptions/64/description.png"
+  },
+  {
+    "id": 65,
+    "page": 25,
+    "text": "Spring, west edge",
+    "feature": "spring",
+    "mapImage": "control-descriptions/65/map.png",
+    "terrainImage": "control-descriptions/65/terrain.png",
+    "descriptionImage": "control-descriptions/65/description.png"
+  },
+  {
+    "id": 66,
+    "page": 25,
+    "text": "Water tank, east side",
+    "feature": "water tank",
+    "mapImage": "control-descriptions/66/map.png",
+    "terrainImage": "control-descriptions/66/terrain.png",
+    "descriptionImage": "control-descriptions/66/description.png"
+  },
+  {
+    "id": 67,
+    "page": 25,
+    "text": "Open land, east corner (inside)",
+    "feature": "open land",
+    "mapImage": "control-descriptions/67/map.png",
+    "terrainImage": "control-descriptions/67/terrain.png",
+    "descriptionImage": "control-descriptions/67/description.png"
+  },
+  {
+    "id": 68,
+    "page": 25,
+    "text": "Open land, sandy west edge",
+    "feature": "open land",
+    "mapImage": "control-descriptions/68/map.png",
+    "terrainImage": "control-descriptions/68/terrain.png",
+    "descriptionImage": "control-descriptions/68/description.png"
+  },
+  {
+    "id": 69,
+    "page": 25,
+    "text": "Semi-open land, east edge",
+    "feature": "semi-open land",
+    "mapImage": "control-descriptions/69/map.png",
+    "terrainImage": "control-descriptions/69/terrain.png",
+    "descriptionImage": "control-descriptions/69/description.png"
+  },
+  {
+    "id": 70,
+    "page": 25,
+    "text": "Forest corner, south tip",
+    "feature": "forest corner",
+    "mapImage": "control-descriptions/70/map.png",
+    "terrainImage": "control-descriptions/70/terrain.png",
+    "descriptionImage": "control-descriptions/70/description.png"
+  },
+  {
+    "id": 71,
+    "page": 25,
+    "text": "Clearing",
+    "feature": "clearing",
+    "mapImage": "control-descriptions/71/map.png",
+    "terrainImage": "control-descriptions/71/terrain.png",
+    "descriptionImage": "control-descriptions/71/description.png"
+  },
+  {
+    "id": 72,
+    "page": 25,
+    "text": "Thicket, east side",
+    "feature": "thicket",
+    "mapImage": "control-descriptions/72/map.png",
+    "terrainImage": "control-descriptions/72/terrain.png",
+    "descriptionImage": "control-descriptions/72/description.png"
+  },
+  {
+    "id": 73,
+    "page": 25,
+    "text": "Linear thicket, east corner (outside)",
+    "feature": "linear thicket",
+    "mapImage": "control-descriptions/73/map.png",
+    "terrainImage": "control-descriptions/73/terrain.png",
+    "descriptionImage": "control-descriptions/73/description.png"
+  },
+  {
+    "id": 74,
+    "page": 26,
+    "text": "Vegetation boundary, east corner outside)",
+    "feature": "vegetation boundary",
+    "mapImage": "control-descriptions/74/map.png",
+    "terrainImage": "control-descriptions/74/terrain.png",
+    "descriptionImage": "control-descriptions/74/description.png"
+  },
+  {
+    "id": 75,
+    "page": 26,
+    "text": "Copse, west tip",
+    "feature": "copse",
+    "mapImage": "control-descriptions/75/map.png",
+    "terrainImage": "control-descriptions/75/terrain.png",
+    "descriptionImage": "control-descriptions/75/description.png"
+  },
+  {
+    "id": 76,
+    "page": 26,
+    "text": "Prominent tree, broad leaved",
+    "feature": "prominent tree",
+    "mapImage": "control-descriptions/76/map.png",
+    "terrainImage": "control-descriptions/76/terrain.png",
+    "descriptionImage": "control-descriptions/76/description.png"
+  },
+  {
+    "id": 77,
+    "page": 26,
+    "text": "Root stock, east side",
+    "feature": "root stock",
+    "mapImage": "control-descriptions/77/map.png",
+    "terrainImage": "control-descriptions/77/terrain.png",
+    "descriptionImage": "control-descriptions/77/description.png"
+  },
+  {
+    "id": 78,
+    "page": 26,
+    "text": "Road, south-east end",
+    "feature": "road",
+    "mapImage": "control-descriptions/78/map.png",
+    "terrainImage": "control-descriptions/78/terrain.png",
+    "descriptionImage": "control-descriptions/78/description.png"
+  },
+  {
+    "id": 79,
+    "page": 26,
+    "text": "Road junction",
+    "feature": "road junction",
+    "mapImage": "control-descriptions/79/map.png",
+    "terrainImage": "control-descriptions/79/terrain.png",
+    "descriptionImage": "control-descriptions/79/description.png"
+  },
+  {
+    "id": 80,
+    "page": 26,
+    "text": "Road/path crossing",
+    "feature": "road/path crossing",
+    "mapImage": "control-descriptions/80/map.png",
+    "terrainImage": "control-descriptions/80/terrain.png",
+    "descriptionImage": "control-descriptions/80/description.png"
+  },
+  {
+    "id": 81,
+    "page": 26,
+    "text": "Path bend",
+    "feature": "path bend",
+    "mapImage": "control-descriptions/81/map.png",
+    "terrainImage": "control-descriptions/81/terrain.png",
+    "descriptionImage": "control-descriptions/81/description.png"
+  },
+  {
+    "id": 82,
+    "page": 26,
+    "text": "Western path bend",
+    "feature": "path bend",
+    "mapImage": "control-descriptions/82/map.png",
+    "terrainImage": "control-descriptions/82/terrain.png",
+    "descriptionImage": "control-descriptions/82/description.png"
+  },
+  {
+    "id": 83,
+    "page": 27,
+    "text": "Path junction",
+    "feature": "path junction",
+    "mapImage": "control-descriptions/83/map.png",
+    "terrainImage": "control-descriptions/83/terrain.png",
+    "descriptionImage": "control-descriptions/83/description.png"
+  },
+  {
+    "id": 84,
+    "page": 27,
+    "text": "Path crossing",
+    "feature": "path crossing",
+    "mapImage": "control-descriptions/84/map.png",
+    "terrainImage": "control-descriptions/84/terrain.png",
+    "descriptionImage": "control-descriptions/84/description.png"
+  },
+  {
+    "id": 85,
+    "page": 27,
+    "text": "Path/stream crossing",
+    "feature": "path/stream crossing",
+    "mapImage": "control-descriptions/85/map.png",
+    "terrainImage": "control-descriptions/85/terrain.png",
+    "descriptionImage": "control-descriptions/85/description.png"
+  },
+  {
+    "id": 86,
+    "page": 27,
+    "text": "Path/ditch crossing",
+    "feature": "path/ditch crossing",
+    "mapImage": "control-descriptions/86/map.png",
+    "terrainImage": "control-descriptions/86/terrain.png",
+    "descriptionImage": "control-descriptions/86/description.png"
+  },
+  {
+    "id": 87,
+    "page": 27,
+    "text": "Ride bend",
+    "feature": "ride bend",
+    "mapImage": "control-descriptions/87/map.png",
+    "terrainImage": "control-descriptions/87/terrain.png",
+    "descriptionImage": "control-descriptions/87/description.png"
+  },
+  {
+    "id": 88,
+    "page": 27,
+    "text": "Bridge, north end",
+    "feature": "bridge",
+    "mapImage": "control-descriptions/88/map.png",
+    "terrainImage": "control-descriptions/88/terrain.png",
+    "descriptionImage": "control-descriptions/88/description.png"
+  },
+  {
+    "id": 89,
+    "page": 27,
+    "text": "Power line, pylon",
+    "feature": "power line",
+    "mapImage": "control-descriptions/89/map.png",
+    "terrainImage": "control-descriptions/89/terrain.png",
+    "descriptionImage": "control-descriptions/89/description.png"
+  },
+  {
+    "id": 90,
+    "page": 27,
+    "text": "Tunnel, south-west end",
+    "feature": "tunnel",
+    "mapImage": "control-descriptions/90/map.png",
+    "terrainImage": "control-descriptions/90/terrain.png",
+    "descriptionImage": "control-descriptions/90/description.png"
+  },
+  {
+    "id": 91,
+    "page": 27,
+    "text": "Wall, east corner (inside)",
+    "feature": "wall",
+    "mapImage": "control-descriptions/91/map.png",
+    "terrainImage": "control-descriptions/91/terrain.png",
+    "descriptionImage": "control-descriptions/91/description.png"
+  },
+  {
+    "id": 92,
+    "page": 28,
+    "text": "Wall, ruined, west end",
+    "feature": "wall",
+    "mapImage": "control-descriptions/92/map.png",
+    "terrainImage": "control-descriptions/92/terrain.png",
+    "descriptionImage": "control-descriptions/92/description.png"
+  },
+  {
+    "id": 93,
+    "page": 28,
+    "text": "Stream/wall crossing",
+    "feature": "stream/wall crossing",
+    "mapImage": "control-descriptions/93/map.png",
+    "terrainImage": "control-descriptions/93/terrain.png",
+    "descriptionImage": "control-descriptions/93/description.png"
+  },
+  {
+    "id": 94,
+    "page": 28,
+    "text": "Path/wall crossing",
+    "feature": "path/wall crossing",
+    "mapImage": "control-descriptions/94/map.png",
+    "terrainImage": "control-descriptions/94/terrain.png",
+    "descriptionImage": "control-descriptions/94/description.png"
+  },
+  {
+    "id": 95,
+    "page": 28,
+    "text": "Fence, south corner (outside)",
+    "feature": "fence",
+    "mapImage": "control-descriptions/95/map.png",
+    "terrainImage": "control-descriptions/95/terrain.png",
+    "descriptionImage": "control-descriptions/95/description.png"
+  },
+  {
+    "id": 96,
+    "page": 28,
+    "text": "Crossing point, south side",
+    "feature": "crossing point",
+    "mapImage": "control-descriptions/96/map.png",
+    "terrainImage": "control-descriptions/96/terrain.png",
+    "descriptionImage": "control-descriptions/96/description.png"
+  },
+  {
+    "id": 97,
+    "page": 28,
+    "text": "Building, east side",
+    "feature": "building",
+    "mapImage": "control-descriptions/97/map.png",
+    "terrainImage": "control-descriptions/97/terrain.png",
+    "descriptionImage": "control-descriptions/97/description.png"
+  },
+  {
+    "id": 98,
+    "page": 28,
+    "text": "Ruin, west side",
+    "feature": "ruin",
+    "mapImage": "control-descriptions/98/map.png",
+    "terrainImage": "control-descriptions/98/terrain.png",
+    "descriptionImage": "control-descriptions/98/description.png"
+  },
+  {
+    "id": 99,
+    "page": 28,
+    "text": "Pipeline, beneath",
+    "feature": "pipeline",
+    "mapImage": "control-descriptions/99/map.png",
+    "terrainImage": "control-descriptions/99/terrain.png",
+    "descriptionImage": "control-descriptions/99/description.png"
+  },
+  {
+    "id": 100,
+    "page": 28,
+    "text": "Tower, south side",
+    "feature": "tower",
+    "mapImage": "control-descriptions/100/map.png",
+    "terrainImage": "control-descriptions/100/terrain.png",
+    "descriptionImage": "control-descriptions/100/description.png"
+  },
+  {
+    "id": 101,
+    "page": 29,
+    "text": "Shooting platform",
+    "feature": "shooting platform",
+    "mapImage": "control-descriptions/101/map.png",
+    "terrainImage": "control-descriptions/101/terrain.png",
+    "descriptionImage": "control-descriptions/101/description.png"
+  },
+  {
+    "id": 102,
+    "page": 29,
+    "text": "Cairn, east side",
+    "feature": "cairn",
+    "mapImage": "control-descriptions/102/map.png",
+    "terrainImage": "control-descriptions/102/terrain.png",
+    "descriptionImage": "control-descriptions/102/description.png"
+  },
+  {
+    "id": 103,
+    "page": 29,
+    "text": "Fodder rack, west side",
+    "feature": "fodder rack",
+    "mapImage": "control-descriptions/103/map.png",
+    "terrainImage": "control-descriptions/103/terrain.png",
+    "descriptionImage": "control-descriptions/103/description.png"
+  },
+  {
+    "id": 104,
+    "page": 29,
+    "text": "Statue",
+    "feature": "statue",
+    "mapImage": "control-descriptions/104/map.png",
+    "terrainImage": "control-descriptions/104/terrain.png",
+    "descriptionImage": "control-descriptions/104/description.png"
+  },
+  {
+    "id": 105,
+    "page": 29,
+    "text": "Charcoal burning ground / platform",
+    "feature": "charcoal burning ground / platform",
+    "mapImage": "control-descriptions/105/map.png",
+    "terrainImage": "control-descriptions/105/terrain.png",
+    "descriptionImage": "control-descriptions/105/description.png"
+  },
+  {
+    "id": 106,
+    "page": 29,
+    "text": "Canopy, south-west end",
+    "feature": "canopy",
+    "mapImage": "control-descriptions/106/map.png",
+    "terrainImage": "control-descriptions/106/terrain.png",
+    "descriptionImage": "control-descriptions/106/description.png"
+  },
+  {
+    "id": 107,
+    "page": 29,
+    "text": "Stairway, foot",
+    "feature": "stairway",
+    "mapImage": "control-descriptions/107/map.png",
+    "terrainImage": "control-descriptions/107/terrain.png",
+    "descriptionImage": "control-descriptions/107/description.png"
+  },
+  {
+    "id": 108,
+    "page": 29,
+    "text": "Trench",
+    "feature": "trench",
+    "mapImage": "control-descriptions/108/map.png",
+    "terrainImage": "control-descriptions/108/terrain.png",
+    "descriptionImage": "control-descriptions/108/description.png"
+  },
+  {
+    "id": 109,
+    "page": 29,
+    "text": "Flower Bed, south corner (outside)",
+    "feature": "flower bed",
+    "mapImage": "control-descriptions/109/map.png",
+    "terrainImage": "control-descriptions/109/terrain.png",
+    "descriptionImage": "control-descriptions/109/description.png"
+  }
+]
