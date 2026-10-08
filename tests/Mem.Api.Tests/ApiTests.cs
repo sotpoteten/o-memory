@@ -34,6 +34,12 @@ public sealed class MemApiFactory : WebApplicationFactory<Program>
         Directory.CreateDirectory(Path.Combine(TempDir, "i18n"));
         var norwegian = Enumerable.Range(1, 13).ToDictionary(i => (200 + i).ToString(), i => $"Symbol nb {i}");
         File.WriteAllText(Path.Combine(TempDir, "i18n", "symbols.nb.json"), JsonSerializer.Serialize(norwegian));
+
+        // 201–203 are "confusable": 11 ungrouped symbols + 1 group = exactly 12 slots, enough for the hardest level.
+        File.WriteAllText(Path.Combine(TempDir, "confusable-groups.json"), JsonSerializer.Serialize(new[]
+        {
+            new { name = "Test group", ids = new[] { "201", "202", "203", "999" } },
+        }));
     }
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -95,6 +101,19 @@ public class ApiTests(MemApiFactory factory) : IClassFixture<MemApiFactory>
         var untranslated = symbols.Single(s => s.Id == "214");
         Assert.Equal(["en"], untranslated.Names.Keys);
         Assert.Equal("Symbol 14", untranslated.Names["en"]);
+    }
+
+    [Fact]
+    public async Task Game_never_contains_two_symbols_from_the_same_confusable_group()
+    {
+        for (var i = 0; i < 50; i++)
+        {
+            var cards = await _client.GetFromJsonAsync<List<CardDto>>("/api/game?pairs=12");
+
+            Assert.NotNull(cards);
+            Assert.Equal(12, cards.Select(c => c.PairId).Distinct().Count());
+            Assert.True(cards.Select(c => c.SymbolId).Distinct().Count(id => id is "201" or "202" or "203") <= 1);
+        }
     }
 
     [Fact]

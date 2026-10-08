@@ -7,7 +7,9 @@ using Microsoft.Extensions.FileProviders;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuration is read lazily (inside factories / after Build) so tests can override it.
-builder.Services.AddSingleton(sp => SymbolRepository.LoadFrom(DataDirectory(sp.GetRequiredService<IConfiguration>(), builder.Environment)));
+builder.Services.AddSingleton(sp => SymbolRepository.LoadFrom(
+    DataDirectory(sp.GetRequiredService<IConfiguration>(), builder.Environment),
+    sp.GetRequiredService<ILogger<SymbolRepository>>()));
 builder.Services.AddDbContext<MemDbContext>((sp, options) =>
     options.UseSqlite(sp.GetRequiredService<IConfiguration>().GetConnectionString("Mem")));
 builder.Services.ConfigureHttpJsonOptions(o => o.SerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)));
@@ -51,7 +53,7 @@ api.MapGet("/game", (int pairs, SymbolRepository repo) =>
         {
             ["pairs"] = [$"Antall par må være {string.Join(", ", Game.AllowedPairs)}."],
         });
-    return Results.Ok(Game.CreateDeck(repo.All, pairs, Random.Shared));
+    return Results.Ok(Game.CreateDeck(repo.All, repo.GroupsBySymbol, pairs, Random.Shared));
 });
 
 api.MapGet("/highscores", async (int pairs, MemDbContext db) =>
