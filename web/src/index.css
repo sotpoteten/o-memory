@@ -250,16 +250,23 @@ main { flex: 1; }
 }
 .card:disabled { opacity: 1; }
 
+/*
+ * While shrinking, z-index counts down from 10 to 0 over the same 0.3s as the transform, so the card stays
+ * above its neighbours until it no longer covers them. Zooming in jumps straight to 10 (no z-index transition),
+ * which also puts a newly enlarged card above one that is still shrinking.
+ */
 .card {
   position: relative;
-  transition: transform 0.3s ease;
+  z-index: 0;
+  transition: transform 0.3s ease, z-index 0.3s linear;
 }
 .board.is-reviewing .card { cursor: zoom-in; }
 .review-hint { margin: 0 0 0.75rem; }
 .card.is-zoomed,
 .board.is-reviewing .card.is-zoomed {
-  z-index: 5;
+  z-index: 10;
   cursor: zoom-out;
+  transition: transform 0.3s ease;
 }
 .card.is-zoomed .card-front { box-shadow: 0 8px 32px rgb(0 0 0 / 0.35); }
 
@@ -357,5 +364,8 @@ main { flex: 1; }
 .credit-list ul { margin: 0.4rem 0 0; font-size: 0.85rem; }
 
 @media (prefers-reduced-motion: reduce) {
-  .card, .card-inner { transition: none; }
+  .card,
+  .card.is-zoomed,
+  .board.is-reviewing .card.is-zoomed,
+  .card-inner { transition: none; }
 }
