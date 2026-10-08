@@ -47,6 +47,17 @@ export function createGame(cards: Card[], random?: () => number): GameState {
 
 export const isFinished = (state: GameState) => state.finishedAt !== null
 
+/**
+ * The pair whose details (map excerpt, text) to show: while reviewing, the enlarged card's pair;
+ * otherwise the most recently found pair. Null before the first match.
+ */
+export function detailsPairId(state: GameState): string | null {
+  if (state.reviewing && state.zoomed.length > 0) {
+    return state.cards.find(c => c.id === state.zoomed[0])?.pairId ?? null
+  }
+  return state.matched.at(-1) ?? null
+}
+
 /** True while two non-matching cards are face up, waiting to be turned back. */
 export const isShowingMismatch = (state: GameState) => state.flipped.length === 2
 

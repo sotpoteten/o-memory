@@ -163,7 +163,7 @@ main { flex: 1; }
 .player-name label { font-weight: 600; }
 .player-name .muted { font-weight: 400; }
 
-.difficulty {
+.choice-group {
   border: 0;
   padding: 0;
   margin: 1.5rem 0;
@@ -171,20 +171,22 @@ main { flex: 1; }
   grid-template-columns: repeat(3, 1fr);
   gap: 0.6rem;
 }
-.difficulty legend { font-weight: 600; margin-bottom: 0.5rem; }
-.difficulty label {
+.choice-group.mode-picker { grid-template-columns: repeat(2, 1fr); }
+.choice-group legend { font-weight: 600; margin-bottom: 0.5rem; }
+.choice-group label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 0.9rem 0.5rem;
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--radius);
   cursor: pointer;
 }
-.difficulty label.is-selected { border-color: var(--accent); background: var(--accent-soft); }
-.difficulty input { position: absolute; opacity: 0; pointer-events: none; }
-.difficulty-label { font-weight: 600; }
+.choice-group label.is-selected { border-color: var(--accent); background: var(--accent-soft); }
+.choice-group input { position: absolute; opacity: 0; pointer-events: none; }
+.choice-label { font-weight: 600; }
 
 .start { width: 100%; padding: 0.85rem; font-size: 1.1rem; }
 
@@ -233,9 +235,18 @@ main { flex: 1; }
 .board-6 { --cols: 4; }
 .board-8 { --cols: 4; }
 .board-12 { --cols: 6; }
+
+/* Control descriptions are wide strips, so this mode uses wide cards and fewer, wider columns. */
+.board-descriptions { max-width: calc(var(--cols) * 260px); }
+.board-descriptions.board-6 { --cols: 3; }
+.board-descriptions.board-12 { --cols: 4; }
+.board-descriptions .card { aspect-ratio: 2; }
 @media (max-width: 600px) {
   .board-6 { --cols: 3; }
   .board-12 { --cols: 4; }
+  .board-descriptions.board-6,
+  .board-descriptions.board-8,
+  .board-descriptions.board-12 { --cols: 2; }
 }
 
 .card-slot { display: flex; flex-direction: column; min-width: 0; }
@@ -306,6 +317,29 @@ main { flex: 1; }
 }
 .card-front-photo img { object-fit: cover; }
 .card-front-symbol img { object-fit: contain; padding: 18%; }
+.card-front-description img,
+.card-front-terrain img { object-fit: contain; padding: 6%; }
+
+.pair-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 96px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.pair-details img {
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 6px;
+  flex: none;
+}
+.pair-details p { margin: 0; font-size: 1.05rem; }
 
 .card.is-matched .card-front { outline: 3px solid var(--green); outline-offset: -3px; }
 

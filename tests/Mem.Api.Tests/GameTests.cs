@@ -33,7 +33,7 @@ public class GameTests
         var groups = new Dictionary<string, int[]> { ["1"] = [0], ["2"] = [0, 1], ["3"] = [1] };
         var ordered = new[] { "2", "1", "3", "4" }.Select(MakeSymbol);
 
-        var picked = Game.PickNonConfusable(ordered, groups, 10).Select(s => s.Id);
+        var picked = Game.PickNonConfusable(ordered, s => s.Id, groups, 10).Select(s => s.Id);
 
         Assert.Equal(["2", "4"], picked);
     }

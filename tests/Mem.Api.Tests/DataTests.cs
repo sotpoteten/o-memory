@@ -12,7 +12,7 @@ public class DataTests
     {
         var repo = SymbolRepository.LoadFrom(DataDirectory);
 
-        Assert.True(Game.PickNonConfusable(repo.All, repo.GroupsBySymbol, int.MaxValue).Count >= Game.AllowedPairs.Max());
+        Assert.True(Game.PickNonConfusable(repo.All, s => s.Id, repo.GroupsBySymbol, int.MaxValue).Count >= Game.AllowedPairs.Max());
     }
 
     [Fact]
@@ -32,6 +32,32 @@ public class DataTests
         var repo = SymbolRepository.LoadFrom(DataDirectory);
 
         Assert.All(repo.All, s => Assert.True(s.Names.ContainsKey("nb"), $"{s.Id} {s.Name} has no Norwegian name"));
+    }
+
+    [Fact]
+    public void Control_descriptions_have_three_images_and_text_each()
+    {
+        var repo = ControlDescriptionRepository.LoadFrom(DataDirectory);
+
+        Assert.Equal(Enumerable.Range(1, 109), repo.All.Select(e => e.Id).Order());
+        Assert.All(repo.All, e =>
+        {
+            Assert.False(string.IsNullOrWhiteSpace(e.Text), $"Example {e.Id} has no text");
+            foreach (var image in new[] { e.MapImage, e.TerrainImage, e.DescriptionImage })
+                Assert.True(File.Exists(Path.Combine(DataDirectory, image)), $"Missing {image}");
+        });
+        Assert.True(Game.PickNonConfusable(repo.All, e => e.Key, repo.GroupsByExample, int.MaxValue).Count >= Game.AllowedPairs.Max());
+    }
+
+    [Fact]
+    public void Control_description_groups_only_refer_to_known_examples()
+    {
+        var known = ControlDescriptionRepository.LoadFrom(DataDirectory).All.Select(e => e.Key).ToHashSet();
+        var groups = JsonSerializer.Deserialize<List<ConfusableGroup>>(
+            File.ReadAllText(Path.Combine(DataDirectory, "control-descriptions-groups.json")), JsonSerializerOptions.Web)!;
+
+        Assert.All(groups.SelectMany(g => g.Ids.Select(id => (g.Name, id))), x =>
+            Assert.True(known.Contains(x.id), $"Group '{x.Name}' refers to unknown example {x.id}"));
     }
 
     private static string FindRepoRoot()

@@ -1,9 +1,11 @@
+import type { GameMode } from '../api'
 import { formatTime } from '../game/useMemoryGame'
 import { useI18n } from '../i18n/context'
 import type { SaveStatus } from '../game/useSaveResult'
 import { HighScoreList } from './HighScoreList'
 
 interface Props {
+  mode: GameMode
   pairs: number
   moves: number
   timeMs: number
@@ -14,7 +16,7 @@ interface Props {
   onQuit: () => void
 }
 
-export function ResultDialog({ pairs, moves, timeMs, saveStatus, onRetrySave, onPlayAgain, onReview, onQuit }: Props) {
+export function ResultDialog({ mode, pairs, moves, timeMs, saveStatus, onRetrySave, onPlayAgain, onReview, onQuit }: Props) {
   const { t } = useI18n()
   return (
     <div className="dialog-backdrop">
@@ -26,7 +28,7 @@ export function ResultDialog({ pairs, moves, timeMs, saveStatus, onRetrySave, on
 
         <div aria-live="polite">
           {saveStatus.state === 'saving' && <p className="muted">{t.result.saving}</p>}
-          {saveStatus.state === 'saved' && <HighScoreList pairs={pairs} highlightId={saveStatus.id} />}
+          {saveStatus.state === 'saved' && <HighScoreList mode={mode} pairs={pairs} highlightId={saveStatus.id} />}
           {saveStatus.state === 'error' && (
             <p className="error">
               {t.result.saveError}{' '}

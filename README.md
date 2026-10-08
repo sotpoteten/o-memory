@@ -43,6 +43,24 @@ cd web && npm test   # spillogikk (Vitest)
 `cd web && npm run build`, kopier `web/dist` til `src/Mem.Api/wwwroot`, og publiser API-et.
 API-et serverer da også frontend. Sett `DataDirectory` og `ConnectionStrings:Mem` for miljøet.
 
+## Spillmoduser
+
+- **Karttegn:** ISOM-karttegn ↔ foto fra O-Map Wiki.
+- **Postbeskrivelser:** IOF-postbeskrivelse ↔ terrengtegning. Når et par er funnet, vises kartutsnitt og tekstbeskrivelse.
+  Eksemplene (side 18–29 i «International Specification for Control Descriptions 2024», CC BY-ND 4.0) trekkes ut med:
+
+  ```sh
+  dotnet run --project tools/ControlDescriptionExtractor -- "<sti til IOF Control Descriptions 2024.pdf>" [--contact-sheet oversikt.html]
+  ```
+
+  Verktøyet finner tabellrutenettet på hver side og klipper ut kart, terrengtegning og postbeskrivelse **uendret**
+  (bare beskåret) til `data/control-descriptions/`. Tekstene havner i `data/control-descriptions.json`.
+  Rader med identisk tekst (og dermed lik postbeskrivelse, f.eks. rad 6 og 8 «Re-entrant») havner i samme
+  forvekslingsgruppe i `data/control-descriptions-groups.json` og kommer aldri i samme spill. Filen kan redigeres
+  for hånd, men overskrives hvis verktøyet kjøres på nytt.
+
+Hver modus har sin egen highscore-liste.
+
 ## Språk
 
 Spillet finnes på norsk og engelsk (velger øverst til høyre). Første gang følges nettleserens språk.

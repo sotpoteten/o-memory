@@ -10,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton(sp => SymbolRepository.LoadFrom(
     DataDirectory(sp.GetRequiredService<IConfiguration>(), builder.Environment),
     sp.GetRequiredService<ILogger<SymbolRepository>>()));
+builder.Services.AddSingleton(sp => ControlDescriptionRepository.LoadFrom(
+    DataDirectory(sp.GetRequiredService<IConfiguration>(), builder.Environment),
+    sp.GetRequiredService<ILogger<ControlDescriptionRepository>>()));
 builder.Services.AddDbContext<MemDbContext>((sp, options) =>
     options.UseSqlite(sp.GetRequiredService<IConfiguration>().GetConnectionString("Mem")));
 builder.Services.ConfigureHttpJsonOptions(o => o.SerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)));
@@ -19,12 +22,25 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    scope.ServiceProvider.GetRequiredService<MemDbContext>().Database.EnsureCreated();
+    var db = scope.ServiceProvider.GetRequiredService<MemDbContext>();
+    db.Database.EnsureCreated();
+    DatabaseUpgrade.AddModeColumnIfMissing(db);
+
+    // Load both data sets at startup so a broken data file fails fast instead of on the first request.
+    scope.ServiceProvider.GetRequiredService<SymbolRepository>();
+    scope.ServiceProvider.GetRequiredService<ControlDescriptionRepository>();
 }
 
+var dataDirectory = DataDirectory(app.Configuration, app.Environment);
+// The more specific path first: control description images live outside data/images.
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(Path.Combine(DataDirectory(app.Configuration, app.Environment), "images")),
+    FileProvider = new PhysicalFileProvider(Path.Combine(dataDirectory, "control-descriptions")),
+    RequestPath = "/images/control-descriptions",
+});
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(dataDirectory, "images")),
     RequestPath = "/images",
 });
 
@@ -46,22 +62,30 @@ api.MapGet("/symbols", (SymbolRepository repo) => repo.All.Select(s => new
     Photos = s.Photos.Select(p => new { ImageUrl = Game.ImageUrl(p.File), p.Alt, p.Caption, p.Location, p.SourceUrl }),
 }));
 
-api.MapGet("/game", (int pairs, SymbolRepository repo) =>
+api.MapGet("/game", (int pairs, string? mode, SymbolRepository symbols, ControlDescriptionRepository descriptions) =>
 {
+    mode ??= GameModes.Symbols;
+    var errors = new Dictionary<string, string[]>();
     if (!Game.AllowedPairs.Contains(pairs))
-        return Results.ValidationProblem(new Dictionary<string, string[]>
-        {
-            ["pairs"] = [$"Antall par må være {string.Join(", ", Game.AllowedPairs)}."],
-        });
-    return Results.Ok(Game.CreateDeck(repo.All, repo.GroupsBySymbol, pairs, Random.Shared));
+        errors["pairs"] = [$"Antall par må være {string.Join(", ", Game.AllowedPairs)}."];
+    if (!GameModes.All.Contains(mode))
+        errors["mode"] = [$"Modus må være {string.Join(", ", GameModes.All)}."];
+    if (errors.Count > 0) return Results.ValidationProblem(errors);
+
+    return Results.Ok(mode == GameModes.Descriptions
+        ? Game.CreateDescriptionDeck(descriptions.All, descriptions.GroupsByExample, pairs, Random.Shared)
+        : Game.CreateDeck(symbols.All, symbols.GroupsBySymbol, pairs, Random.Shared));
 });
 
-api.MapGet("/highscores", async (int pairs, MemDbContext db) =>
-    await db.HighScores
-        .Where(h => h.Pairs == pairs)
+api.MapGet("/highscores", async (int pairs, string? mode, MemDbContext db) =>
+{
+    mode ??= GameModes.Symbols;
+    return await db.HighScores
+        .Where(h => h.Pairs == pairs && h.Mode == mode)
         .OrderBy(h => h.Moves).ThenBy(h => h.TimeMs).ThenBy(h => h.CreatedAt)
         .Take(10)
-        .ToListAsync());
+        .ToListAsync();
+});
 
 api.MapPost("/highscores", async (NewHighScore input, MemDbContext db) =>
 {
@@ -71,6 +95,7 @@ api.MapPost("/highscores", async (NewHighScore input, MemDbContext db) =>
     var score = new HighScore
     {
         Name = input.Name.Trim(),
+        Mode = input.ModeOrDefault,
         Pairs = input.Pairs,
         Moves = input.Moves,
         TimeMs = input.TimeMs,

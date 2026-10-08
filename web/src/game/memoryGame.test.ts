@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Card } from '../api'
-import { createGame, gameReducer, isFinished, isLocked, shuffle, type GameState } from './memoryGame'
+import { createGame, detailsPairId, gameReducer, isFinished, isLocked, shuffle, type GameState } from './memoryGame'
 
 const card = (pairId: string, kind: 'symbol' | 'photo'): Card => ({
   id: `${pairId}-${kind[0]}`,
@@ -126,6 +126,21 @@ describe('gameReducer', () => {
     expect(state.zoomed).toEqual(['b-s'])
     state = gameReducer(state, { type: 'toggleZoom', cardId: 'b-s' })
     expect(state.zoomed).toEqual([])
+  })
+
+  it('shows details for the most recently found pair, or the enlarged card while reviewing', () => {
+    let state = newGame()
+    expect(detailsPairId(state)).toBeNull()
+
+    state = flip(flip(state, 'b-s'), 'b-p')
+    expect(detailsPairId(state)).toBe('b')
+    state = flip(flip(state, 'a-p'), 'a-s')
+    expect(detailsPairId(state)).toBe('a')
+
+    state = gameReducer(state, { type: 'review' })
+    expect(detailsPairId(state)).toBe('a')
+    state = gameReducer(state, { type: 'toggleZoom', cardId: 'b-p' })
+    expect(detailsPairId(state)).toBe('b')
   })
 
   it('finishes when all pairs are found', () => {

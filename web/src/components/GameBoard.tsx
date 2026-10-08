@@ -1,22 +1,24 @@
 import { useMemo } from 'react'
-import type { Card } from '../api'
+import type { Card, GameMode } from '../api'
 import { useI18n } from '../i18n/context'
 import { displayName } from '../playerName'
 import { useSaveResult } from '../game/useSaveResult'
 import { formatTime, useMemoryGame } from '../game/useMemoryGame'
-import { isFinished, isLocked } from '../game/memoryGame'
+import { detailsPairId, isFinished, isLocked } from '../game/memoryGame'
 import { MemoryCard } from './MemoryCard'
+import { PairDetailsPanel } from './PairDetailsPanel'
 import { ResultDialog } from './ResultDialog'
 
 interface Props {
   cards: Card[]
+  mode: GameMode
   pairs: number
   playerName: string
   onRestart: () => void
   onQuit: () => void
 }
 
-export function GameBoard({ cards, pairs, playerName, onRestart, onQuit }: Props) {
+export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }: Props) {
   const { t } = useI18n()
   const { state, flip, unzoom, review, toggleZoom, elapsedMs } = useMemoryGame(cards)
 
@@ -24,10 +26,13 @@ export function GameBoard({ cards, pairs, playerName, onRestart, onQuit }: Props
   // Moves and time are frozen once the game is finished, so this is created once.
   const finalTimeMs = finished ? state.finishedAt! - state.startedAt! : 0
   const score = useMemo(
-    () => (finished ? { name: displayName(playerName, t.anonymous), pairs, moves: state.moves, timeMs: finalTimeMs } : null),
-    [finished, playerName, t.anonymous, pairs, state.moves, finalTimeMs],
+    () => (finished ? { name: displayName(playerName, t.anonymous), mode, pairs, moves: state.moves, timeMs: finalTimeMs } : null),
+    [finished, playerName, t.anonymous, mode, pairs, state.moves, finalTimeMs],
   )
   const { status: saveStatus, retry: retrySave } = useSaveResult(score)
+
+  const detailsPair = detailsPairId(state)
+  const details = state.cards.find(c => c.pairId === detailsPair)?.details ?? null
 
   return (
     <section className="game">
@@ -41,9 +46,11 @@ export function GameBoard({ cards, pairs, playerName, onRestart, onQuit }: Props
         </span>
       </div>
 
+      {mode === 'descriptions' && <PairDetailsPanel details={details} />}
+
       {state.reviewing && <p className="muted center review-hint">{t.game.reviewHint}</p>}
 
-      <div className={`board board-${pairs} ${state.reviewing ? 'is-reviewing' : ''}`}>
+      <div className={`board board-${pairs} board-${mode} ${state.reviewing ? 'is-reviewing' : ''}`}>
         {state.cards.map(card => {
           const faceUp = state.flipped.includes(card.id) || state.matched.includes(card.pairId)
           const zoomed = state.zoomed.includes(card.id)
@@ -67,6 +74,7 @@ export function GameBoard({ cards, pairs, playerName, onRestart, onQuit }: Props
 
       {finished && saveStatus && !state.reviewing && (
         <ResultDialog
+          mode={mode}
           pairs={pairs}
           moves={state.moves}
           timeMs={elapsedMs}

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import type { GameMode } from '../api'
 import type { Language } from './language'
 
 const en = {
@@ -12,13 +13,24 @@ const en = {
       'Find the pairs: every map symbol from the orienteering map belongs with a photo of the same terrain feature in real life.',
     nameLabel: 'Name',
     optional: '(optional)',
+    mode: 'Game',
     difficulty: 'Difficulty',
     levels: { 6: 'Easy', 8: 'Medium', 12: 'Hard' } as Record<number, string>,
     pairsCount: (pairs: number) => `${pairs} pairs`,
     start: 'Start game',
     loadingCards: 'Dealing cards…',
     startError: 'Could not start the game. Is the API running?',
-    highscoreHeading: (level: string) => `High scores – ${level.toLowerCase()}`,
+    highscoreHeading: (mode: string, level: string) => `High scores – ${mode}, ${level.toLowerCase()}`,
+  },
+
+  modes: {
+    symbols: { title: 'Map symbols', description: 'Map symbol ↔ photo' },
+    descriptions: { title: 'Control descriptions', description: 'Description ↔ terrain drawing' },
+  } as Record<GameMode, { title: string; description: string }>,
+
+  pairDetails: {
+    placeholder: 'Find a pair to see the map excerpt and the text description.',
+    mapAlt: 'Map excerpt with control circle',
   },
 
   anonymous: 'Anonymous',
@@ -35,6 +47,8 @@ const en = {
   card: {
     symbol: 'Map symbol',
     photo: 'Photo',
+    description: 'Control description',
+    terrain: 'Terrain drawing',
     hidden: 'Hidden card',
     clickToShrink: '(click to shrink)',
     clickToEnlarge: '(click to enlarge)',
@@ -69,6 +83,12 @@ const en = {
     ),
     norwegianNames: (translation: ReactNode) => <>Norwegian symbol names: {translation}.</>,
     norwegianTranslation: "the Norwegian Orienteering Federation's translation of ISOM 2017",
+    controlDescriptions: (document: ReactNode, license: ReactNode) => (
+      <>
+        Control descriptions, terrain drawings, map excerpts and text descriptions: examples from {document} by
+        the International Orienteering Federation, licensed under {license}. The excerpts are reproduced unchanged.
+      </>
+    ),
     loading: 'Loading…',
     loadError: 'Could not load the symbol list.',
   },
@@ -87,13 +107,24 @@ const nb: Messages = {
       'Finn parene: hvert karttegn fra orienteringskartet hører sammen med et foto av det samme terrengobjektet i virkeligheten.',
     nameLabel: 'Navn',
     optional: '(valgfritt)',
+    mode: 'Spill',
     difficulty: 'Vanskelighetsgrad',
     levels: { 6: 'Lett', 8: 'Middels', 12: 'Vanskelig' },
     pairsCount: pairs => `${pairs} par`,
     start: 'Start spill',
     loadingCards: 'Henter kort…',
     startError: 'Kunne ikke starte spillet. Kjører API-et?',
-    highscoreHeading: level => `Highscore – ${level.toLowerCase()}`,
+    highscoreHeading: (mode, level) => `Highscore – ${mode.toLowerCase()}, ${level.toLowerCase()}`,
+  },
+
+  modes: {
+    symbols: { title: 'Karttegn', description: 'Karttegn ↔ foto' },
+    descriptions: { title: 'Postbeskrivelser', description: 'Postbeskrivelse ↔ terrengtegning' },
+  },
+
+  pairDetails: {
+    placeholder: 'Finn et par for å se kartutsnittet og tekstbeskrivelsen.',
+    mapAlt: 'Kartutsnitt med postring',
   },
 
   anonymous: 'Anonym',
@@ -110,6 +141,8 @@ const nb: Messages = {
   card: {
     symbol: 'Karttegn',
     photo: 'Foto',
+    description: 'Postbeskrivelse',
+    terrain: 'Terrengtegning',
     hidden: 'Skjult kort',
     clickToShrink: '(klikk for å forminske)',
     clickToEnlarge: '(klikk for å forstørre)',
@@ -144,6 +177,12 @@ const nb: Messages = {
     ),
     norwegianNames: translation => <>Norske navn på karttegnene: {translation}.</>,
     norwegianTranslation: 'Norges Orienteringsforbunds oversettelse av ISOM 2017',
+    controlDescriptions: (document, license) => (
+      <>
+        Postbeskrivelser, terrengtegninger, kartutsnitt og tekstbeskrivelser: eksempler fra {document} fra
+        International Orienteering Federation, lisensiert under {license}. Utsnittene er gjengitt uendret.
+      </>
+    ),
     loading: 'Laster…',
     loadError: 'Kunne ikke hente symbollisten.',
   },

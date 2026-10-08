@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 namespace Mem.Api.Tests;
 
 /// <summary>Runs the API against a temporary data directory and SQLite database.</summary>
-public sealed class MemApiFactory : WebApplicationFactory<Program>
+public class MemApiFactory : WebApplicationFactory<Program>
 {
     public string TempDir { get; } = Path.Combine(Path.GetTempPath(), "mem-api-tests-" + Guid.NewGuid().ToString("N"));
 
@@ -40,6 +40,24 @@ public sealed class MemApiFactory : WebApplicationFactory<Program>
         {
             new { name = "Test group", ids = new[] { "201", "202", "203", "999" } },
         }));
+
+        // 14 control description examples; 1 and 2 are confusable.
+        var examples = Enumerable.Range(1, 14).Select(i => new
+        {
+            id = i,
+            page = 18,
+            text = $"Example {i}",
+            feature = $"feature {i}",
+            mapImage = $"control-descriptions/{i}/map.png",
+            terrainImage = $"control-descriptions/{i}/terrain.png",
+            descriptionImage = $"control-descriptions/{i}/description.png",
+        });
+        Directory.CreateDirectory(Path.Combine(TempDir, "control-descriptions"));
+        File.WriteAllText(Path.Combine(TempDir, "control-descriptions.json"), JsonSerializer.Serialize(examples));
+        File.WriteAllText(Path.Combine(TempDir, "control-descriptions-groups.json"), JsonSerializer.Serialize(new[]
+        {
+            new { name = "feature", ids = new[] { "1", "2" } },
+        }));
     }
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -59,9 +77,10 @@ public class ApiTests(MemApiFactory factory) : IClassFixture<MemApiFactory>
 {
     private readonly HttpClient _client = factory.CreateClient();
 
-    private record CardDto(string Id, string PairId, string Kind, string ImageUrl, string SymbolId, Dictionary<string, string> SymbolNames);
+    private record CardDto(string Id, string PairId, string Kind, string ImageUrl, string SymbolId, Dictionary<string, string> SymbolNames, DetailsDto? Details = null);
+    private record DetailsDto(string MapImageUrl, string Text);
     private record SymbolDto(string Id, string Name, Dictionary<string, string> Names);
-    private record HighScoreDto(int Id, string Name, int Pairs, int Moves, int TimeMs);
+    private record HighScoreDto(int Id, string Name, int Pairs, int Moves, int TimeMs, string Mode);
 
     [Fact]
     public async Task Game_returns_two_cards_per_pair_with_one_symbol_and_one_photo()
@@ -117,6 +136,53 @@ public class ApiTests(MemApiFactory factory) : IClassFixture<MemApiFactory>
     }
 
     [Fact]
+    public async Task Description_game_pairs_description_strips_with_terrain_drawings()
+    {
+        for (var i = 0; i < 20; i++)
+        {
+            var cards = await _client.GetFromJsonAsync<List<CardDto>>("/api/game?pairs=12&mode=descriptions");
+
+            Assert.NotNull(cards);
+            Assert.Equal(24, cards.Count);
+            Assert.All(cards.GroupBy(c => c.PairId), g =>
+                Assert.Equal(["description", "terrain"], g.Select(c => c.Kind).Order()));
+            Assert.All(cards, c =>
+            {
+                Assert.StartsWith("/images/control-descriptions/", c.ImageUrl);
+                Assert.NotNull(c.Details);
+                Assert.Equal($"/images/control-descriptions/{c.PairId}/map.png", c.Details.MapImageUrl);
+                Assert.Equal($"Example {c.PairId}", c.Details.Text);
+                Assert.Equal(c.Details.Text, c.SymbolNames["en"]);
+            });
+            Assert.False(cards.Any(c => c.PairId == "1") && cards.Any(c => c.PairId == "2"));
+        }
+    }
+
+    [Fact]
+    public async Task Game_with_unknown_mode_returns_400()
+    {
+        var response = await _client.GetAsync("/api/game?pairs=6&mode=sprint");
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task Highscores_are_kept_per_mode()
+    {
+        await _client.PostAsJsonAsync("/api/highscores", new { name = "Symboler", pairs = 8, moves = 12, timeMs = 50_000 });
+        await _client.PostAsJsonAsync("/api/highscores", new { name = "Poster", pairs = 8, moves = 14, timeMs = 70_000, mode = "descriptions" });
+
+        var symbols = await _client.GetFromJsonAsync<List<HighScoreDto>>("/api/highscores?pairs=8");
+        var descriptions = await _client.GetFromJsonAsync<List<HighScoreDto>>("/api/highscores?pairs=8&mode=descriptions");
+
+        Assert.NotNull(symbols);
+        Assert.NotNull(descriptions);
+        Assert.Contains(symbols, h => h.Name == "Symboler" && h.Mode == "symbols");
+        Assert.DoesNotContain(symbols, h => h.Name == "Poster");
+        Assert.Equal(["Poster"], descriptions.Select(h => h.Name));
+    }
+
+    [Fact]
     public async Task Game_with_unsupported_pair_count_returns_400()
     {
         var response = await _client.GetAsync("/api/game?pairs=7");
@@ -143,9 +209,10 @@ public class ApiTests(MemApiFactory factory) : IClassFixture<MemApiFactory>
     [InlineData("Ok", 7, 10, 1000)]
     [InlineData("Ok", 6, 3, 1000)]
     [InlineData("Ok", 6, 10, 0)]
-    public async Task Invalid_highscore_is_rejected(string name, int pairs, int moves, int timeMs)
+    [InlineData("Ok", 6, 10, 1000, "sprint")]
+    public async Task Invalid_highscore_is_rejected(string name, int pairs, int moves, int timeMs, string mode = "symbols")
     {
-        var response = await _client.PostAsJsonAsync("/api/highscores", new { name, pairs, moves, timeMs });
+        var response = await _client.PostAsJsonAsync("/api/highscores", new { name, pairs, moves, timeMs, mode });
 
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }

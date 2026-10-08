@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { fetchGame, type Card } from './api'
+import { fetchGame, type Card, type GameMode } from './api'
 import { Credits } from './components/Credits'
 import { GameBoard } from './components/GameBoard'
 import { SetupScreen } from './components/SetupScreen'
@@ -10,7 +10,7 @@ import { messages } from './i18n/messages'
 type Screen =
   | { name: 'setup' }
   | { name: 'loading' }
-  | { name: 'playing'; pairs: number; playerName: string; cards: Card[]; gameId: number }
+  | { name: 'playing'; mode: GameMode; pairs: number; playerName: string; cards: Card[]; gameId: number }
   | { name: 'credits' }
 
 export default function App() {
@@ -18,12 +18,12 @@ export default function App() {
   const [startFailed, setStartFailed] = useState(false)
   const { t, language, setLanguage } = useI18n()
 
-  async function start(pairs: number, playerName: string) {
+  async function start(mode: GameMode, pairs: number, playerName: string) {
     setStartFailed(false)
     setScreen({ name: 'loading' })
     try {
-      const cards = await fetchGame(pairs)
-      setScreen({ name: 'playing', pairs, playerName, cards, gameId: Date.now() })
+      const cards = await fetchGame(pairs, mode)
+      setScreen({ name: 'playing', mode, pairs, playerName, cards, gameId: Date.now() })
     } catch {
       setStartFailed(true)
       setScreen({ name: 'setup' })
@@ -67,9 +67,10 @@ export default function App() {
           <GameBoard
             key={screen.gameId}
             cards={screen.cards}
+            mode={screen.mode}
             pairs={screen.pairs}
             playerName={screen.playerName}
-            onRestart={() => start(screen.pairs, screen.playerName)}
+            onRestart={() => start(screen.mode, screen.pairs, screen.playerName)}
             onQuit={toSetup}
           />
         )}

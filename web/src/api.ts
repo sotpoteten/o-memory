@@ -1,4 +1,13 @@
-export type CardKind = 'symbol' | 'photo'
+export type CardKind = 'symbol' | 'photo' | 'description' | 'terrain'
+
+export type GameMode = 'symbols' | 'descriptions'
+export const GAME_MODES: readonly GameMode[] = ['symbols', 'descriptions']
+
+/** Shown once a pair is found (control description mode). */
+export interface CardDetails {
+  mapImageUrl: string
+  text: string
+}
 
 export interface Card {
   id: string
@@ -9,6 +18,7 @@ export interface Card {
   /** Symbol name per language code; "en" is always present. */
   symbolNames: Record<string, string>
   alt: string | null
+  details?: CardDetails | null
 }
 
 export interface HighScore {
@@ -17,11 +27,13 @@ export interface HighScore {
   pairs: number
   moves: number
   timeMs: number
+  mode: GameMode
   createdAt: string
 }
 
 export interface NewHighScore {
   name: string
+  mode: GameMode
   pairs: number
   moves: number
   timeMs: number
@@ -52,11 +64,12 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
   return response.json() as Promise<T>
 }
 
-export const fetchGame = (pairs: number) => request<Card[]>(`/api/game?pairs=${pairs}`)
+export const fetchGame = (pairs: number, mode: GameMode) => request<Card[]>(`/api/game?pairs=${pairs}&mode=${mode}`)
 
 export const fetchSymbols = () => request<SymbolInfo[]>('/api/symbols')
 
-export const fetchHighScores = (pairs: number) => request<HighScore[]>(`/api/highscores?pairs=${pairs}`)
+export const fetchHighScores = (pairs: number, mode: GameMode) =>
+  request<HighScore[]>(`/api/highscores?pairs=${pairs}&mode=${mode}`)
 
 export const postHighScore = (score: NewHighScore) =>
   request<HighScore>('/api/highscores', {

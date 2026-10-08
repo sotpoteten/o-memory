@@ -39,7 +39,7 @@ export function MemoryCard({ card, faceUp, matched, zoomed, interactive, onClick
   const title = symbolName(card.symbolNames, language)
   const hint = zoomed ? t.card.clickToShrink : interactive ? t.card.clickToEnlarge : ''
   const label = faceUp
-    ? [`${card.kind === 'symbol' ? t.card.symbol : t.card.photo}${matched ? `: ${title}` : ''}`, hint].filter(Boolean).join(' ')
+    ? [`${t.card[card.kind]}${matched ? `: ${title}` : ''}`, hint].filter(Boolean).join(' ')
     : t.card.hidden
 
   return (
@@ -57,7 +57,7 @@ export function MemoryCard({ card, faceUp, matched, zoomed, interactive, onClick
           <span className={`card-front card-front-${card.kind}`}>
             <img
               src={card.imageUrl}
-              alt={card.kind === 'photo' ? (card.alt ?? '') : t.card.symbol}
+              alt={card.kind === 'photo' ? (card.alt ?? '') : t.card[card.kind]}
               draggable={false}
             />
           </span>
@@ -69,28 +69,34 @@ export function MemoryCard({ card, faceUp, matched, zoomed, interactive, onClick
 }
 
 const MAX_ZOOM = 3
-const MAX_ZOOMED_SIZE_PX = 380
+const MAX_ZOOMED_WIDTH_PX = 560
+const MAX_ZOOMED_HEIGHT_PX = 380
 const VIEWPORT_MARGIN_PX = 8
 
 /**
  * Scales the card up around its centre, then shifts it so the enlarged card stays inside the viewport.
  * Measures the slot (never transformed) and the button's layout size (unaffected by transforms).
+ * Works for square cards (map symbols) and wide ones (control descriptions).
  */
 function zoomTransform(slot: HTMLElement, button: HTMLElement) {
   const { left, top } = slot.getBoundingClientRect()
-  const size = button.offsetWidth
+  const width = button.offsetWidth
+  const height = button.offsetHeight
   const vw = document.documentElement.clientWidth
   const vh = document.documentElement.clientHeight
 
-  const target = Math.min(MAX_ZOOMED_SIZE_PX, vw * 0.75, vh * 0.6)
-  const scale = Math.max(1, Math.min(MAX_ZOOM, target / size))
-  const zoomedSize = size * scale
+  const scale = Math.max(1, Math.min(
+    MAX_ZOOM,
+    Math.min(MAX_ZOOMED_WIDTH_PX, vw * 0.75) / width,
+    Math.min(MAX_ZOOMED_HEIGHT_PX, vh * 0.6) / height,
+  ))
 
-  const shift = (start: number, viewport: number) => {
+  const shift = (start: number, size: number, viewport: number) => {
+    const zoomedSize = size * scale
     const zoomedStart = start + size / 2 - zoomedSize / 2
     const max = Math.max(VIEWPORT_MARGIN_PX, viewport - VIEWPORT_MARGIN_PX - zoomedSize)
     return Math.min(Math.max(zoomedStart, VIEWPORT_MARGIN_PX), max) - zoomedStart
   }
 
-  return `translate(${shift(left, vw)}px, ${shift(top, vh)}px) scale(${scale})`
+  return `translate(${shift(left, width, vw)}px, ${shift(top, height, vh)}px) scale(${scale})`
 }
