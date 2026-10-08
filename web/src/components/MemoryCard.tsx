@@ -36,7 +36,7 @@ export function MemoryCard({ card, faceUp, matched, zoomed, interactive, onClick
     }
   }, [zoomed])
 
-  const title = `${card.symbolId} ${symbolName(card.symbolNames, language)}`
+  const title = symbolName(card.symbolNames, language)
   const hint = zoomed ? t.card.clickToShrink : interactive ? t.card.clickToEnlarge : ''
   const label = faceUp
     ? [`${card.kind === 'symbol' ? t.card.symbol : t.card.photo}${matched ? `: ${title}` : ''}`, hint].filter(Boolean).join(' ')
@@ -57,7 +57,7 @@ export function MemoryCard({ card, faceUp, matched, zoomed, interactive, onClick
           <span className={`card-front card-front-${card.kind}`}>
             <img
               src={card.imageUrl}
-              alt={card.kind === 'photo' ? (card.alt ?? '') : t.card.symbolAlt(card.symbolId)}
+              alt={card.kind === 'photo' ? (card.alt ?? '') : t.card.symbol}
               draggable={false}
             />
           </span>

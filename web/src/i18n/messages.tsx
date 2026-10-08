@@ -38,7 +38,6 @@ const en = {
     hidden: 'Hidden card',
     clickToShrink: '(click to shrink)',
     clickToEnlarge: '(click to enlarge)',
-    symbolAlt: (id: string) => `Map symbol ${id}`,
   },
 
   result: {
@@ -114,7 +113,6 @@ const nb: Messages = {
     hidden: 'Skjult kort',
     clickToShrink: '(klikk for å forminske)',
     clickToEnlarge: '(klikk for å forstørre)',
-    symbolAlt: id => `Karttegn ${id}`,
   },
 
   result: {
