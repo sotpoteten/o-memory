@@ -6,6 +6,7 @@ import { useSaveResult } from '../game/useSaveResult'
 import { formatTime, useMemoryGame } from '../game/useMemoryGame'
 import { detailsPairId, isFinished, isLocked } from '../game/memoryGame'
 import { layoutZoomedCards, type CardRect } from '../game/zoomLayout'
+import { fitBoard } from '../game/boardFit'
 import { MemoryCard } from './MemoryCard'
 import { PairDetailsPanel } from './PairDetailsPanel'
 import { ResultDialog } from './ResultDialog'
@@ -34,6 +35,8 @@ export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }:
 
   const boardRef = useRef<HTMLDivElement>(null)
   useZoomLayout(boardRef, state.zoomed)
+  // The review hint above the board moves it down, so refit when it appears.
+  useFitToWindow(boardRef, state.cards.length, state.reviewing)
 
   const detailsPair = detailsPairId(state)
   const details = state.cards.find(c => c.pairId === detailsPair)?.details ?? null
@@ -136,4 +139,51 @@ function useZoomLayout(boardRef: RefObject<HTMLDivElement | null>, zoomedIds: re
       window.removeEventListener('scroll', update)
     }
   }, [boardRef, zoomedKey])
+}
+
+const PHONE_QUERY = '(max-width: 600px)'
+
+/**
+ * On PC screens, picks the number of columns and the board width (the --fit-cols and --fit-width CSS
+ * variables) that give the largest cards while the whole page — header, board and footer — fits in the
+ * window without scrolling. Phones keep the CSS layout and scroll; fitted cards would be too small there.
+ */
+function useFitToWindow(boardRef: RefObject<HTMLDivElement | null>, cardCount: number, reviewing: boolean) {
+  useLayoutEffect(() => {
+    const board = boardRef.current
+    if (!board) return
+
+    const update = () => {
+      if (window.matchMedia(PHONE_QUERY).matches) {
+        board.style.removeProperty('--fit-cols')
+        board.style.removeProperty('--fit-width')
+        return
+      }
+      const card = board.querySelector<HTMLElement>('.card')
+      const caption = board.querySelector<HTMLElement>('.card-caption')
+      if (!card || !caption || !board.parentElement) return
+      const style = getComputedStyle(board)
+      const layout = fitBoard({
+        availableWidth: board.parentElement.clientWidth,
+        availableHeight: window.innerHeight - (board.getBoundingClientRect().top + window.scrollY) - footerHeight(),
+        cards: cardCount,
+        rowGap: parseFloat(style.rowGap) || 0,
+        columnGap: parseFloat(style.columnGap) || 0,
+        captionHeight: caption.offsetHeight + (parseFloat(getComputedStyle(caption).marginTop) || 0),
+        aspectRatio: card.offsetHeight > 0 ? card.offsetWidth / card.offsetHeight : 1,
+        maxCardWidth: parseFloat(style.getPropertyValue('--card-width')) || 170,
+      })
+      board.style.setProperty('--fit-cols', String(layout.columns))
+      board.style.setProperty('--fit-width', `${layout.width}px`)
+    }
+
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [boardRef, cardCount, reviewing])
+}
+
+/** Height of the page footer below the board (its top padding doubles as the space under the board). */
+function footerHeight() {
+  return document.querySelector<HTMLElement>('.app-footer')?.offsetHeight ?? 0
 }
