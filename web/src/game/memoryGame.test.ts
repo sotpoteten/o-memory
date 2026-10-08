@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Card } from '../api'
-import { createGame, gameReducer, isFinished, shuffle, type GameState } from './memoryGame'
+import { createGame, gameReducer, isFinished, isLocked, shuffle, type GameState } from './memoryGame'
 
 const card = (pairId: string, kind: 'symbol' | 'photo'): Card => ({
   id: `${pairId}-${kind[0]}`,
@@ -93,6 +93,23 @@ describe('gameReducer', () => {
     expect(state.zoomed).toEqual(['b-s'])
   })
 
+  it('locks the board from a mismatch until the cards are fully turned back', () => {
+    let state = flip(flip(newGame(), 'a-s'), 'b-p')
+    expect(isLocked(state)).toBe(true)
+    // Neither clicking the second card again nor another card does anything.
+    expect(gameReducer(state, { type: 'unzoom', cardId: 'b-p' })).toBe(state)
+    expect(flip(state, 'b-p')).toBe(state)
+    expect(flip(state, 'b-s')).toBe(state)
+
+    state = gameReducer(state, { type: 'hideMismatch' })
+    expect(isLocked(state)).toBe(true)
+    expect(flip(state, 'b-p')).toBe(state)
+
+    state = gameReducer(state, { type: 'closed' })
+    expect(isLocked(state)).toBe(false)
+    expect(flip(state, 'b-p').flipped).toEqual(['b-p'])
+  })
+
   it('lets the player review the finished board and toggle zoom on any card', () => {
     let state = flip(flip(newGame(), 'a-s'), 'a-p')
     expect(gameReducer(state, { type: 'review' })).toBe(state) // not finished yet
@@ -116,6 +133,7 @@ describe('gameReducer', () => {
     state = flip(state, 'a-s', 1000)
     state = flip(state, 'b-p', 2000)
     state = gameReducer(state, { type: 'hideMismatch' })
+    state = gameReducer(state, { type: 'closed' })
     state = flip(state, 'a-s', 3000)
     state = flip(state, 'a-p', 4000)
     expect(isFinished(state)).toBe(false)

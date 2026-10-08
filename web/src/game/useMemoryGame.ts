@@ -4,6 +4,8 @@ import { createGame, gameReducer, isShowingMismatch } from './memoryGame'
 
 const MISMATCH_DELAY_MS = 1000
 const MATCH_ZOOM_MS = 1200
+/** Slightly longer than the card flip transition in index.css (0.4s). */
+const TURN_BACK_MS = 450
 
 export function useMemoryGame(cards: Card[]) {
   const [state, dispatch] = useReducer(gameReducer, cards, c => createGame(c))
@@ -14,6 +16,12 @@ export function useMemoryGame(cards: Card[]) {
     const timer = setTimeout(() => dispatch({ type: 'hideMismatch' }), MISMATCH_DELAY_MS)
     return () => clearTimeout(timer)
   }, [state])
+
+  useEffect(() => {
+    if (!state.closing) return
+    const timer = setTimeout(() => dispatch({ type: 'closed' }), TURN_BACK_MS)
+    return () => clearTimeout(timer)
+  }, [state.closing])
 
   // A found pair stays enlarged for a moment before shrinking back.
   const showingMatch = !state.reviewing && state.flipped.length === 0 && state.zoomed.length > 0

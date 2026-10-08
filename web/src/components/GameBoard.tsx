@@ -3,7 +3,7 @@ import type { Card } from '../api'
 import { displayName } from '../playerName'
 import { useSaveResult } from '../game/useSaveResult'
 import { formatTime, useMemoryGame } from '../game/useMemoryGame'
-import { isFinished } from '../game/memoryGame'
+import { isFinished, isLocked } from '../game/memoryGame'
 import { MemoryCard } from './MemoryCard'
 import { ResultDialog } from './ResultDialog'
 
@@ -52,7 +52,7 @@ export function GameBoard({ cards, pairs, playerName, onRestart, onQuit }: Props
               faceUp={faceUp}
               matched={state.matched.includes(card.pairId)}
               zoomed={zoomed}
-              interactive={state.reviewing || zoomed || !faceUp}
+              interactive={state.reviewing || (!isLocked(state) && (zoomed || !faceUp))}
               onClick={() => {
                 if (state.reviewing) toggleZoom(card.id)
                 else if (zoomed) unzoom(card.id)
