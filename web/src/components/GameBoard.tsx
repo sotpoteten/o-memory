@@ -1,10 +1,11 @@
-import { useMemo } from 'react'
+import { useLayoutEffect, useMemo, useRef, type RefObject } from 'react'
 import type { Card, GameMode } from '../api'
 import { useI18n } from '../i18n/context'
 import { displayName } from '../playerName'
 import { useSaveResult } from '../game/useSaveResult'
 import { formatTime, useMemoryGame } from '../game/useMemoryGame'
 import { detailsPairId, isFinished, isLocked } from '../game/memoryGame'
+import { layoutZoomedCards, type CardRect } from '../game/zoomLayout'
 import { MemoryCard } from './MemoryCard'
 import { PairDetailsPanel } from './PairDetailsPanel'
 import { ResultDialog } from './ResultDialog'
@@ -31,6 +32,9 @@ export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }:
   )
   const { status: saveStatus, retry: retrySave } = useSaveResult(score)
 
+  const boardRef = useRef<HTMLDivElement>(null)
+  useZoomLayout(boardRef, state.zoomed)
+
   const detailsPair = detailsPairId(state)
   const details = state.cards.find(c => c.pairId === detailsPair)?.details ?? null
 
@@ -50,7 +54,7 @@ export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }:
 
       {state.reviewing && <p className="muted center review-hint">{t.game.reviewHint}</p>}
 
-      <div className={`board board-${pairs} board-${mode} ${state.reviewing ? 'is-reviewing' : ''}`}>
+      <div ref={boardRef} className={`board board-${pairs} board-${mode} ${state.reviewing ? 'is-reviewing' : ''}`}>
         {state.cards.map(card => {
           const faceUp = state.flipped.includes(card.id) || state.matched.includes(card.pairId)
           const zoomed = state.zoomed.includes(card.id)
@@ -61,6 +65,7 @@ export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }:
               faceUp={faceUp}
               matched={state.matched.includes(card.pairId)}
               zoomed={zoomed}
+              zoomOrder={state.zoomed.indexOf(card.id)}
               interactive={state.reviewing || (!isLocked(state) && (zoomed || !faceUp))}
               onClick={() => {
                 if (state.reviewing) toggleZoom(card.id)
@@ -87,4 +92,48 @@ export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }:
       )}
     </section>
   )
+}
+
+/**
+ * Positions the enlarged cards. They are laid out together (see layoutZoomedCards) so two enlarged
+ * neighbours sit edge to edge instead of overlapping; every other card gets its transform cleared.
+ * Writes the transforms straight to the DOM, re-measuring on resize and scroll.
+ */
+function useZoomLayout(boardRef: RefObject<HTMLDivElement | null>, zoomedIds: readonly string[]) {
+  const zoomedKey = zoomedIds.join('|')
+
+  useLayoutEffect(() => {
+    const board = boardRef.current
+    if (!board) return
+    const ids = zoomedKey ? zoomedKey.split('|') : []
+    const slotOf = (id: string) => board.querySelector<HTMLElement>(`[data-card-id="${CSS.escape(id)}"]`)
+
+    const update = () => {
+      const rects = ids.flatMap((id): CardRect[] => {
+        const slot = slotOf(id)
+        const button = slot?.querySelector('button')
+        if (!slot || !button) return []
+        // The slot is never transformed, and offsetWidth/Height ignore transforms.
+        const { left, top } = slot.getBoundingClientRect()
+        return [{ id, left, top, width: button.offsetWidth, height: button.offsetHeight }]
+      })
+      const viewport = { width: document.documentElement.clientWidth, height: document.documentElement.clientHeight }
+      const layout = layoutZoomedCards(rects, viewport)
+
+      for (const slot of board.querySelectorAll<HTMLElement>('[data-card-id]')) {
+        const button = slot.querySelector('button')
+        const t = layout.get(slot.dataset.cardId!)
+        if (button) button.style.transform = t ? `translate(${t.dx}px, ${t.dy}px) scale(${t.scale})` : ''
+      }
+    }
+
+    update()
+    if (ids.length === 0) return
+    window.addEventListener('resize', update)
+    window.addEventListener('scroll', update, { passive: true })
+    return () => {
+      window.removeEventListener('resize', update)
+      window.removeEventListener('scroll', update)
+    }
+  }, [boardRef, zoomedKey])
 }

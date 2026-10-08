@@ -275,7 +275,8 @@ main { flex: 1; }
 .review-hint { margin: 0 0 0.75rem; }
 .card.is-zoomed,
 .board.is-reviewing .card.is-zoomed {
-  z-index: 10;
+  /* The most recently enlarged card is on top (--zoom-order is set per card). */
+  z-index: calc(10 + var(--zoom-order, 0));
   cursor: zoom-out;
   transition: transform 0.3s ease;
 }
