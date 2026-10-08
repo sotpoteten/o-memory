@@ -3,6 +3,9 @@ import { fetchGame, type Card } from './api'
 import { Credits } from './components/Credits'
 import { GameBoard } from './components/GameBoard'
 import { SetupScreen } from './components/SetupScreen'
+import { useI18n } from './i18n/context'
+import { LANGUAGES } from './i18n/language'
+import { messages } from './i18n/messages'
 
 type Screen =
   | { name: 'setup' }
@@ -12,16 +15,17 @@ type Screen =
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>({ name: 'setup' })
-  const [error, setError] = useState<string>()
+  const [startFailed, setStartFailed] = useState(false)
+  const { t, language, setLanguage } = useI18n()
 
   async function start(pairs: number, playerName: string) {
-    setError(undefined)
+    setStartFailed(false)
     setScreen({ name: 'loading' })
     try {
       const cards = await fetchGame(pairs)
       setScreen({ name: 'playing', pairs, playerName, cards, gameId: Date.now() })
     } catch {
-      setError('Kunne ikke starte spillet. Kjører API-et?')
+      setStartFailed(true)
       setScreen({ name: 'setup' })
     }
   }
@@ -35,16 +39,30 @@ export default function App() {
           <span className="brand-flag" aria-hidden="true" />
           O-memory
         </button>
-        <nav>
+        <nav className="row">
           <button type="button" className="link" onClick={() => setScreen({ name: 'credits' })}>
-            Kilder
+            {t.nav.credits}
           </button>
+          <div className="language-picker" role="group" aria-label={t.languagePicker}>
+            {LANGUAGES.map(lang => (
+              <button
+                key={lang}
+                type="button"
+                lang={lang}
+                aria-pressed={language === lang}
+                title={messages[lang].languageName}
+                onClick={() => setLanguage(lang)}
+              >
+                {lang === 'nb' ? 'NO' : 'EN'}
+              </button>
+            ))}
+          </div>
         </nav>
       </header>
 
       <main>
-        {screen.name === 'setup' && <SetupScreen onStart={start} error={error} />}
-        {screen.name === 'loading' && <p className="muted center">Henter kort…</p>}
+        {screen.name === 'setup' && <SetupScreen onStart={start} error={startFailed ? t.setup.startError : undefined} />}
+        {screen.name === 'loading' && <p className="muted center">{t.setup.loadingCards}</p>}
         {screen.name === 'playing' && (
           <GameBoard
             key={screen.gameId}
@@ -59,7 +77,7 @@ export default function App() {
       </main>
 
       <footer className="app-footer">
-        Innhold fra <a href="https://omapwiki.orienteering.sport/">IOF O-Map Wiki</a>, CC BY-SA 4.0
+        {t.footer(<a href="https://omapwiki.orienteering.sport/">IOF O-Map Wiki</a>)}
       </footer>
     </div>
   )

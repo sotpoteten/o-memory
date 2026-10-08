@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react'
 import { fetchSymbols, type SymbolInfo } from '../api'
+import { useI18n } from '../i18n/context'
+import { symbolName } from '../i18n/language'
 
 const WIKI_URL = 'https://omapwiki.orienteering.sport/'
 const LICENSE_URL = 'https://creativecommons.org/licenses/by-sa/4.0/'
+const NOF_TRANSLATION_URL = 'https://www.orientering.no/storage/Downloadfile?id=2320e527-19b7-4747-8648-2cd334928acd'
 
 export function Credits() {
+  const { t, language } = useI18n()
   const [symbols, setSymbols] = useState<SymbolInfo[] | null>(null)
   const [error, setError] = useState(false)
 
@@ -14,23 +18,24 @@ export function Credits() {
 
   return (
     <section className="credits">
-      <h2>Kilder og kreditering</h2>
+      <h2>{t.credits.heading}</h2>
       <p>
-        Karttegn, definisjoner og foto er hentet fra <a href={WIKI_URL}>IOF O-Map Wiki</a> (International
-        Orienteering Federation), og er lisensiert under{' '}
-        <a href={LICENSE_URL}>Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)</a>. Bildene er
-        nedskalert. Hvert foto lenker til sin originalside med fotograf og lisens.
+        {t.credits.intro(
+          <a href={WIKI_URL}>IOF O-Map Wiki</a>,
+          <a href={LICENSE_URL}>Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)</a>,
+        )}
       </p>
+      <p>{t.credits.norwegianNames(<a href={NOF_TRANSLATION_URL}>{t.credits.norwegianTranslation}</a>)}</p>
 
-      {error && <p className="error">Kunne ikke hente symbollisten.</p>}
-      {symbols === null && !error && <p className="muted">Laster…</p>}
+      {error && <p className="error">{t.credits.loadError}</p>}
+      {symbols === null && !error && <p className="muted">{t.credits.loading}</p>}
 
       <ul className="credit-list">
         {symbols?.map(s => (
           <li key={s.id}>
             <div className="credit-symbol">
               <img src={s.symbolImageUrl} alt="" />
-              <a href={s.pageUrl}>{s.id} {s.name}</a>
+              <a href={s.pageUrl}>{s.id} {symbolName(s.names, language)}</a>
             </div>
             <ul>
               {s.photos.map(p => (

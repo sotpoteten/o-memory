@@ -29,6 +29,11 @@ public sealed class MemApiFactory : WebApplicationFactory<Program>
             },
         });
         File.WriteAllText(Path.Combine(TempDir, "symbols.json"), JsonSerializer.Serialize(symbols));
+
+        // Norwegian names for 201–213 only; 214 and 215 stay untranslated to exercise the English fallback.
+        Directory.CreateDirectory(Path.Combine(TempDir, "i18n"));
+        var norwegian = Enumerable.Range(1, 13).ToDictionary(i => (200 + i).ToString(), i => $"Symbol nb {i}");
+        File.WriteAllText(Path.Combine(TempDir, "i18n", "symbols.nb.json"), JsonSerializer.Serialize(norwegian));
     }
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -48,7 +53,8 @@ public class ApiTests(MemApiFactory factory) : IClassFixture<MemApiFactory>
 {
     private readonly HttpClient _client = factory.CreateClient();
 
-    private record CardDto(string Id, string PairId, string Kind, string ImageUrl, string SymbolId, string SymbolName);
+    private record CardDto(string Id, string PairId, string Kind, string ImageUrl, string SymbolId, Dictionary<string, string> SymbolNames);
+    private record SymbolDto(string Id, string Name, Dictionary<string, string> Names);
     private record HighScoreDto(int Id, string Name, int Pairs, int Moves, int TimeMs);
 
     [Fact]
@@ -62,6 +68,33 @@ public class ApiTests(MemApiFactory factory) : IClassFixture<MemApiFactory>
         Assert.All(cards.GroupBy(c => c.PairId), g =>
             Assert.Equal(["photo", "symbol"], g.Select(c => c.Kind).Order()));
         Assert.All(cards, c => Assert.StartsWith("/images/", c.ImageUrl));
+    }
+
+    [Fact]
+    public async Task Game_cards_carry_symbol_names_per_language()
+    {
+        var cards = await _client.GetFromJsonAsync<List<CardDto>>("/api/game?pairs=12");
+
+        Assert.NotNull(cards);
+        Assert.All(cards, c =>
+        {
+            var n = int.Parse(c.SymbolId) - 200;
+            Assert.Equal($"Symbol {n}", c.SymbolNames["en"]);
+            if (n <= 13) Assert.Equal($"Symbol nb {n}", c.SymbolNames["nb"]);
+            else Assert.False(c.SymbolNames.ContainsKey("nb"));
+        });
+    }
+
+    [Fact]
+    public async Task Symbols_without_translation_only_have_english_name()
+    {
+        var symbols = await _client.GetFromJsonAsync<List<SymbolDto>>("/api/symbols");
+
+        Assert.NotNull(symbols);
+        Assert.Equal("Symbol nb 1", symbols.Single(s => s.Id == "201").Names["nb"]);
+        var untranslated = symbols.Single(s => s.Id == "214");
+        Assert.Equal(["en"], untranslated.Names.Keys);
+        Assert.Equal("Symbol 14", untranslated.Names["en"]);
     }
 
     [Fact]

@@ -1,10 +1,9 @@
 const NAME_KEY = 'mem.playerName'
 
-export const ANONYMOUS = 'Anonym'
 export const MAX_NAME_LENGTH = 20
 
-/** The name to store on the highscore list; empty input plays as anonymous. */
-export const displayName = (name: string) => name.trim() || ANONYMOUS
+/** The name to store on the highscore list; empty input plays as anonymous (label in the current language). */
+export const displayName = (name: string, anonymous: string) => name.trim() || anonymous
 
 export function readStoredName() {
   try {

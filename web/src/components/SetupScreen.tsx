@@ -1,12 +1,9 @@
 import { useState } from 'react'
-import { ANONYMOUS, MAX_NAME_LENGTH, readStoredName, storeName } from '../playerName'
+import { useI18n } from '../i18n/context'
+import { MAX_NAME_LENGTH, readStoredName, storeName } from '../playerName'
 import { HighScoreList } from './HighScoreList'
 
-const DIFFICULTIES = [
-  { pairs: 6, label: 'Lett' },
-  { pairs: 8, label: 'Middels' },
-  { pairs: 12, label: 'Vanskelig' },
-] as const
+const PAIR_OPTIONS = [6, 8, 12] as const
 
 interface Props {
   onStart: (pairs: number, playerName: string) => void
@@ -14,6 +11,7 @@ interface Props {
 }
 
 export function SetupScreen({ onStart, error }: Props) {
+  const { t } = useI18n()
   const [pairs, setPairs] = useState<number>(8)
   const [name, setName] = useState(readStoredName)
 
@@ -24,44 +22,41 @@ export function SetupScreen({ onStart, error }: Props) {
 
   return (
     <section className="setup">
-      <p className="intro">
-        Finn parene: hvert karttegn fra orienteringskartet hører sammen med et foto av det samme
-        terrengobjektet i virkeligheten.
-      </p>
+      <p className="intro">{t.setup.intro}</p>
 
       <div className="player-name">
-        <label htmlFor="player-name">Navn <span className="muted">(valgfritt)</span></label>
+        <label htmlFor="player-name">{t.setup.nameLabel} <span className="muted">{t.setup.optional}</span></label>
         <input
           id="player-name"
           value={name}
           onChange={e => setName(e.target.value)}
           maxLength={MAX_NAME_LENGTH}
-          placeholder={ANONYMOUS}
+          placeholder={t.anonymous}
           autoComplete="nickname"
         />
       </div>
 
       <fieldset className="difficulty">
-        <legend>Vanskelighetsgrad</legend>
-        {DIFFICULTIES.map(d => (
-          <label key={d.pairs} className={pairs === d.pairs ? 'is-selected' : ''}>
+        <legend>{t.setup.difficulty}</legend>
+        {PAIR_OPTIONS.map(p => (
+          <label key={p} className={pairs === p ? 'is-selected' : ''}>
             <input
               type="radio"
               name="difficulty"
-              value={d.pairs}
-              checked={pairs === d.pairs}
-              onChange={() => setPairs(d.pairs)}
+              value={p}
+              checked={pairs === p}
+              onChange={() => setPairs(p)}
             />
-            <span className="difficulty-label">{d.label}</span>
-            <span className="muted">{d.pairs} par</span>
+            <span className="difficulty-label">{t.setup.levels[p]}</span>
+            <span className="muted">{t.setup.pairsCount(p)}</span>
           </label>
         ))}
       </fieldset>
 
-      <button type="button" className="start" onClick={start}>Start spill</button>
+      <button type="button" className="start" onClick={start}>{t.setup.start}</button>
       {error && <p className="error">{error}</p>}
 
-      <h2>Highscore – {DIFFICULTIES.find(d => d.pairs === pairs)?.label.toLowerCase()}</h2>
+      <h2>{t.setup.highscoreHeading(t.setup.levels[pairs])}</h2>
       <HighScoreList key={pairs} pairs={pairs} />
     </section>
   )

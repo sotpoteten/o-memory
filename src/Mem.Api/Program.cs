@@ -36,6 +36,7 @@ api.MapGet("/symbols", (SymbolRepository repo) => repo.All.Select(s => new
 {
     s.Id,
     s.Name,
+    s.Names,
     s.Category,
     s.Definition,
     s.PageUrl,

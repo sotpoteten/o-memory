@@ -129,6 +129,24 @@ main { flex: 1; }
   background: linear-gradient(135deg, #fff 50%, var(--accent) 50%);
 }
 
+.language-picker {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.language-picker button {
+  background: transparent;
+  color: var(--muted);
+  border-radius: 0;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+}
+.language-picker button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
 .app-footer {
   padding: 2rem 0 1.5rem;
   color: var(--muted);

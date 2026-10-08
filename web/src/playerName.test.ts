@@ -3,11 +3,11 @@ import { displayName } from './playerName'
 
 describe('displayName', () => {
   it('uses the trimmed name', () => {
-    expect(displayName('  Kari ')).toBe('Kari')
+    expect(displayName('  Kari ', 'Anonym')).toBe('Kari')
   })
 
-  it('falls back to Anonym for an empty name', () => {
-    expect(displayName('')).toBe('Anonym')
-    expect(displayName('   ')).toBe('Anonym')
+  it('falls back to the anonymous label for an empty name', () => {
+    expect(displayName('', 'Anonym')).toBe('Anonym')
+    expect(displayName('   ', 'Anonymous')).toBe('Anonymous')
   })
 })

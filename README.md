@@ -43,6 +43,15 @@ cd web && npm test   # spillogikk (Vitest)
 `cd web && npm run build`, kopier `web/dist` til `src/Mem.Api/wwwroot`, og publiser API-et.
 API-et serverer da også frontend. Sett `DataDirectory` og `ConnectionStrings:Mem` for miljøet.
 
+## Språk
+
+Spillet finnes på norsk og engelsk (velger øverst til høyre). Første gang følges nettleserens språk.
+
+- UI-tekster: `web/src/i18n/messages.tsx`
+- Norske karttegnnavn: `data/i18n/symbols.nb.json` (`{ "204": "Stein", … }`), fra Norges Orienteringsforbunds
+  oversettelse av ISOM 2017. 203.2, 513.2 og 532 finnes ikke der (nye i ISOM 2017-2) og er oversatt manuelt.
+  Flere språk legges til som `symbols.<språk>.json`; mangler et navn, brukes engelsk.
+
 ## Lisens for innhold
 
 Karttegn, definisjoner og foto: © IOF og bidragsytere til O-Map Wiki, CC BY-SA 4.0.

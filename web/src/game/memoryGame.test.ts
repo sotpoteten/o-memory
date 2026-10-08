@@ -8,7 +8,7 @@ const card = (pairId: string, kind: 'symbol' | 'photo'): Card => ({
   kind,
   imageUrl: '',
   symbolId: pairId,
-  symbolName: pairId,
+  symbolNames: { en: pairId },
   alt: null,
 })
 

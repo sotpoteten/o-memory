@@ -6,7 +6,8 @@ export interface Card {
   kind: CardKind
   imageUrl: string
   symbolId: string
-  symbolName: string
+  /** Symbol name per language code; "en" is always present. */
+  symbolNames: Record<string, string>
   alt: string | null
 }
 
@@ -37,6 +38,7 @@ export interface Photo {
 export interface SymbolInfo {
   id: string
   name: string
+  names: Record<string, string>
   category: number
   definition: string | null
   pageUrl: string

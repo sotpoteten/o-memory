@@ -1,5 +1,7 @@
 import { useLayoutEffect, useRef } from 'react'
 import type { Card } from '../api'
+import { useI18n } from '../i18n/context'
+import { symbolName } from '../i18n/language'
 
 interface Props {
   card: Card
@@ -12,6 +14,7 @@ interface Props {
 }
 
 export function MemoryCard({ card, faceUp, matched, zoomed, interactive, onClick }: Props) {
+  const { t, language } = useI18n()
   const slotRef = useRef<HTMLDivElement>(null)
   const cardRef = useRef<HTMLButtonElement>(null)
 
@@ -33,9 +36,11 @@ export function MemoryCard({ card, faceUp, matched, zoomed, interactive, onClick
     }
   }, [zoomed])
 
+  const title = `${card.symbolId} ${symbolName(card.symbolNames, language)}`
+  const hint = zoomed ? t.card.clickToShrink : interactive ? t.card.clickToEnlarge : ''
   const label = faceUp
-    ? `${card.kind === 'symbol' ? 'Karttegn' : 'Foto'}${matched ? `: ${card.symbolId} ${card.symbolName}` : ''}${zoomed ? ' (klikk for å forminske)' : faceUp && interactive ? ' (klikk for å forstørre)' : ''}`
-    : 'Skjult kort'
+    ? [`${card.kind === 'symbol' ? t.card.symbol : t.card.photo}${matched ? `: ${title}` : ''}`, hint].filter(Boolean).join(' ')
+    : t.card.hidden
 
   return (
     <div className="card-slot" ref={slotRef}>
@@ -50,11 +55,15 @@ export function MemoryCard({ card, faceUp, matched, zoomed, interactive, onClick
         <span className="card-inner">
           <span className="card-back" aria-hidden="true" />
           <span className={`card-front card-front-${card.kind}`}>
-            <img src={card.imageUrl} alt={card.kind === 'photo' ? (card.alt ?? '') : ''} draggable={false} />
+            <img
+              src={card.imageUrl}
+              alt={card.kind === 'photo' ? (card.alt ?? '') : t.card.symbolAlt(card.symbolId)}
+              draggable={false}
+            />
           </span>
         </span>
       </button>
-      <span className="card-caption">{matched ? `${card.symbolId} ${card.symbolName}` : ' '}</span>
+      <span className="card-caption">{matched ? title : ' '}</span>
     </div>
   )
 }

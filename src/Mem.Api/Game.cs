@@ -9,7 +9,7 @@ public record Card(
     CardKind Kind,
     string ImageUrl,
     string SymbolId,
-    string SymbolName,
+    IReadOnlyDictionary<string, string> SymbolNames,
     string? Alt);
 
 public static class Game
@@ -32,8 +32,9 @@ public static class Game
         foreach (var symbol in shuffled.Take(pairs))
         {
             var photo = symbol.Photos[random.Next(symbol.Photos.Count)];
-            cards.Add(new Card($"{symbol.Id}-s", symbol.Id, CardKind.Symbol, ImageUrl(symbol.SymbolImage), symbol.Id, symbol.Name, $"Karttegn {symbol.Id}"));
-            cards.Add(new Card($"{symbol.Id}-p", symbol.Id, CardKind.Photo, ImageUrl(photo.File), symbol.Id, symbol.Name, photo.Alt));
+            // Symbol cards get their alt text from the client, in the chosen language.
+            cards.Add(new Card($"{symbol.Id}-s", symbol.Id, CardKind.Symbol, ImageUrl(symbol.SymbolImage), symbol.Id, symbol.Names, null));
+            cards.Add(new Card($"{symbol.Id}-p", symbol.Id, CardKind.Photo, ImageUrl(photo.File), symbol.Id, symbol.Names, photo.Alt));
         }
         return cards;
     }
