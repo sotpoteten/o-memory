@@ -16,6 +16,16 @@ public class WikiParserTests
         Assert.Contains("https://omapwiki.orienteering.sport/symbols/204-boulder/", links);
     }
 
+    [Theory]
+    [InlineData("https://omapwiki.orienteering.sport/symbols/204-boulder/", 2)]
+    [InlineData("https://omapwiki.orienteering.sport/symbols/105-2-retaining-earth-wall/", 1)]
+    [InlineData("https://omapwiki.orienteering.sport/symbols/701-start/", 7)]
+    [InlineData("https://omapwiki.orienteering.sport/glossary/", null)]
+    public void CategoryFromSymbolUrl_reads_first_digit_of_symbol_number(string url, int? expected)
+    {
+        Assert.Equal(expected, WikiParser.CategoryFromSymbolUrl(url));
+    }
+
     [Fact]
     public void ParseSymbolPage_reads_id_name_and_symbol_image()
     {

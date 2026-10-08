@@ -9,6 +9,10 @@ using OmapScraper;
 
 const string IsomIndexUrl = "https://omapwiki.orienteering.sport/specifications/isom/";
 
+// Only terrain features (1xx–5xx). Technical symbols (6xx) and course planning symbols (7xx)
+// have no real-world counterpart to photograph, so they are left out of the game.
+int[] includedCategories = [1, 2, 3, 4, 5];
+
 var maxPhotos = GetIntArg("--max-photos") ?? 4;
 var limit = GetIntArg("--limit");
 
@@ -19,7 +23,9 @@ var cacheDir = Path.Combine(repoRoot, "tools", "OmapScraper", ".cache");
 
 var fetcher = new PoliteFetcher(cacheDir, TimeSpan.FromSeconds(1));
 
-var symbolLinks = WikiParser.ParseSymbolLinks(await fetcher.GetHtmlAsync(IsomIndexUrl));
+var symbolLinks = WikiParser.ParseSymbolLinks(await fetcher.GetHtmlAsync(IsomIndexUrl))
+    .Where(url => WikiParser.CategoryFromSymbolUrl(url) is { } category && includedCategories.Contains(category))
+    .ToList();
 if (limit is not null) symbolLinks = symbolLinks.Take(limit.Value).ToList();
 Console.WriteLine($"Found {symbolLinks.Count} symbol pages");
 

@@ -23,6 +23,16 @@ public static partial class WikiParser
             .ToList();
     }
 
+    /// <summary>ISOM category (first digit of the symbol number) from a URL like <c>/symbols/204-boulder/</c>.</summary>
+    public static int? CategoryFromSymbolUrl(string url)
+    {
+        var match = SymbolUrlRegex().Match(url);
+        return match.Success ? match.Groups[1].Value[0] - '0' : null;
+    }
+
+    [GeneratedRegex(@"/symbols/(\d)\d\d")]
+    private static partial Regex SymbolUrlRegex();
+
     public static SymbolPage ParseSymbolPage(string html)
     {
         var doc = Parser.ParseDocument(html);
