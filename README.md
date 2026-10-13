@@ -1,76 +1,106 @@
 # O-memory
 
-Memory-spill der hvert par er et ISOM-karttegn og et foto av det samme terrengobjektet.
-Data og bilder hentes fra [IOF O-Map Wiki](https://omapwiki.orienteering.sport/specifications/isom/) (CC BY-SA 4.0).
+[![CI](https://github.com/sotpoteten/o-memory/actions/workflows/ci.yml/badge.svg)](https://github.com/sotpoteten/o-memory/actions/workflows/ci.yml)
+
+Et memory-spill for orienteringsløpere. Hvert par består av to bilder av det samme, og det finnes to spillmoduser:
+
+- **Karttegn:** et ISOM-karttegn og et foto av terrengobjektet i virkeligheten.
+- **Postbeskrivelser:** en IOF-postbeskrivelse og en tegning av posten i terrenget. Når paret er funnet, vises
+  kartutsnittet og tekstbeskrivelsen.
+
+![Karttegn-modus med fire funne par og ett forstørret kort](docs/karttegn.jpg)
+
+![Postbeskrivelsesmodus med kartutsnitt og tekst for sist funne par](docs/postbeskrivelser.jpg)
+
+## Funksjoner
+
+- Tre vanskelighetsgrader: 6, 8 eller 12 par.
+- Trekk og tid telles, og resultatet lagres automatisk i en highscore-liste per modus og vanskelighetsgrad.
+- Åpne kort forstørres og legges kant i kant, så detaljene er lette å se.
+- Ferdig brett kan gås gjennom etterpå, med zoom på hvert kort.
+- Norsk og engelsk språkversjon. Første gang følges nettleserens språk.
+- Lett forvekslbare karttegn (for eksempel de ulike steintegnene) kommer aldri i samme spill.
+- Brettet tilpasses vinduet, så hele spillet er synlig uten scrolling på PC.
+
+![Startsiden med valg av spillmodus og vanskelighetsgrad](docs/startside.jpg)
+
+## Teknologi
 
 | Del | Teknologi | Mappe |
 | --- | --- | --- |
-| Scraper | .NET 10 konsollapp + AngleSharp (nedlasting via curl) | `tools/OmapScraper` |
-| API | ASP.NET Core Minimal API + EF Core SQLite | `src/Mem.Api` |
-| Frontend | React + Vite + TypeScript | `web` |
+| Frontend | React 19 + Vite + TypeScript | `web` |
+| API | ASP.NET Core Minimal API + EF Core SQLite (.NET 10) | `src/Mem.Api` |
+| Scraper | .NET-konsollapp + AngleSharp (nedlasting via curl) | `tools/OmapScraper` |
+| PDF-uttrekk | .NET-konsollapp + PdfPig og PDFtoImage | `tools/ControlDescriptionExtractor` |
+
+Spillogikken er en ren reducer (`web/src/game/memoryGame.ts`), og plasseringen av kortene regnes ut av rene
+funksjoner (`zoomLayout.ts`, `boardFit.ts`). Alt dette er dekket av enhetstester.
 
 ## Kom i gang
 
-Krever .NET 10 SDK og Node 20.19+.
+Krever .NET 10 SDK og Node 20.19 eller nyere. Bilder og data ligger allerede i `data/`.
 
 ```sh
-# 1. Hent data fra wikien (én gang; HTML caches i tools/OmapScraper/.cache)
-dotnet run --project tools/OmapScraper            # valgfritt: -- --max-photos 4 --limit 10
+# 1. Start API-et (http://localhost:5126)
+dotnet run --project src/Mem.Api --launch-profile http
 
-# 2. Start API-et (http://localhost:5126)
-dotnet run --project src/Mem.Api
-
-# 3. Start frontend (http://localhost:5173, proxyer /api og /images til API-et)
+# 2. Start frontend (http://localhost:5173, proxyer /api og /images til API-et)
 cd web && npm install && npm run dev
 ```
 
 ## Tester
 
 ```sh
-dotnet test          # parser- og API-tester
-cd web && npm test   # spillogikk (Vitest)
+dotnet test          # parsere, spilloppsett, API og data
+cd web && npm test   # spillogikk og layout (Vitest)
 ```
 
 ## API
 
-- `GET /api/game?pairs=6|8|12` – kortstokk (symbol + foto per par, ustokket)
-- `GET /api/symbols` – alle symboler med foto og kreditering
-- `GET /api/highscores?pairs=8` – topp 10
-- `POST /api/highscores` – `{ name, pairs, moves, timeMs }`
+- `GET /api/game?pairs=6|8|12&mode=symbols|descriptions` – kortstokk med to kort per par, ustokket
+- `GET /api/highscores?pairs=8&mode=symbols` – topp 10 for modusen og vanskelighetsgraden
+- `POST /api/highscores` – `{ name, pairs, moves, timeMs, mode }`
+- `GET /api/symbols` – alle karttegn med foto og kreditering
+
+`mode` er valgfri og er `symbols` hvis den utelates.
 
 ## Produksjon
 
-`cd web && npm run build`, kopier `web/dist` til `src/Mem.Api/wwwroot`, og publiser API-et.
+Kjør `cd web && npm run build`, kopier `web/dist` til `src/Mem.Api/wwwroot`, og publiser API-et.
 API-et serverer da også frontend. Sett `DataDirectory` og `ConnectionStrings:Mem` for miljøet.
 
-## Spillmoduser
+## Generere data på nytt
 
-- **Karttegn:** ISOM-karttegn ↔ foto fra O-Map Wiki.
-- **Postbeskrivelser:** IOF-postbeskrivelse ↔ terrengtegning. Når et par er funnet, vises kartutsnitt og tekstbeskrivelse.
-  Eksemplene (side 18–29 i «International Specification for Control Descriptions 2024», CC BY-ND 4.0) trekkes ut med:
+Dette trengs bare hvis kildene endres. Resultatet skrives til `data/`.
 
-  ```sh
-  dotnet run --project tools/ControlDescriptionExtractor -- "<sti til IOF Control Descriptions 2024.pdf>" [--contact-sheet oversikt.html]
-  ```
+```sh
+# Karttegn og foto fra O-Map Wiki (HTML caches i tools/OmapScraper/.cache)
+dotnet run --project tools/OmapScraper            # valgfritt: -- --max-photos 4 --limit 10
 
-  Verktøyet finner tabellrutenettet på hver side og klipper ut kart, terrengtegning og postbeskrivelse **uendret**
-  (bare beskåret) til `data/control-descriptions/`. Tekstene havner i `data/control-descriptions.json`.
-  Rader med identisk tekst (og dermed lik postbeskrivelse, f.eks. rad 6 og 8 «Re-entrant») havner i samme
-  forvekslingsgruppe i `data/control-descriptions-groups.json` og kommer aldri i samme spill. Filen kan redigeres
-  for hånd, men overskrives hvis verktøyet kjøres på nytt.
+# Postbeskrivelser fra side 18–29 i «International Specification for Control Descriptions 2024»
+dotnet run --project tools/ControlDescriptionExtractor -- "<sti til PDF-en>" [--contact-sheet oversikt.html]
+```
 
-Hver modus har sin egen highscore-liste.
+- **Scraperen** henter bare kategori 1–5. Tekniske symboler (6xx) og løypesymboler (7xx) har ikke noe foto.
+- **PDF-uttrekket** finner tabellrutenettet på hver side og klipper ut kart, terrengtegning og postbeskrivelse
+  uendret, bare beskåret.
+- **Forvekslingsgrupper** ligger i `data/confusable-groups.json` (vedlikeholdes for hånd) og
+  `data/control-descriptions-groups.json` (lages av PDF-uttrekket og overskrives når det kjøres).
+- **Norske karttegnnavn** ligger i `data/i18n/symbols.nb.json`. Flere språk legges til som
+  `symbols.<språk>.json`. Mangler et navn, brukes det engelske.
 
-## Språk
+## Lisenser
 
-Spillet finnes på norsk og engelsk (velger øverst til høyre). Første gang følges nettleserens språk.
+Kildekoden er lisensiert under [MIT](LICENSE). Innholdet kommer fra andre og har egne lisenser:
 
-- UI-tekster: `web/src/i18n/messages.tsx`
-- Norske karttegnnavn: `data/i18n/symbols.nb.json` (`{ "204": "Stein", … }`), fra Norges Orienteringsforbunds
-  oversettelse av ISOM 2017. 203.2, 513.2 og 532 finnes ikke der (nye i ISOM 2017-2) og er oversatt manuelt.
-  Flere språk legges til som `symbols.<språk>.json`; mangler et navn, brukes engelsk.
+| Innhold | Kilde | Lisens |
+| --- | --- | --- |
+| Karttegn, definisjoner og foto (`data/images`, `data/symbols.json`, `tests/OmapScraper.Tests/Fixtures`) | © IOF og bidragsytere til [IOF O-Map Wiki](https://omapwiki.orienteering.sport/) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Postbeskrivelser, terrengtegninger og kartutsnitt (`data/control-descriptions`, `data/control-descriptions.json`) | © IOF, [International Specification for Control Descriptions 2024](https://orienteering.sport/iof/rules/control-descriptions/) | [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/), gjengitt uendret bortsett fra beskjæring |
+| Norske karttegnnavn (`data/i18n/symbols.nb.json`) | Norges Orienteringsforbunds oversettelse av ISOM 2017 | Kreditert. 203.2, 513.2 og 532 er oversatt manuelt |
 
-## Lisens for innhold
+Fotograf og kilde for hvert bilde vises på «Kilder»-siden i spillet.
 
-Karttegn, definisjoner og foto: © IOF og bidragsytere til O-Map Wiki, CC BY-SA 4.0.
-Fotograf og lisens per bilde står på kildesiden og vises på «Kilder»-siden i spillet.
+## Om utviklingen
+
+Prosjektet er utviklet av Isak Jonsson med [Claude Code](https://claude.com/claude-code) som programmeringsassistent.
