@@ -18,10 +18,15 @@ using UglyToad.PdfPig;
 
 const int FirstPage = 18;
 const int LastPage = 29;
-const int Dpi = 200;
+// High enough that the drawings stay sharp when a card is enlarged to full screen width.
+const int Dpi = 600;
 const byte DarkLuminance = 150;
 const byte WhiteLuminance = 235;
-const int TrimPadding = 4;
+// Pixel margins are given at 200 dpi and scaled with the resolution.
+const int TrimPadding = 4 * Dpi / 200;
+const int GridLineMargin = 2 * Dpi / 200;
+// A row or column needs this many non-white pixels to count as content, so lone specks do not widen the crop.
+const int MinContentPixels = Dpi / 100;
 
 if (args.Length < 1) { Console.Error.WriteLine("Usage: <pdf> [--contact-sheet <html>]"); return 1; }
 var pdfPath = args[0];
@@ -128,17 +133,22 @@ static byte[,] Luminance(SKBitmap bitmap)
 /// <summary>Crops the cell to its non-white content (plus a little padding) and saves it as PNG.</summary>
 static void SaveCell(SKBitmap page, byte[,] luminance, Box cell, string path)
 {
-    // Stay a couple of pixels inside the grid lines so anti-aliased line edges are not included.
-    int left = cell.Left + 2, top = cell.Top + 2, right = cell.Right - 2, bottom = cell.Bottom - 2;
-    int minX = right, minY = bottom, maxX = left, maxY = top;
+    // Stay a little inside the grid lines so anti-aliased line edges are not included.
+    int left = cell.Left + GridLineMargin, top = cell.Top + GridLineMargin, right = cell.Right - GridLineMargin, bottom = cell.Bottom - GridLineMargin;
+    var rowCounts = new int[bottom - top];
+    var columnCounts = new int[right - left];
     for (var y = top; y < bottom; y++)
     for (var x = left; x < right; x++)
     {
         if (luminance[y, x] >= WhiteLuminance) continue;
-        minX = Math.Min(minX, x); maxX = Math.Max(maxX, x);
-        minY = Math.Min(minY, y); maxY = Math.Max(maxY, y);
+        rowCounts[y - top]++;
+        columnCounts[x - left]++;
     }
-    if (maxX <= minX || maxY <= minY) throw new InvalidOperationException($"Empty cell for {path}");
+    var contentRows = Enumerable.Range(0, rowCounts.Length).Where(i => rowCounts[i] >= MinContentPixels).ToList();
+    var contentColumns = Enumerable.Range(0, columnCounts.Length).Where(i => columnCounts[i] >= MinContentPixels).ToList();
+    if (contentRows.Count == 0 || contentColumns.Count == 0) throw new InvalidOperationException($"Empty cell for {path}");
+    int minX = left + contentColumns[0], maxX = left + contentColumns[^1];
+    int minY = top + contentRows[0], maxY = top + contentRows[^1];
 
     var crop = SKRectI.Create(
         Math.Max(left, minX - TrimPadding), Math.Max(top, minY - TrimPadding),
