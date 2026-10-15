@@ -28,11 +28,13 @@ dotnet run --project src/Mem.Api --launch-profile http       # API on http://loc
 
 # Frontend (from web/)
 npm run dev        # http://localhost:5173, proxies /api and /images to :5126 (override with MEM_API_URL)
+npm run dev:pages  # static version without the API, at http://localhost:5173/o-memory/
 npm test           # vitest run
 npx vitest run src/game/zoomLayout.test.ts                   # one file
 npx tsc -b         # typecheck
 npx oxlint         # lint
 npm run build
+npm run build:pages   # static GitHub Pages build (copies data/ into dist/data)
 
 # Data tools (only needed to regenerate data/, which is committed)
 dotnet run --project tools/OmapScraper [-- --max-photos 4 --limit N]
@@ -50,12 +52,17 @@ dotnet run --project tools/ControlDescriptionExtractor -- "<IOF Control Descript
 
 **API** (`src/Mem.Api/Program.cs`): `GET /api/game?pairs=6|8|12&mode=symbols|descriptions` returns unshuffled cards (client shuffles); `GET/POST /api/highscores` per mode; `GET /api/symbols` for the credits page. Images are served from `data/images` at `/images` and from `data/control-descriptions` at `/images/control-descriptions`. Config is read lazily (factories/after `Build`) so `WebApplicationFactory` tests can override `DataDirectory` and `ConnectionStrings:Mem`. The DB uses `EnsureCreated` (no migrations); schema additions to an existing `mem.db` are done by hand in `DatabaseUpgrade` (e.g. the `Mode` column) — follow that pattern and add a test like `DatabaseUpgradeTests`.
 
+**Two backends, chosen at build time** in `web/src/api.ts` (`import.meta.env.VITE_BACKEND`, set to `static` by `web/.env.pages`):
+- *API* (default): the .NET API above, shared high scores in SQLite.
+- *Static* (`--mode pages`, deployed to https://sotpoteten.github.io/o-memory/ by `.github/workflows/pages.yml`): `web/src/static/` reads the files in `data/` directly (the `staticData` plugin in `vite.config.ts` serves them in dev and copies them into `dist/data`), builds decks in `deck.ts` and keeps high scores in localStorage (`localHighScores.ts`). Base path is `/o-memory/`.
+`deck.ts` mirrors `SymbolRepository`/`ControlDescriptionRepository`/`Game` in C#: change deck or group rules in both, with tests on both sides.
+
 **Cards** carry `symbolNames` per language (`en` always present; description mode uses IOF's English text for all languages) and optional `details` (map excerpt + text). The client picks the name with `symbolName(names, lang)` falling back to `en`.
 
 **Frontend game logic** is a pure reducer in `web/src/game/memoryGame.ts` (flip, mismatch lock incl. the 0.45 s turn-back animation, zoom state, review mode); `useMemoryGame` adds timers. Keep new game rules in the reducer and test them there.
 
 **Layout is computed in JS and written straight to the DOM** in `GameBoard.tsx`:
-- `useZoomLayout` → `zoomLayout.ts`: places all enlarged cards together so neighbours sit edge to edge (never overlap), within the viewport; cards mark themselves with `data-card-id`. `--zoom-order` keeps the latest-opened card on top; CSS animates `z-index` down while a card shrinks.
+- `useZoomLayout` → `zoomLayout.ts`: places all enlarged cards together so neighbours sit edge to edge (never overlap), within the viewport; cards mark themselves with `data-card-id`. The zoom is applied as a real size and position (`left/top/width/height` of the card inside its `.card-box`), not a scale transform: Chrome draws a scaled 3D-flipped card small and blows it up, which blurs the SVG symbols. `--zoom-order` keeps the latest-opened card on top; CSS animates `z-index` down while a card shrinks.
 - `useFitToWindow` → `boardFit.ts`: on PC screens picks the column count (only divisors of the card count, so rows are full) and board width (`--fit-cols`, `--fit-width`) so the whole page fits without scrolling. Phones (≤600 px) keep the CSS `--cols` and scroll.
 Both pure functions have Vitest tests; verify visual changes in a real browser (Chrome extension) since tests can't see layout.
 

@@ -99,8 +99,9 @@ export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }:
 
 /**
  * Positions the enlarged cards. They are laid out together (see layoutZoomedCards) so two enlarged
- * neighbours sit edge to edge instead of overlapping; every other card gets its transform cleared.
- * Writes the transforms straight to the DOM, re-measuring on resize and scroll.
+ * neighbours sit edge to edge instead of overlapping; every other card goes back to filling its box.
+ * The zoom is applied as a real size and position (not a scale transform), so images are drawn sharply at the
+ * enlarged size. Writes the styles straight to the DOM, re-measuring on resize and scroll.
  */
 function useZoomLayout(boardRef: RefObject<HTMLDivElement | null>, zoomedIds: readonly string[]) {
   const zoomedKey = zoomedIds.join('|')
@@ -113,20 +114,32 @@ function useZoomLayout(boardRef: RefObject<HTMLDivElement | null>, zoomedIds: re
 
     const update = () => {
       const rects = ids.flatMap((id): CardRect[] => {
-        const slot = slotOf(id)
-        const button = slot?.querySelector('button')
-        if (!slot || !button) return []
-        // The slot is never transformed, and offsetWidth/Height ignore transforms.
-        const { left, top } = slot.getBoundingClientRect()
-        return [{ id, left, top, width: button.offsetWidth, height: button.offsetHeight }]
+        // The box keeps the card's unenlarged place and size.
+        const box = slotOf(id)?.querySelector('.card-box')
+        if (!box) return []
+        const { left, top, width, height } = box.getBoundingClientRect()
+        return [{ id, left, top, width, height }]
       })
       const viewport = { width: document.documentElement.clientWidth, height: document.documentElement.clientHeight }
       const layout = layoutZoomedCards(rects, viewport)
 
       for (const slot of board.querySelectorAll<HTMLElement>('[data-card-id]')) {
         const button = slot.querySelector('button')
+        const box = slot.querySelector('.card-box')
         const t = layout.get(slot.dataset.cardId!)
-        if (button) button.style.transform = t ? `translate(${t.dx}px, ${t.dy}px) scale(${t.scale})` : ''
+        if (!button || !box) continue
+        if (t) {
+          // The transform is relative to the card's centre; turn it into a position within the box.
+          const { width, height } = box.getBoundingClientRect()
+          Object.assign(button.style, {
+            left: `${t.dx - (width * t.scale - width) / 2}px`,
+            top: `${t.dy - (height * t.scale - height) / 2}px`,
+            width: `${width * t.scale}px`,
+            height: `${height * t.scale}px`,
+          })
+        } else {
+          Object.assign(button.style, { left: '', top: '', width: '', height: '' })
+        }
       }
     }
 
@@ -159,7 +172,7 @@ function useFitToWindow(boardRef: RefObject<HTMLDivElement | null>, cardCount: n
         board.style.removeProperty('--fit-width')
         return
       }
-      const card = board.querySelector<HTMLElement>('.card')
+      const card = board.querySelector<HTMLElement>('.card-box')
       const caption = board.querySelector<HTMLElement>('.card-caption')
       if (!card || !caption || !board.parentElement) return
       const style = getComputedStyle(board)

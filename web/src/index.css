@@ -246,7 +246,7 @@ main { flex: 1; }
 .board-descriptions { --card-width: 260px; }
 .board-descriptions.board-6 { --cols: 3; }
 .board-descriptions.board-12 { --cols: 4; }
-.board-descriptions .card { aspect-ratio: 2; }
+.board-descriptions .card-box { aspect-ratio: 2; }
 @media (max-width: 600px) {
   .board-6 { --cols: 3; }
   .board-12 { --cols: 4; }
@@ -257,9 +257,10 @@ main { flex: 1; }
 
 .card-slot { display: flex; flex-direction: column; min-width: 0; }
 
+/* Keeps the card's place in the grid; the card itself is enlarged on top of it. */
+.card-box { position: relative; aspect-ratio: 1; }
+
 .card {
-  aspect-ratio: 1;
-  width: 100%;
   padding: 0;
   background: none;
   perspective: 800px;
@@ -268,14 +269,21 @@ main { flex: 1; }
 .card:disabled { opacity: 1; }
 
 /*
- * While shrinking, z-index counts down from 10 to 0 over the same 0.3s as the transform, so the card stays
+ * Enlarging changes the card's real size (left/top/width/height, set by GameBoard) rather than scaling it with a
+ * transform: a scaled card is drawn small and blown up, which blurs the SVG symbols and drawings.
+ *
+ * While shrinking, z-index counts down from 10 to 0 over the same 0.3s as the size change, so the card stays
  * above its neighbours until it no longer covers them. Zooming in jumps straight to 10 (no z-index transition),
  * which also puts a newly enlarged card above one that is still shrinking.
  */
 .card {
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
-  transition: transform 0.3s ease, z-index 0.3s linear;
+  transition: left 0.3s ease, top 0.3s ease, width 0.3s ease, height 0.3s ease, z-index 0.3s linear;
 }
 .board.is-reviewing .card { cursor: zoom-in; }
 .review-hint { margin: 0 0 0.75rem; }
@@ -284,7 +292,7 @@ main { flex: 1; }
   /* The most recently enlarged card is on top (--zoom-order is set per card). */
   z-index: calc(10 + var(--zoom-order, 0));
   cursor: zoom-out;
-  transition: transform 0.3s ease;
+  transition: left 0.3s ease, top 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 .card.is-zoomed .card-front { box-shadow: 0 8px 32px rgb(0 0 0 / 0.35); }
 

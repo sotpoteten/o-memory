@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { fetchGame, type Card, type GameMode } from './api'
+import { fetchGame, IS_STATIC, type Card, type GameMode } from './api'
 import { Credits } from './components/Credits'
 import { GameBoard } from './components/GameBoard'
 import { SetupScreen } from './components/SetupScreen'
+import { preloadImages } from './game/preloadImages'
 import { useI18n } from './i18n/context'
 import { LANGUAGES } from './i18n/language'
 import { messages } from './i18n/messages'
@@ -23,6 +24,7 @@ export default function App() {
     setScreen({ name: 'loading' })
     try {
       const cards = await fetchGame(pairs, mode)
+      await preloadImages(cards)
       setScreen({ name: 'playing', mode, pairs, playerName, cards, gameId: Date.now() })
     } catch {
       setStartFailed(true)
@@ -61,7 +63,7 @@ export default function App() {
       </header>
 
       <main>
-        {screen.name === 'setup' && <SetupScreen onStart={start} error={startFailed ? t.setup.startError : undefined} />}
+        {screen.name === 'setup' && <SetupScreen onStart={start} error={startFailed ? (IS_STATIC ? t.setup.startErrorStatic : t.setup.startError) : undefined} />}
         {screen.name === 'loading' && <p className="muted center">{t.setup.loadingCards}</p>}
         {screen.name === 'playing' && (
           <GameBoard

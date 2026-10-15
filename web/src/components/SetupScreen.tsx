@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GAME_MODES, type GameMode } from '../api'
+import { GAME_MODES, IS_STATIC, type GameMode } from '../api'
 import { readStoredMode, storeMode } from '../gameMode'
 import { useI18n } from '../i18n/context'
 import { MAX_NAME_LENGTH, readStoredName, storeName } from '../playerName'
@@ -71,7 +71,8 @@ export function SetupScreen({ onStart, error }: Props) {
       <button type="button" className="start" onClick={start}>{t.setup.start}</button>
       {error && <p className="error">{error}</p>}
 
-      <h2>{t.setup.highscoreHeading(t.modes[mode].title, t.setup.levels[pairs])}</h2>
+      <h2>{(IS_STATIC ? t.setup.localHighscoreHeading : t.setup.highscoreHeading)(t.modes[mode].title, t.setup.levels[pairs])}</h2>
+      {IS_STATIC && <p className="muted">{t.setup.localHighscoreNote}</p>}
       <HighScoreList key={`${mode}-${pairs}`} mode={mode} pairs={pairs} />
     </section>
   )

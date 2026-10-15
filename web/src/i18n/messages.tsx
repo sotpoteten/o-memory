@@ -20,7 +20,10 @@ const en = {
     start: 'Start game',
     loadingCards: 'Dealing cards…',
     startError: 'Could not start the game. Is the API running?',
+    startErrorStatic: 'Could not load the game data. Try reloading the page.',
     highscoreHeading: (mode: string, level: string) => `High scores – ${mode}, ${level.toLowerCase()}`,
+    localHighscoreHeading: (mode: string, level: string) => `Your best results – ${mode}, ${level.toLowerCase()}`,
+    localHighscoreNote: 'Results are only saved in this browser.',
   },
 
   modes: {
@@ -69,6 +72,7 @@ const en = {
     loading: 'Loading…',
     loadError: 'Could not load high scores.',
     empty: 'No results yet – be the first!',
+    emptyLocal: 'No results yet.',
     moves: (moves: number) => `${moves} moves`,
   },
 
@@ -114,7 +118,10 @@ const nb: Messages = {
     start: 'Start spill',
     loadingCards: 'Henter kort…',
     startError: 'Kunne ikke starte spillet. Kjører API-et?',
+    startErrorStatic: 'Kunne ikke laste spilldataene. Prøv å laste siden på nytt.',
     highscoreHeading: (mode, level) => `Highscore – ${mode.toLowerCase()}, ${level.toLowerCase()}`,
+    localHighscoreHeading: (mode, level) => `Dine beste resultater – ${mode.toLowerCase()}, ${level.toLowerCase()}`,
+    localHighscoreNote: 'Resultatene lagres bare i denne nettleseren.',
   },
 
   modes: {
@@ -163,6 +170,7 @@ const nb: Messages = {
     loading: 'Laster…',
     loadError: 'Kunne ikke hente highscore.',
     empty: 'Ingen resultater ennå – bli den første!',
+    emptyLocal: 'Ingen resultater ennå.',
     moves: moves => `${moves} trekk`,
   },
 

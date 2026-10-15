@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { fetchHighScores, type GameMode, type HighScore } from '../api'
+import { fetchHighScores, IS_STATIC, type GameMode, type HighScore } from '../api'
 import { formatTime } from '../game/useMemoryGame'
 import { useI18n } from '../i18n/context'
 
@@ -24,7 +24,7 @@ export function HighScoreList({ mode, pairs, highlightId }: Props) {
 
   if (error) return <p className="muted">{t.highscores.loadError}</p>
   if (scores === null) return <p className="muted">{t.highscores.loading}</p>
-  if (scores.length === 0) return <p className="muted">{t.highscores.empty}</p>
+  if (scores.length === 0) return <p className="muted">{IS_STATIC ? t.highscores.emptyLocal : t.highscores.empty}</p>
 
   return (
     <ol className="highscores">

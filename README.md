@@ -8,6 +8,8 @@ Et memory-spill for orienteringsløpere. Hvert par består av to bilder av det s
 - **Postbeskrivelser:** en IOF-postbeskrivelse og en tegning av posten i terrenget. Når paret er funnet, vises
   kartutsnittet og tekstbeskrivelsen.
 
+**Spill på nett: https://sotpoteten.github.io/o-memory/**
+
 ![Karttegn-modus med fire funne par og ett forstørret kort](docs/karttegn.jpg)
 
 ![Postbeskrivelsesmodus med kartutsnitt og tekst for sist funne par](docs/postbeskrivelser.jpg)
@@ -16,6 +18,7 @@ Et memory-spill for orienteringsløpere. Hvert par består av to bilder av det s
 
 - Tre vanskelighetsgrader: 6, 8 eller 12 par.
 - Trekk og tid telles, og resultatet lagres automatisk i en highscore-liste per modus og vanskelighetsgrad.
+  På nettversjonen lagres listen bare i nettleseren din.
 - Åpne kort forstørres og legges kant i kant, så detaljene er lette å se.
 - Ferdig brett kan gås gjennom etterpå, med zoom på hvert kort.
 - Norsk og engelsk språkversjon. Første gang følges nettleserens språk.
@@ -47,6 +50,20 @@ dotnet run --project src/Mem.Api --launch-profile http
 # 2. Start frontend (http://localhost:5173, proxyer /api og /images til API-et)
 cd web && npm install && npm run dev
 ```
+
+## Statisk versjon (GitHub Pages)
+
+Nettversjonen kjører uten API. Frontend leser datafilene i `data/` direkte og setter sammen spillene selv
+(`web/src/static/`), og highscore lagres i nettleserens localStorage. Hvilken variant som bygges, avgjøres
+ved byggetid med `--mode pages`.
+
+```sh
+cd web
+npm run dev:pages       # http://localhost:5173/o-memory/, uten API
+npm run build:pages     # web/dist med datafilene kopiert inn
+```
+
+Hver push til `main` bygger og publiserer siden med `.github/workflows/pages.yml`.
 
 ## Tester
 
