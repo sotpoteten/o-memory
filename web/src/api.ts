@@ -1,3 +1,4 @@
+import { SAMPLE_FILES } from './sampleFiles'
 import { staticBackend } from './static/staticBackend'
 
 export type CardKind = 'symbol' | 'photo' | 'description' | 'terrain'
@@ -60,6 +61,14 @@ export interface SymbolInfo {
   photos: Photo[]
 }
 
+/** One pair of each mode, shown on the mode choice on the start page. */
+export interface SampleImages {
+  symbol: string
+  photo: string
+  description: string
+  terrain: string
+}
+
 /** Where games, symbols and high scores come from: the .NET API, or the data files alone (GitHub Pages). */
 export interface Backend {
   /** True for the static version, where high scores are only kept in the player's own browser. */
@@ -68,6 +77,7 @@ export interface Backend {
   fetchSymbols: () => Promise<SymbolInfo[]>
   fetchHighScores: (pairs: number, mode: GameMode) => Promise<HighScore[]>
   postHighScore: (score: NewHighScore) => Promise<HighScore>
+  sampleImages: SampleImages
 }
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
@@ -87,6 +97,13 @@ const apiBackend: Backend = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(score),
     }),
+  // Symbol images are served from data/images at /images, control descriptions from data/ at /images too.
+  sampleImages: {
+    symbol: `/images/${SAMPLE_FILES.symbol}`,
+    photo: `/images/${SAMPLE_FILES.photo}`,
+    description: `/images/${SAMPLE_FILES.description}`,
+    terrain: `/images/${SAMPLE_FILES.terrain}`,
+  },
 }
 
 /** Chosen at build time (`--mode pages` sets VITE_BACKEND=static), so the unused backend is left out of the bundle. */
@@ -97,3 +114,4 @@ export const fetchGame = backend.fetchGame
 export const fetchSymbols = backend.fetchSymbols
 export const fetchHighScores = backend.fetchHighScores
 export const postHighScore = backend.postHighScore
+export const SAMPLE_IMAGES = backend.sampleImages

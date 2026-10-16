@@ -22,9 +22,16 @@ export function ResultDialog({ mode, pairs, moves, timeMs, saveStatus, onRetrySa
     <div className="dialog-backdrop">
       <div className="dialog" role="dialog" aria-modal="true" aria-labelledby="result-title">
         <h2 id="result-title">{t.result.title}</h2>
-        <p className="result-stats">
-          {t.result.stats(<strong>{moves}</strong>, <strong>{formatTime(timeMs)}</strong>)}
-        </p>
+        <dl className="result-stats">
+          <div>
+            <dt>{t.game.time}</dt>
+            <dd>{formatTime(timeMs)}</dd>
+          </div>
+          <div>
+            <dt>{t.game.moves}</dt>
+            <dd>{moves}</dd>
+          </div>
+        </dl>
 
         <div aria-live="polite">
           {saveStatus.state === 'saving' && <p className="muted">{t.result.saving}</p>}

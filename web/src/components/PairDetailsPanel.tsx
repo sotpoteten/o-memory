@@ -11,10 +11,11 @@ export function PairDetailsPanel({ details }: { details: CardDetails | null }) {
   return (
     <div className="pair-details" aria-live="polite">
       {details ? (
-        <>
+        // Keyed by the text, so a newly found pair fades in instead of replacing the old one in place.
+        <div className="pair-details-content" key={details.text}>
           <img src={details.mapImageUrl} alt={t.pairDetails.mapAlt} />
           <p lang="en">{details.text}</p>
-        </>
+        </div>
       ) : (
         <p className="muted">{t.pairDetails.placeholder}</p>
       )}

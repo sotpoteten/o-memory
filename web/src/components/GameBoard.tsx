@@ -7,6 +7,7 @@ import { formatTime, useMemoryGame } from '../game/useMemoryGame'
 import { detailsPairId, isFinished, isLocked } from '../game/memoryGame'
 import { layoutZoomedCards, type CardRect } from '../game/zoomLayout'
 import { fitBoard } from '../game/boardFit'
+import { ControlProgress } from './ControlProgress'
 import { MemoryCard } from './MemoryCard'
 import { PairDetailsPanel } from './PairDetailsPanel'
 import { ResultDialog } from './ResultDialog'
@@ -43,13 +44,21 @@ export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }:
 
   return (
     <section className="game">
-      <div className="scorebar" aria-live="polite">
-        <span>{t.game.moves}: <strong>{state.moves}</strong></span>
-        <span>{t.game.time}: <strong>{formatTime(elapsedMs)}</strong></span>
-        <span>{t.game.pairs}: <strong>{state.matched.length}/{pairs}</strong></span>
+      <div className="scorebar">
+        <dl className="scorebar-stats">
+          <div>
+            <dt>{t.game.time}</dt>
+            <dd>{formatTime(elapsedMs)}</dd>
+          </div>
+          <div>
+            <dt>{t.game.moves}</dt>
+            <dd>{state.moves}</dd>
+          </div>
+        </dl>
+        <ControlProgress total={pairs} found={state.matched.length} />
         <span className="scorebar-actions">
-          <button type="button" className="secondary" onClick={onRestart}>{t.game.newGame}</button>
-          <button type="button" className="secondary" onClick={onQuit}>{t.game.quit}</button>
+          <button type="button" className="link" onClick={onRestart}>{t.game.newGame}</button>
+          <button type="button" className="link" onClick={onQuit}>{t.game.quit}</button>
         </span>
       </div>
 
@@ -58,13 +67,14 @@ export function GameBoard({ cards, mode, pairs, playerName, onRestart, onQuit }:
       {state.reviewing && <p className="muted center review-hint">{t.game.reviewHint}</p>}
 
       <div ref={boardRef} className={`board board-${pairs} board-${mode} ${state.reviewing ? 'is-reviewing' : ''}`}>
-        {state.cards.map(card => {
+        {state.cards.map((card, index) => {
           const faceUp = state.flipped.includes(card.id) || state.matched.includes(card.pairId)
           const zoomed = state.zoomed.includes(card.id)
           return (
             <MemoryCard
               key={card.id}
               card={card}
+              index={index}
               faceUp={faceUp}
               matched={state.matched.includes(card.pairId)}
               zoomed={zoomed}
@@ -178,7 +188,8 @@ function useFitToWindow(boardRef: RefObject<HTMLDivElement | null>, cardCount: n
       const style = getComputedStyle(board)
       const layout = fitBoard({
         availableWidth: board.parentElement.clientWidth,
-        availableHeight: window.innerHeight - (board.getBoundingClientRect().top + window.scrollY) - footerHeight(),
+        // 1px to spare: card heights are fractional, and rounding must never tip the page into scrolling.
+        availableHeight: window.innerHeight - (board.getBoundingClientRect().top + window.scrollY) - footerHeight() - 1,
         cards: cardCount,
         rowGap: parseFloat(style.rowGap) || 0,
         columnGap: parseFloat(style.columnGap) || 0,
@@ -191,8 +202,14 @@ function useFitToWindow(boardRef: RefObject<HTMLDivElement | null>, cardCount: n
     }
 
     update()
+    // The web font can finish loading after the first fit and change the height of the text above the board.
+    let active = true
+    document.fonts?.ready.then(() => { if (active) update() })
     window.addEventListener('resize', update)
-    return () => window.removeEventListener('resize', update)
+    return () => {
+      active = false
+      window.removeEventListener('resize', update)
+    }
   }, [boardRef, cardCount, reviewing])
 }
 

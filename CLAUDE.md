@@ -66,6 +66,8 @@ dotnet run --project tools/ControlDescriptionExtractor -- "<IOF Control Descript
 - `useFitToWindow` → `boardFit.ts`: on PC screens picks the column count (only divisors of the card count, so rows are full) and board width (`--fit-cols`, `--fit-width`) so the whole page fits without scrolling. Phones (≤600 px) keep the CSS `--cols` and scroll.
 Both pure functions have Vitest tests; verify visual changes in a real browser (Chrome extension) since tests can't see layout.
 
+**Visual design** («orienteringskartet»): tokens at the top of `web/src/index.css` use ISOM map colours with the purple course overprint (`--overprint`) as the only accent; the control-flag orange (`--flag`) is only for card backs and the logo. Font is Archivo (self-hosted via `@fontsource-variable/archivo`). Motion follows strong custom curves (`--ease-out`, `--ease-in-out`), stays under ~300ms, hover is gated by `(hover: hover) and (pointer: fine)`, and everything has a `prefers-reduced-motion` fallback. IOF images (CC BY-ND) must never get filters or overlays. Keep visible copy free of em/en dashes.
+
 **i18n**: no library. `web/src/i18n/messages.tsx` has typed `en`/`nb` dictionaries (`nb: Messages = typeof en`, so missing keys fail `tsc`); some messages are functions returning JSX for embedded links. Language: localStorage, else browser language (`nb`/`nn`/`no` → Norwegian).
 
 **Credits**: any new third-party content must be attributed on the Kilder page (`Credits.tsx`) with its license.

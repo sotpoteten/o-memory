@@ -1,4 +1,5 @@
 import type { Backend } from '../api'
+import { SAMPLE_FILES } from '../sampleFiles'
 import {
   buildGameData, createDescriptionDeck, createSymbolDeck, symbolInfos,
   type ConfusableGroup, type GameData, type ImageUrls, type RawControlExample, type RawSymbol,
@@ -53,4 +54,10 @@ export const staticBackend: Backend = {
   fetchSymbols: async () => symbolInfos(await loadGameData(), urls),
   fetchHighScores: async (pairs, mode) => topScores(storage(), pairs, mode),
   postHighScore: async score => addScore(storage(), score),
+  sampleImages: {
+    symbol: urls.image(SAMPLE_FILES.symbol),
+    photo: urls.image(SAMPLE_FILES.photo),
+    description: urls.data(SAMPLE_FILES.description),
+    terrain: urls.data(SAMPLE_FILES.terrain),
+  },
 }

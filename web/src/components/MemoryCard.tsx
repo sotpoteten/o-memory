@@ -5,6 +5,8 @@ import { symbolName } from '../i18n/language'
 
 interface Props {
   card: Card
+  /** Position on the board; staggers the deal animation. */
+  index: number
   faceUp: boolean
   matched: boolean
   zoomed: boolean
@@ -20,7 +22,7 @@ interface Props {
  * they never overlap); the card only marks itself with data-card-id so the board can find it. The card box keeps
  * the card's place in the grid while the card is enlarged.
  */
-export function MemoryCard({ card, faceUp, matched, zoomed, zoomOrder, interactive, onClick }: Props) {
+export function MemoryCard({ card, index, faceUp, matched, zoomed, zoomOrder, interactive, onClick }: Props) {
   const { t, language } = useI18n()
 
   const title = symbolName(card.symbolNames, language)
@@ -30,7 +32,7 @@ export function MemoryCard({ card, faceUp, matched, zoomed, zoomOrder, interacti
     : t.card.hidden
 
   return (
-    <div className="card-slot" data-card-id={card.id}>
+    <div className="card-slot" data-card-id={card.id} style={{ '--i': index } as CSSProperties}>
       <div className="card-box">
         <button
           type="button"

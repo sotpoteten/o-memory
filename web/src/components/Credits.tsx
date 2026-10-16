@@ -20,7 +20,7 @@ export function Credits() {
 
   return (
     <section className="credits">
-      <h2>{t.credits.heading}</h2>
+      <h1>{t.credits.heading}</h1>
       <p>
         {t.credits.intro(
           <a href={WIKI_URL}>IOF O-Map Wiki</a>,

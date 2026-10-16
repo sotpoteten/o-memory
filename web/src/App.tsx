@@ -36,13 +36,19 @@ export default function App() {
 
   return (
     <div className="app">
+      <a className="skip-link" href="#main">{t.skipToContent}</a>
       <header className="app-header">
         <button type="button" className="brand" onClick={toSetup}>
           <span className="brand-flag" aria-hidden="true" />
           O-memory
         </button>
-        <nav className="row">
-          <button type="button" className="link" onClick={() => setScreen({ name: 'credits' })}>
+        <nav className="app-nav">
+          <button
+            type="button"
+            className="link"
+            aria-current={screen.name === 'credits' ? 'page' : undefined}
+            onClick={() => setScreen({ name: 'credits' })}
+          >
             {t.nav.credits}
           </button>
           <div className="language-picker" role="group" aria-label={t.languagePicker}>
@@ -62,9 +68,14 @@ export default function App() {
         </nav>
       </header>
 
-      <main>
+      <main id="main" tabIndex={-1}>
         {screen.name === 'setup' && <SetupScreen onStart={start} error={startFailed ? (IS_STATIC ? t.setup.startErrorStatic : t.setup.startError) : undefined} />}
-        {screen.name === 'loading' && <p className="muted center">{t.setup.loadingCards}</p>}
+        {screen.name === 'loading' && (
+          <div className="loading" role="status">
+            <span className="loading-flags" aria-hidden="true"><span /><span /><span /></span>
+            <span className="muted">{t.setup.loadingCards}</span>
+          </div>
+        )}
         {screen.name === 'playing' && (
           <GameBoard
             key={screen.gameId}

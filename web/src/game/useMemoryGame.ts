@@ -4,8 +4,8 @@ import { createGame, gameReducer, isShowingMismatch } from './memoryGame'
 
 const MISMATCH_DELAY_MS = 1000
 const MATCH_ZOOM_MS = 1200
-/** Slightly longer than the card flip transition in index.css (0.4s). */
-const TURN_BACK_MS = 450
+/** Slightly longer than the card flip transition in index.css (0.3s). */
+const TURN_BACK_MS = 320
 
 export function useMemoryGame(cards: Card[]) {
   const [state, dispatch] = useReducer(gameReducer, cards, c => createGame(c))

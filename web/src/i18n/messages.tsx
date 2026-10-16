@@ -5,12 +5,13 @@ import type { Language } from './language'
 const en = {
   languageName: 'English',
   languagePicker: 'Language',
+  skipToContent: 'Skip to content',
   nav: { credits: 'Sources' },
   footer: (wiki: ReactNode) => <>Content from {wiki}, CC BY-SA 4.0</>,
 
   setup: {
-    intro:
-      'Find the pairs: every map symbol from the orienteering map belongs with a photo of the same terrain feature in real life.',
+    heading: 'Find the pairs',
+    intro: 'Turn two cards at a time. Each pair shows the same thing from the orienteering map in two different ways.',
     nameLabel: 'Name',
     optional: '(optional)',
     mode: 'Game',
@@ -21,8 +22,9 @@ const en = {
     loadingCards: 'Dealing cards…',
     startError: 'Could not start the game. Is the API running?',
     startErrorStatic: 'Could not load the game data. Try reloading the page.',
-    highscoreHeading: (mode: string, level: string) => `High scores – ${mode}, ${level.toLowerCase()}`,
-    localHighscoreHeading: (mode: string, level: string) => `Your best results – ${mode}, ${level.toLowerCase()}`,
+    highscoreHeading: 'High scores',
+    localHighscoreHeading: 'Your best results',
+    highscoreScope: (mode: string, level: string) => `${mode}, ${level.toLowerCase()}`,
     localHighscoreNote: 'Results are only saved in this browser.',
   },
 
@@ -42,6 +44,7 @@ const en = {
     moves: 'Moves',
     time: 'Time',
     pairs: 'Pairs',
+    pairsProgress: (found: number, total: number) => `${found} of ${total} pairs found`,
     newGame: 'New game',
     quit: 'Quit',
     reviewHint: 'Click a card to enlarge it.',
@@ -58,8 +61,7 @@ const en = {
   },
 
   result: {
-    title: 'All pairs found!',
-    stats: (moves: ReactNode, time: ReactNode) => <>{moves} moves in {time}</>,
+    title: 'All pairs found',
     saving: 'Saving your result…',
     saveError: 'Could not save the result.',
     retry: 'Try again',
@@ -71,7 +73,7 @@ const en = {
   highscores: {
     loading: 'Loading…',
     loadError: 'Could not load high scores.',
-    empty: 'No results yet – be the first!',
+    empty: 'No results yet. Be the first on the list.',
     emptyLocal: 'No results yet.',
     moves: (moves: number) => `${moves} moves`,
   },
@@ -103,12 +105,13 @@ export type Messages = typeof en
 const nb: Messages = {
   languageName: 'Norsk',
   languagePicker: 'Språk',
+  skipToContent: 'Hopp til innholdet',
   nav: { credits: 'Kilder' },
   footer: wiki => <>Innhold fra {wiki}, CC BY-SA 4.0</>,
 
   setup: {
-    intro:
-      'Finn parene: hvert karttegn fra orienteringskartet hører sammen med et foto av det samme terrengobjektet i virkeligheten.',
+    heading: 'Finn parene',
+    intro: 'Snu to kort om gangen. Hvert par viser det samme fra orienteringskartet, på to forskjellige måter.',
     nameLabel: 'Navn',
     optional: '(valgfritt)',
     mode: 'Spill',
@@ -119,8 +122,9 @@ const nb: Messages = {
     loadingCards: 'Henter kort…',
     startError: 'Kunne ikke starte spillet. Kjører API-et?',
     startErrorStatic: 'Kunne ikke laste spilldataene. Prøv å laste siden på nytt.',
-    highscoreHeading: (mode, level) => `Highscore – ${mode.toLowerCase()}, ${level.toLowerCase()}`,
-    localHighscoreHeading: (mode, level) => `Dine beste resultater – ${mode.toLowerCase()}, ${level.toLowerCase()}`,
+    highscoreHeading: 'Highscore',
+    localHighscoreHeading: 'Dine beste resultater',
+    highscoreScope: (mode, level) => `${mode}, ${level.toLowerCase()}`,
     localHighscoreNote: 'Resultatene lagres bare i denne nettleseren.',
   },
 
@@ -140,6 +144,7 @@ const nb: Messages = {
     moves: 'Trekk',
     time: 'Tid',
     pairs: 'Par',
+    pairsProgress: (found, total) => `${found} av ${total} par funnet`,
     newGame: 'Nytt spill',
     quit: 'Avslutt',
     reviewHint: 'Klikk på et kort for å forstørre det.',
@@ -156,8 +161,7 @@ const nb: Messages = {
   },
 
   result: {
-    title: 'Alle par funnet!',
-    stats: (moves, time) => <>{moves} trekk på {time}</>,
+    title: 'Alle par funnet',
     saving: 'Lagrer resultatet…',
     saveError: 'Kunne ikke lagre resultatet.',
     retry: 'Prøv igjen',
@@ -169,7 +173,7 @@ const nb: Messages = {
   highscores: {
     loading: 'Laster…',
     loadError: 'Kunne ikke hente highscore.',
-    empty: 'Ingen resultater ennå – bli den første!',
+    empty: 'Ingen resultater ennå. Bli den første på listen.',
     emptyLocal: 'Ingen resultater ennå.',
     moves: moves => `${moves} trekk`,
   },

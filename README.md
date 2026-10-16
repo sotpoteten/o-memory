@@ -10,7 +10,7 @@ Et memory-spill for orienteringsløpere. Hvert par består av to bilder av det s
 
 **Spill på nett: https://sotpoteten.github.io/o-memory/**
 
-![Karttegn-modus med fire funne par og ett forstørret kort](docs/karttegn.jpg)
+![Karttegn-modus med fire funne par og løypa som fylles opp](docs/karttegn.jpg)
 
 ![Postbeskrivelsesmodus med kartutsnitt og tekst for sist funne par](docs/postbeskrivelser.jpg)
 
